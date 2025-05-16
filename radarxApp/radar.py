@@ -39,8 +39,8 @@ should_send = True
 def post_init(self):
     global server
 
-    ip_addr = socket.gethostbyname(socket.gethostname())
-    # ip_addr = "127.0.1.1"
+    # ip_addr = socket.gethostbyname(socket.gethostname())
+    ip_addr = "127.0.0.1"
     port_radarxApp = 5002
 
     log_info(f"connecting using SCTP on {ip_addr}")
@@ -72,88 +72,95 @@ def entry(self):
                 if current_mode == "KPMs":
                     key_pattern = "kpm_*"
                     n = 2
-                    keys = sdl2.find_keys(ns2, key_pattern)
-                    
-                    sorted_keys = sorted(keys, key=lambda x: int(x.split('_')[1]))
-                    # print(len(sorted_keys))
-                    lastn_keys = sorted_keys[-n:]
-                    values = sdl2.get(ns2, set(lastn_keys)) 
-                    metrics_to_extract = ["pusch_sinr", "rx_bitrate", "rx_block_error_rate", "ul_mcs", "ul_buffer"]
-                    curr_extracted_metrics = []
-                    
-                    for key, value_bytes in values.items():
-                        if value_bytes:
-                            value = json.loads(value_bytes.decode('utf-8'))
-                            ue_metrics = value.get("ue_metrics", [])
-                            # print(ue_metrics)
-                            for ue_metric in ue_metrics:
-                                if (ue_metric.get("rx_bitrate") == 0 
-                                    and ue_metric.get("rx_block_error_rate") == 0 
-                                    and ue_metric.get("ul_buffer") == 0):
-                                    continue  # Skip appending if all three are zero
-                                curr_extracted_metrics.extend([ue_metric.get(metric) for metric in metrics_to_extract])
+                    try:
+                        keys = sdl2.find_keys(ns2, key_pattern)
+                   
+                        sorted_keys = sorted(keys, key=lambda x: int(x.split('_')[1]))
+                        # print(len(sorted_keys))
+                        lastn_keys = sorted_keys[-n:]
+                        values = sdl2.get(ns2, set(lastn_keys)) 
+                        metrics_to_extract = ["pusch_sinr", "rx_bitrate", "rx_block_error_rate", "ul_mcs", "ul_buffer"]
+                        curr_extracted_metrics = []
+                        
+                        for key, value_bytes in values.items():
+                            if value_bytes:
+                                value = json.loads(value_bytes.decode('utf-8'))
+                                ue_metrics = value.get("ue_metrics", [])
+                                # print(ue_metrics)
+                                for ue_metric in ue_metrics:
+                                    if (ue_metric.get("rx_bitrate") == 0 
+                                        and ue_metric.get("rx_block_error_rate") == 0 
+                                        and ue_metric.get("ul_buffer") == 0):
+                                        continue  # Skip appending if all three are zero
+                                    curr_extracted_metrics.extend([ue_metric.get(metric) for metric in metrics_to_extract])
 
-                    if len(curr_extracted_metrics) == len(metrics_to_extract)*n:          
-                        if curr_extracted_metrics!=prev_extracted_metrics:
-                            print("Gotten KPMs from RAN")
-                            # print(f"KPMs gotten from the RAN: {curr_extracted_metrics}")
-                            metrics = curr_extracted_metrics
-                            log_entry1 = f"{metrics}\n"
-                            log_file1.write(log_entry1)  # Write to file
-                            prev_extracted_metrics = curr_extracted_metrics
-                            # print(len((curr_extracted_metrics)))
-                            curr_extracted_metrics = np.array(curr_extracted_metrics).reshape(1,len(metrics_to_extract)*n)
-                            model_kpms = xgb.XGBClassifier() 
-                            model_kpms.load_model("/home/azuka/spectrumsharing_4g/models/prelim_xgboost_model.model")  
-                            start_time = time.perf_counter()
-                            pred = model_kpms.predict(curr_extracted_metrics)
-                            if metrics[2] >= 5 or metrics[7] >=5:
-                                pred[0] = 1
-                            else:
-                                pred[0] = 0
-                            epoch_time1 = time.time()
-                            end_time = time.perf_counter()
-                            duration = end_time - start_time
-                            print(f"KPMs detection Time {duration:.6f} seconds")
-                            log_entry1 = f"Epoch: {epoch_time1}, KPMs Prediction: {pred[0]}\n"
-                            print(f"KPMs detection at {epoch_time1:.6f} seconds")
-                            log_file1.write(log_entry1)  # Write to file
-                            log_file1.flush()  # Ensure immediate write to disk
-                            if pred[0] == 0:
-                                # No radar detected, stay in KPMs mode
-                                # First ensure that the BS is not blanking
+                        if len(curr_extracted_metrics) == len(metrics_to_extract)*n:          
+                            if curr_extracted_metrics!=prev_extracted_metrics:
+                                print("Gotten KPMs from RAN")
+                                # print(f"KPMs gotten from the RAN: {curr_extracted_metrics}")
+                                metrics = curr_extracted_metrics
+                                log_entry1 = f"{metrics}\n"
+                                log_file1.write(log_entry1)  # Write to file
+                                prev_extracted_metrics = curr_extracted_metrics
+                                # print(len((curr_extracted_metrics)))
+                                curr_extracted_metrics = np.array(curr_extracted_metrics).reshape(1,len(metrics_to_extract)*n)
+                                model_kpms = xgb.XGBClassifier() 
+                                model_kpms.load_model("/root/O-DSS/models/prelim_xgboost_model.model")  
+                                start_time = time.perf_counter()
+                                pred = model_kpms.predict(curr_extracted_metrics)
                                 if metrics[2] >= 5 or metrics[7] >=5:
-                                    interf_restoarr = array.array('i',interf_res_final)
-                                    interf_restobytes = interf_restoarr.tobytes()
-                                    # print(f"Confirmed Affected PRBs are {interf_res}")
-                                    conn.send(interf_restobytes)
-                                    print("Retain previous blanked PRBs")
-                                    log_entry1 = f"In KPMs mode. Retain previous blanked PRBs\n"
-                                    log_file1.write(log_entry1)  # Write to file
+                                    pred[0] = 1
                                 else:
-                                    interf_res = [0,0]
-                                    interf_restoarr = array.array('i',interf_res)
-                                    interf_restobytes = interf_restoarr.tobytes()
-                                    # print(f"Confirmed Affected PRBs are {interf_res}")
-                                    conn.send(interf_restobytes)
-                                    print(f"Sent control to unblank PRBs")
-                                    log_entry1 = f"In KPMs mode. Unblanking PRBS\n"
-                                    log_file1.write(log_entry1)  # Write to file
-
-                                if current_mode != "KPMs":
-                                    command = b'k'
-                                    print(f"No Radar signal detected! Sending command {command} to imi") 
-                                    conn.send(command)
-                                    current_mode = "KPMs"
-                                else:
-                                    print("Remaining in KPMs state (NO Radar Signal detected)")
-                            else:
-                                command = b'i'
-                                print(f"Radar signal detected! Sending command {command} to imi")
-                                conn.send(command)
+                                    pred[0] = 0
+                                epoch_time1 = time.time()
                                 end_time = time.perf_counter()
-                                current_mode = "I/Qs"
-                                continue
+                                duration = end_time - start_time
+                                print(f"KPMs detection Time {duration:.6f} seconds")
+                                log_entry1 = f"Epoch: {epoch_time1}, KPMs Prediction: {pred[0]}\n"
+                                print(f"KPMs detection at {epoch_time1:.6f} seconds")
+                                log_file1.write(log_entry1)  # Write to file
+                                log_file1.flush()  # Ensure immediate write to disk
+                                if pred[0] == 0:
+                                    # No radar detected, stay in KPMs mode
+                                    # First ensure that the BS is not blanking
+                                    if metrics[2] >= 5 or metrics[7] >=5:
+                                        interf_restoarr = array.array('i',interf_res_final)
+                                        interf_restobytes = interf_restoarr.tobytes()
+                                        # print(f"Confirmed Affected PRBs are {interf_res}")
+                                        conn.send(interf_restobytes)
+                                        print("Retain previous blanked PRBs")
+                                        log_entry1 = f"In KPMs mode. Retain previous blanked PRBs\n"
+                                        log_file1.write(log_entry1)  # Write to file
+                                    else:
+                                        interf_res = [0,0]
+                                        interf_restoarr = array.array('i',interf_res)
+                                        interf_restobytes = interf_restoarr.tobytes()
+                                        # print(f"Confirmed Affected PRBs are {interf_res}")
+                                        conn.send(interf_restobytes)
+                                        print(f"Sent control to unblank PRBs")
+                                        log_entry1 = f"In KPMs mode. Unblanking PRBS\n"
+                                        log_file1.write(log_entry1)  # Write to file
+
+                                    if current_mode != "KPMs":
+                                        command = b'k'
+                                        print(f"No Radar signal detected! Sending command {command} to imi") 
+                                        conn.send(command)
+                                        current_mode = "KPMs"
+                                    else:
+                                        print("Remaining in KPMs state (NO Radar Signal detected)")
+                                else:
+                                    command = b'i'
+                                    print(f"Radar signal detected! Sending command {command} to imi")
+                                    conn.send(command)
+                                    end_time = time.perf_counter()
+                                    current_mode = "I/Qs"
+                                    continue
+                    except IndexError:
+                        keys = []
+
+                    except Exception as e:
+                        print(f"Unexpected error during key lookup: {e}")
+                        keys = []  # Fallback for other errors
                                 
                                 
 
@@ -278,7 +285,7 @@ def run_prediction(raw_bytes):
 
 # Load model_spec
 def load_model_spec():
-    model_spec_path = '/home/azuka/spectrumsharing_4g/models/best.pt'
+    model_spec_path = '/root/O-DSS/models/best.pt'
     best_model_spec = YOLO(model_spec_path)
         
     return best_model_spec

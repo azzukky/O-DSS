@@ -1,0 +1,28 @@
+--- command='../build/srsenb/src/srsenb enb.conf --enb_files.rr_config=rr1.conf' version=21.10.0 signal=11 date='16/05/2025 07:27:32' ---
+	../build/srsenb/src/srsenb(+0x2d8b12) [0x562d63386b12]
+	/lib/x86_64-linux-gnu/libc.so.6(+0x42520) [0x7ff36db08520]
+	/lib/x86_64-linux-gnu/libc.so.6(_IO_fwrite+0x22) [0x7ff36db45f42]
+	../build/srsenb/src/srsenb(+0xf13fc) [0x562d6319f3fc]
+	../build/srsenb/src/srsenb(+0xc0b65) [0x562d6316eb65]
+	/lib/x86_64-linux-gnu/libc.so.6(+0x94ac3) [0x7ff36db5aac3]
+	/lib/x86_64-linux-gnu/libc.so.6(clone+0x44) [0x7ff36dbeba04]
+
+--- command='../build/srsenb/src/srsenb enb.conf --enb_files.rr_config=rr1.conf' version=21.10.0 signal=11 date='16/05/2025 07:39:59' ---
+	../build/srsenb/src/srsenb(+0x2d8b12) [0x564957121b12]
+	/lib/x86_64-linux-gnu/libc.so.6(+0x42520) [0x7f4a3d195520]
+	/lib/x86_64-linux-gnu/libc.so.6(_IO_fwrite+0x22) [0x7f4a3d1d2f42]
+	../build/srsenb/src/srsenb(+0xddc11) [0x564956f26c11]
+	../build/srsenb/src/srsenb(+0xc9b5f) [0x564956f12b5f]
+	../build/srsenb/src/srsenb(+0xc0aea) [0x564956f09aea]
+	/lib/x86_64-linux-gnu/libc.so.6(+0x94ac3) [0x7f4a3d1e7ac3]
+	/lib/x86_64-linux-gnu/libc.so.6(clone+0x44) [0x7f4a3d278a04]
+
+--- command='../build/srsenb/src/srsenb enb.conf --enb_files.rr_config=rr1.conf' version=21.10.0 signal=11 date='16/05/2025 07:42:59' ---
+	../build/srsenb/src/srsenb(+0x2d8b12) [0x559a9b0c2b12]
+	/lib/x86_64-linux-gnu/libc.so.6(+0x42520) [0x7f94ef143520]
+	/lib/x86_64-linux-gnu/libc.so.6(_IO_fwrite+0x22) [0x7f94ef180f42]
+	../build/srsenb/src/srsenb(+0xf13fc) [0x559a9aedb3fc]
+	../build/srsenb/src/srsenb(+0xc0b65) [0x559a9aeaab65]
+	/lib/x86_64-linux-gnu/libc.so.6(+0x94ac3) [0x7f94ef195ac3]
+	/lib/x86_64-linux-gnu/libc.so.6(clone+0x44) [0x7f94ef226a04]
+

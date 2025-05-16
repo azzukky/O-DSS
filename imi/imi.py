@@ -43,8 +43,8 @@ def post_init(self):
     global server, spec_conn, xapp_conn
 
     # This will automatically find a correct IP address to use, and works well in the RIC.
-    ip_addr = socket.gethostbyname(socket.gethostname())
-    # ip_addr = "127.0.1.1"
+    # ip_addr = socket.gethostbyname(socket.gethostname())
+    ip_addr = "127.0.0.1"
     port_srsRAN = 5000 # local port to enable connection to srsRAN
     port_specxApp = 5001
     port_radarxApp = 5002
