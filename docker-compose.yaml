@@ -1,0 +1,52 @@
+version: '3'
+# volumes:
+#   influxdb-volume:   
+#     external: true  
+services:
+  # influxdb:
+  #   image: influxdb:1.8
+  #   ports:
+  #     - 8086:8086
+  #   volumes:
+  #     - influxdb-volume:/var/lib/influxdb
+  #   environment:
+  #     - INFLUXDB_DB=db0
+  #     - INFLUXDB_ADMIN_USER=admin
+  #     - INFLUXDB_ADMIN_PASSWORD=Password1
+  #   restart: on-failure:10
+
+  db:
+    build:
+      context: ric-plt-dbaas
+      dockerfile: docker/Dockerfile.redis
+    ports:
+      - "6379:6379"
+  imi:
+    build: IMI
+    ports:
+      - "5000:5000"
+    environment:
+      - SPEC_ADDR=spectrogram-xapp
+      - IC_ADDR=ic-xapp
+    depends_on:
+      - spectrogram-xapp
+      - ic-xapp
+  spectrogram-xapp:
+    build: spectrogramxApp
+    ports:
+      - "5001"
+    environment:
+      - DBAAS_SERVICE_HOST=db
+      - DBAAS_SERVICE_PORT=6379
+    depends_on:
+      - db
+  ic-xapp:
+    build: icxApp
+    ports:
+      - "5002"
+    environment:
+      - DBAAS_SERVICE_HOST=db
+      - DBAAS_SERVICE_PORT=6379
+    depends_on:
+      - db
+

@@ -1,0 +1,12 @@
+# Ignore Python cache and virtual environment
+__pycache__/
+*.pyc
+venv/
+
+.vscode/
+ric-plt-dbass/
+
+srsRAN-old/
+
+srsRAN_senseoran/build/
+imi/samples/
