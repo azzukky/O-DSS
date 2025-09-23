@@ -15,3 +15,4 @@ imi/samples.zip
 srsRAN_senseoran/configs/*.iso
 srsRAN_senseoran/configs/*.log
 srsRAN_senseoran/configs/*.txt
+radarxApp/*.txt

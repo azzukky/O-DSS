@@ -189,6 +189,7 @@ private:
   std::string tmp_path;
   std::string agent_command_path;
   std::string agent_prb_path;
+  std::string agent_mcs_path;
 
 
   // file pointer for I/Q data

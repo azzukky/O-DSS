@@ -81,6 +81,7 @@ public:
     int         pdcch_cqi_offset          = 0;
     std::string sched_save_path           = "/tmp/sched_data.dat";
     std::string agent_prb_path           = "/mnt/tmp/prb_cmd.bin";
+    std::string agent_mcs_path           = "/mnt/tmp/mcs_cmd.bin";
   };
 
   struct cell_cfg_t {

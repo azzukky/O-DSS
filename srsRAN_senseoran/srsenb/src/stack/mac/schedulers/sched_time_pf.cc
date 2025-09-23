@@ -20,6 +20,7 @@
  */
 
 #include "srsenb/hdr/stack/mac/schedulers/sched_time_pf.h"
+#include <iomanip> 
 #include "srsenb/hdr/stack/mac/sched_grid.h"
 #include <vector>
 #include <sys/time.h>
@@ -357,41 +358,40 @@ namespace srsenb
     if (!file) {
         std::cerr << "Failed to open PRB bin file for reading: " << agent_prb_path.c_str() << std::endl;
     }
-    char buffer[8];
-    file.read(buffer, 8);
-    if (file.gcount() != 8) {
-        std::cerr << "Failed to read 8 bytes from PRB bin file: " << agent_prb_path.c_str() << std::endl;
+    char buffer[12];
+    file.read(buffer, 12);
+    if (file.gcount() != 12) {
+        std::cerr << "Failed to read 12 bytes from PRB bin file: " << agent_prb_path.c_str() << std::endl;
     } else {
       std::memcpy(&low, buffer, 4);
       std::memcpy(&high, buffer + 4, 4);
-      std::cout << "Successfully read 8 bytes from file." << std::endl;
+      std::cout << "Successfully read 12 bytes from PRB Bin file." << std::endl;
       std::cout << "Low value: " << low << std::endl;
       std::cout << "High value: " << high << std::endl;
     }
 
+
     prbmask_t modified_mask = ~(tti_sched->get_ul_mask()); // Assume this is the new mask you want to set
+    if ((low > 0 && low < 50) && (high > 0 && high > low && high < 50)){
+      size_t bit = low;
+      std::ofstream log_file("/home/azuka/spectrumsharing_4g/imi/prb_blank_log.txt", std::ios::app);
+      if (!log_file) {
+          std::cerr << "Failed to open log file for writing." << std::endl;
+      }
+      for (int bit = low; bit <= high; ++bit) {
+        modified_mask.reset(bit);
+        std::cout << "Blanked PRBs: " << low << " to " << high  << std::endl;
 
-    // static int prb_low = 48;
-    // static int prb_high = 49;
-    
-    // if ((low > 0 && low < 50) && (high > 0 && high < 50)){
-    //   prb_low = low;
-    //   prb_high = high;
-    //   for (int bit = prb_low; bit <= prb_high; ++bit) {
-    //     modified_mask.reset(bit);
-    //   }
-    //   std::cout << "Blanked PRBs: " << prb_low << " to " << prb_high  << std::endl;
-    // } else if ((low < 0 || low > 50 || high < 0 || high > 50)){
-    //   for (int bit = prb_low; bit <= prb_high; ++bit) {
-    //     modified_mask.reset(bit);
-    //   }
-    //   // std::cout << "Invalid PRB range, retaining last valid blanking " << prb_low << " " << prb_high << std::endl;
-    // }
-
-    size_t bit = low;
-    for (int bit = low; bit <= high; ++bit) {
-      modified_mask.reset(bit);
-      std::cout << "Blanked PRBs: " << low << " to " << high  << std::endl;
+        double timestamp;
+        auto time = std::chrono::system_clock::now().time_since_epoch();
+        std::chrono::seconds seconds = std::chrono::duration_cast< std::chrono::seconds >(time);
+        std::chrono::milliseconds ms = std::chrono::duration_cast< std::chrono::milliseconds >(time);
+        printf("Timestamp: %0.7f\n", (double) seconds.count() + ((double) (ms.count() % 1000)/1000.0));
+        timestamp = (double) seconds.count() + ((double) (ms.count() % 1000)/1000.0);
+        log_file << "[" << std::fixed << std::setprecision(7) << timestamp << "] Blanked PRBs: " << low << " to " << high << std::endl;
+        
+      }
+      log_file.close();
     }
     tti_sched->set_ul_mask(~modified_mask);
     prbmask_t current_mask = ~(tti_sched->get_ul_mask()); // Assume this is a bounded_bitset<25>

@@ -17,6 +17,7 @@ typedef struct agent_args {
   int log_hex_limit;
   std::string agent_command_path;
   std::string agent_prb_path;
+  std::string agent_mcs_path;
   uint32_t    enb_id;
 } agent_args_t;
 

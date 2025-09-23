@@ -38,6 +38,58 @@ prev_iq_data = None
 command_prev = None
 iq_samples = {}
 lock = threading.Lock()
+log_file1 = open('odss-timing-imi2.txt', 'w')  # Open log file in write mode
+
+def handle_kpms(client_soc, thread_id, addr, k, log_file1):
+    start_time = time.perf_counter()
+    kpms_header_data = client_soc.recv(20)
+    timestamp, base_station_id, num_ues = process_kpms(kpms_header_data)
+    
+    print(f"[{timestamp}] {hex(base_station_id)} and {num_ues} UEs")
+    print(len(kpms_header_data))
+
+    kpms_payload_data = client_soc.recv(80 * num_ues)
+    ue_metrics = process_kpms(kpms_payload_data, num_ues=num_ues)
+
+    if ue_metrics:
+        for i, ue in enumerate(ue_metrics):
+            print(f"UE {i+1} Metrics:")
+            print(f"  RNTI: {ue[0]}")
+            print(f"  PUSCH SINR: {ue[1]}")
+            print(f"  PUCCH SINR: {ue[2]}")
+            print(f"  RSSI: {ue[3]}")
+            print(f"  Turbo Iterators: {ue[4]}")
+            print(f"  UL MCS: {ue[5]}")
+            print(f"  UL Num Samples: {ue[6]}")
+            print(f"  DL MCS: {ue[7]}")
+            print(f"  DL Num Samples: {ue[8]}")
+            print(f"  TX Packets: {ue[9]}")
+            print(f"  TX Errors: {ue[10]}")
+            print(f"  TX Bitrate: {ue[11]}")
+            print(f"  TX Block Error Rate: {ue[12]}")
+            print(f"  RX Packets: {ue[13]}")
+            print(f"  RX Errors: {ue[14]}")
+            print(f"  RX Bitrate: {ue[15]}")
+            print(f"  RX Block Error Rate: {ue[16]}")
+            print(f"  UL Buffer: {ue[17]}")
+            print(f"  DL Buffer: {ue[18]}")
+            print(f"  DL CQI: {ue[19]}")
+            print("-" * 40)
+
+        kpms_handler(timestamp, base_station_id, num_ues, ue_metrics, k)
+        time.sleep(0.01)
+
+        end_time = time.perf_counter()
+        duration = end_time - start_time
+        log_file1.write(f"{timestamp} Time to get KPMs from RAN and store in database {duration}\n")
+        
+        k += 1
+        if k >= 100:
+            log_info(f"Index reached 100. Flushing the database and resetting index to 0.")
+            flush_database()
+            k = 0
+    return k
+
 
 def post_init(self):
     global server, spec_conn, xapp_conn
@@ -80,67 +132,68 @@ def post_init(self):
 
     log_info("Client connection established to radarxApp")
 
+def handle_xAppClient(connection):
+    print("In xApp client thread")
+    # time.sleep(5)
+    global command
+    while True:
+        print("I am receiving from xApp")
+        # time.sleep(5)
+        command = connection.recv(12)
+        # time.sleep(0.01)
+        print(f"Received command {command}")
+        # print(f"Received command {command.decode()}")
+        
+        # if len(command) == 8:
+        #     val1, val2 = struct.unpack('<II', command)
+        #     print(f"Decoded values: {val1}, {val2}")
+        # if len(command) == 4:
+        #     val1 = struct.unpack('<I', command)[0]  # unpack returns a tuple
+        #     print(f"Decoded value: {val1}")
 
+        # command = connection.recv(12)
+        if len(command) == 12:
+            prb_start, prb_end, mcs = struct.unpack('<III', command)
+            print(f"Decoded PRBs: [{prb_start}, {prb_end}], MCS: {mcs}")
+        else:
+            print(f"Received unexpected length: {len(command)}")
+            
 def handle_clients(client_soc, addr, thread_id):
     # This is used to interact with all client base stations
-    global prev_iq_data
+    global prev_iq_data, command_prev
     try:
         j = 0
         k = 0
         while True:
             try:
-                client_soc.send(command)
-                # print("Sending command to base station", command)
-                print(f"[{thread_id}]    Sending control {command} to srsRAN through e2 lite interface by port {addr[1]}")
-                if command == b"k" or len(command) == 8:
-                    # For KPMs
-                    kpms_header_data = client_soc.recv(20)
-                    # timestamp, base_station_id, num_ues = struct.unpack("<dIq", kpms_data)
-                    timestamp, base_station_id, num_ues = process_kpms(kpms_header_data)
-                    print(f"[{timestamp}] {hex(base_station_id)} and {num_ues} UEs")
-                    print(len(kpms_header_data))
+                start_time_total = time.perf_counter()
 
-                    # Now that we know the number of UE metrics, we can retrieve them
-                    kpms_payload_data = client_soc.recv(80 * num_ues)
-                    ue_metrics = process_kpms(kpms_payload_data,num_ues=num_ues)
-                    # print(f"Found length of data: {len(ue_metrics)}")
-                    # print(f"All metrics {ue_metrics}")
-                    if ue_metrics:
-                        for i, ue in enumerate(ue_metrics):
-                            print(f"UE {i+1} Metrics:")
-                            print(f"  RNTI: {ue[0]}")
-                            print(f"  PUSCH SINR: {ue[1]}")
-                            print(f"  PUCCH SINR: {ue[2]}")
-                            print(f"  RSSI: {ue[3]}")
-                            print(f"  Turbo Iterators: {ue[4]}")
-                            print(f"  UL MCS: {ue[5]}")
-                            print(f"  UL Num Samples: {ue[6]}")
-                            print(f"  DL MCS: {ue[7]}")
-                            print(f"  DL Num Samples: {ue[8]}")
-                            print(f"  TX Packets: {ue[9]}")
-                            print(f"  TX Errors: {ue[10]}")
-                            print(f"  TX Bitrate: {ue[11]}")
-                            print(f"  TX Block Error Rate: {ue[12]}")
-                            print(f"  RX Packets: {ue[13]}")
-                            print(f"  RX Errors: {ue[14]}")
-                            print(f"  RX Bitrate: {ue[15]}")
-                            print(f"  RX Block Error Rate: {ue[16]}")
-                            print(f"  UL Buffer: {ue[17]}")
-                            print(f"  DL Buffer: {ue[18]}")
-                            print(f"  DL CQI: {ue[19]}")
-                            print("-" * 40)
-                        # Next is to save the data into a database for all UEs
-                        # if num_ues > 0:
-                        kpms_handler(timestamp, base_station_id, num_ues, ue_metrics, k)
-                        k+=1
-                        if k >= 100:
-                            log_info(f"Index reached 100. Flushing the database and resetting index to 0.")
-                            flush_database()
-                            k = 0
-                    
-                elif command == b"i":
+                start_time = time.perf_counter()
+                client_soc.send(command)
+                if len(command)==12:
+                    prb_start, prb_end, mcs = struct.unpack('<III', command)
+                    if prb_start == 33 or prb_start == 35 or prb_end == 49 or prb_end == 48:
+                        log_entry1 = f" Time Stamp when PRB control sent {time.time()} \n"
+                        log_file1.write(log_entry1)  # Write to file
+                end_time = time.perf_counter()
+                duration = end_time - start_time
+                log_entry1 = f" Time to send control to the RAN {duration} \n"
+                log_file1.write(log_entry1)  # Write to file
+
+
+                # print("Sending command to base station", command)
+                print(f"[{thread_id}] Sending control {command} to srsRAN through e2 lite interface by port {addr[1]}")
+                print("In handle clients thread")
+                # time.sleep()
+                if command == b"k" or len(command) == 12:
+                    k = handle_kpms(client_soc, thread_id, addr, k, log_file1)
+
+                elif command == b"i" or len(command) == 12:
+                    # First, process KPMs
+                    k = handle_kpms(client_soc, thread_id, addr, k, log_file1)
                     # For I/Q samples
                     i = 0
+                    start_time = time.perf_counter()
                     iqdata = client_soc.recv(10000) #conn.recv(10000)
                     # print(f"[{thread_id}]    Receiving I/Q iqdata... from port {addr[1]}")
                     while i < spectrogram_size-10000:
@@ -161,35 +214,54 @@ def handle_clients(client_soc, addr, thread_id):
                         if addr[1] == 38071:  
                             # I want to save the I/Q samples into a json file here
                             spec = iq_handler(addr[1],j,current_iq_data)
+                            end_time = time.perf_counter()
+                            duration = end_time - start_time
+                            log_entry1 = f"Time to get I/Qs from RAN, convert to spectrograms and store in database {duration}\n"
+                            log_file1.write(log_entry1)  # Write to file
                             # print(spec)
-                            print(f"Length of IQ SAMPLES in dictionary {len(iq_samples)}")
-                            if len(iq_samples) == 12:
-                                # save_iq_tojson("iq_samples.json",iq_samples)
-                                print("Saved IQ SAMPLES TO JSON")    
-                            j += 1
+                            # print(f"Length of IQ SAMPLES in dictionary {len(iq_samples)}")
+                            # if len(iq_samples) == 12:
+                            #     # save_iq_tojson("iq_samples.json",iq_samples)
+                            #     print("Saved IQ SAMPLES TO JSON")    
+                            # j += 1
                         # elif addr[1] == 38072:
                         #     spec = iq_handler(addr[1],k)
                         #     print(spec)
                         #     k += 1
                         prev_iq_data = current_iq_data
-                        time.sleep(0.1)
+                end_time_total = time.perf_counter()
+                duration = end_time_total - start_time_total
+                log_entry1 = f" Total time in IMI {duration} \n"
+                log_file1.write(log_entry1)  # Write to file
+
+                time.sleep(0.25)
                     # else:
                         # print("IQ DATA FROM RAN UNCHANGED")
-                time.sleep(0.01)
+                
             except OverflowError:
                 print("Error: Integer overflow in payload calculation")
                 continue
     except OSError as e:
         log_error(e)
+
+# For threading purposes to receive the ic xApp result concurrently.
+
                 
 def entry(self):
     global server , conn
     # Initialize the E2-like interface
     post_init(self)
+    print("Ready")
     clients = []
 
     # Accept number of connections depending on the number of base stations you have
     try:
+        # Start a thread for the radarxApp
+        print("In the radar thread")
+        radar_recvthread = threading.Thread(target=handle_xAppClient, args=(xapp_conn,))
+        radar_recvthread.start()
+        # radar_recvthread.join()
+
         # Loop through for any number of connected base stations
         for i in range(ENB_COUNT):
             conn, addr = server.accept()
@@ -197,13 +269,9 @@ def entry(self):
             clients.append([conn,addr, i])
             conn.send(f"E2-lite request at {datetime.now().strftime('%H:%M:%S')}".encode('utf-8'))
             # print( "Sent E2-lite request to port", addr[1])
-        # Start a thread for the radarxApp
-        print("In the radar thread")
-        radar_recvthread = threading.Thread(target=handle_xAppClient, args=(xapp_conn,))
-        radar_recvthread.start()
-        
 
         # Start threads for any number of base stations
+        print("In handle clients thread")
         threads = [threading.Thread(target=handle_clients, args=(conn[0], conn[1], conn[2])) for conn in clients]
         # Start threads
         for thread in threads:
@@ -216,15 +284,7 @@ def entry(self):
     except OSError as e:
         log_error(e)
 
-# For threading purposes to receive the ic xApp result concurrently.
-def handle_xAppClient(connection):
-    global command
-    while True:
-        command = connection.recv(8)
-        print(f"Received command {command}")
-        # if command:
-        #     command_decoded = command.decode()
-        #     print(f"Received command {command_decoded}")
+
 
 def process_image(new_img):
     image_width = 640
@@ -386,15 +446,32 @@ def kpms_handler(timestamp, bs_id, num_ues, ue_metrics,index):
                 "dl_cqi": ue[19]
             }
             kpm_entry["ue_metrics"].append(ue_metric)
-        # Use timestamp as the key for time-series storage
+
+        key_pattern = "kpm_*"
+        existing_keys = sdl1.find_keys(ns2, key_pattern)
+
+        if existing_keys:
+            # Extract numeric part and find the max index
+            last_index = max(int(k.split('_')[1]) for k in existing_keys)
+            index = last_index + 1
+        else:
+            # Start from 1 if no key exists
+            index = 1
+
         key = f"kpm_{index}"
-        # Save the KPM entry to SyncStorage
-        # Convert the KPM entry to a JSON string and encode it into bytes
         kpm_entry_bytes = json.dumps(kpm_entry).encode('utf-8')
-        # Save the KPM entry to SyncStorage
         sdl1.set(ns2, {key: kpm_entry_bytes})
-        # Log success
         log_info(f"Saved KPMs to SyncStorage under namespace: {ns2}, key: {key}")
+
+        # # Use timestamp as the key for time-series storage
+        # key = f"kpm_{index}"
+        # # Save the KPM entry to SyncStorage
+        # # Convert the KPM entry to a JSON string and encode it into bytes
+        # kpm_entry_bytes = json.dumps(kpm_entry).encode('utf-8')
+        # # Save the KPM entry to SyncStorage
+        # sdl1.set(ns2, {key: kpm_entry_bytes})
+        # # Log success
+        # log_info(f"Saved KPMs to SyncStorage under namespace: {ns2}, key: {key}")
 
     except Exception as e:
         # Log any errors that occur

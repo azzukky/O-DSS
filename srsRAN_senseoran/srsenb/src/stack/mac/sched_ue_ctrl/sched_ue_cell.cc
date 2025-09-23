@@ -24,6 +24,9 @@
 #include "srsenb/hdr/stack/mac/sched_phy_ch/sched_dci.h"
 #include "srsran/common/standard_streams.h"
 #include <numeric>
+#include <cstring>  // for memcpy
+#include <fstream>
+#include <filesystem>
 
 #define CHECK_VALID_CC(feedback_type)                                                                                  \
   do {                                                                                                                 \
@@ -433,44 +436,50 @@ tbs_info cqi_to_tbs_ul(sched_ue_cell& cell, uint32_t nof_prb, uint32_t nof_re, i
 {
   using ul64qam_cap    = sched_interface::ue_cfg_t::ul64qam_cap;
   
-  #ifdef ENABLE_AGENT_CMD
-  // srsran::console("CQI to TBS UL\n");
+  int low = 23;
+  // if (file_size == 8){
+  std::ifstream file("/mnt/tmp/prb_cmd.bin", std::ios::binary);
+  if (!file) {
+      std::cerr << "Failed to open MCS bin file for reading: "  << std::endl;
+  }
+  char buffer[12];
+  file.read(buffer, 12);
+  if (file.gcount() != 12) {
+      std::cerr << "Failed to read 12 bytes from MCS bin file: " << std::endl;
+  } else {
+    std::memcpy(&low, buffer + 8, 4);
+    std::cout << "Successfully read 12 bytes from MCS bin file." << std::endl;
+    std::cout << "Low MCS value: " << low << std::endl;
+  }
+  cell.fixed_mcs_ul = low;
+  // if (low == 4){
+  //   std::cout << "Successfully read 8 bytes from file." << std::endl;
+  //   std::cout << "Low MCS value: " << low << std::endl;
+  //   std::cout << "High MCS value: " << high << std::endl;
+  // }
+  // #ifdef ENABLE_AGENT_CMD
+  // srsran::console("MCS ADAPTATION WILL HAPPEN HERE\n");
+  // cell.fixed_mcs_ul = 2;
   // if (cell.mcs_counter == 0) {
-  //   cell.mcs_f = fopen("/mnt/tmp/agent_cmd.bin", "r");
-  //   if (cell.mcs_f) {
-  //     size_t s = fread(cell.mcs_cmd_buffer, 1, 1, cell.mcs_f);
-      
-  //     switch (cell.mcs_cmd_buffer[0]) {
-  //       case 'm':
-  //         if(cell.fixed_mcs_ul == -1){
-  //           // break;
-  //         }
-  //         else{
-  //           srsran::console("E2-like cmd received, using adaptive MCS\n");
-  //           cell.fixed_mcs_ul = -1;
-  //         }  
-  //         // srsran::console("E2-like cmd received, using adaptive MCS\n"); 
-  //         break;
-  //       case 'z':
-  //         if(cell.fixed_mcs_ul > 0){
-  //           // break;
-  //         }
-  //         else{
-  //           srsran::console("E2-like cmd received, using fixed MCS\n");
-  //           cell.fixed_mcs_ul = cell.cell_cfg->sched_cfg->pusch_mcs;
-  //         }
-  //         // srsran::console("E2-like cmd received, using fixed MCS\n");
-  //         break;
-  //       default:
-  //         // srsran::console("unknown E2-like cmd received: %c\n", cell.mcs_cmd_buffer[0]);
-  //         break;
-  //     }
-  //   } else { srsran::console("error opening agent_cmd.bin\n"); perror("error"); }
+  //   cell.mcs_f = fopen("/mnt/tmp/mcs_cmd.bin", "r");
+  //   if (!cell.mcs_f) {
+  //       srsran::console("Failed to open MCS command file.\n");
+  //   }
+  //   fseek(cell.mcs_f, 0, SEEK_SET);
+  //   size_t optim_mcs_bytes = fread(cell.mcs_cmd_buffer, 1, 4, cell.mcs_f);
+  //   if (optim_mcs_bytes == 4){
+  //       uint32_t val;
+  //       memcpy(&val, cell.mcs_cmd_buffer, sizeof(uint32_t));
+  //       cell.fixed_mcs_ul = val;
+  //       srsran::console("Updated MCS UL to: ", cell.fixed_mcs_ul);
+    
+  //   } else { 
+  //    srsran::console( "Could not read 4 bytes from MCS command file.");
+  //   }
   //   fclose(cell.mcs_f);
   // } // else { srsran::console("error opening agent_cmd.bin\n"); perror("error"); }
   
   // cell.mcs_counter = (cell.mcs_counter + 1) % 250;
-  #endif
 
   int  mcs             = explicit_mcs >= 0 ? explicit_mcs : cell.fixed_mcs_ul;
   bool ulqam64_enabled = cell.get_ue_cfg()->support_ul64qam == ul64qam_cap::enabled;

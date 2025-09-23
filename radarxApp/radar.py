@@ -15,6 +15,9 @@ import matplotlib.pyplot as plt
 from ricsdl.syncstorage import SyncStorage
 import json
 import xgboost as xgb
+from tensorflow.keras.models import load_model
+
+# CONSTANTS
 
 # SAMPLING_RATE = 7.68e6
 chann_bandwidth = 10e6
@@ -24,17 +27,21 @@ spec_height_px = 640
 # spectrogram_time = 0.010  # 10 ms
 # num_of_samples = SAMPLING_RATE * spectrogram_time
 # SPEC_SIZE = num_of_samples * 8  # size in bytes, where 8 bytes is the size of one sample (complex64)
-
 PROTOCOL = 'SCTP'
 ENABLE_DEBUG = False
 server = None
-interf_res_final = [0,0]
+interf_res_final = [34,46]
 # create the sdl client
 ns1 = "Spectrograms"
 ns2 = "Kpms"
 sdl2= SyncStorage()
-log_file1 = open('radar_power_log_12db.txt', 'w')  # Open log file in write mode
+log_file1 = open('radar_power_log_2db.txt', 'w')  # Open log file in write mode
+log_file2 = open('odss-timing-radarxapp.txt', 'w')  # Open log file in write mode
+model_kpms = load_model("/home/azuka/spectrumsharing_4g/models/kpmradarmodel1.h5")
 should_send = True
+# max_metrics = [49.108295, 45839996.0, 78.57143, 24.34091, 148525]
+max_metrics = [49.108295, 45839996.0, 100, 24.34091, 148525]
+
 
 def post_init(self):
     global server
@@ -69,9 +76,10 @@ def entry(self):
             print("Starting inferences")
             while True:
                 #  For KPMs inference
+                start_time = time.perf_counter()
                 if current_mode == "KPMs":
                     key_pattern = "kpm_*"
-                    n = 2
+                    n = 1
                     keys = sdl2.find_keys(ns2, key_pattern)
                     
                     sorted_keys = sorted(keys, key=lambda x: int(x.split('_')[1]))
@@ -98,44 +106,69 @@ def entry(self):
                             print("Gotten KPMs from RAN")
                             # print(f"KPMs gotten from the RAN: {curr_extracted_metrics}")
                             metrics = curr_extracted_metrics
-                            log_entry1 = f"{metrics}\n"
-                            log_file1.write(log_entry1)  # Write to file
                             prev_extracted_metrics = curr_extracted_metrics
+                            curr_extracted_metrics = [x / y for x, y in zip(curr_extracted_metrics, max_metrics)]
                             # print(len((curr_extracted_metrics)))
                             curr_extracted_metrics = np.array(curr_extracted_metrics).reshape(1,len(metrics_to_extract)*n)
-                            model_kpms = xgb.XGBClassifier() 
-                            model_kpms.load_model("/home/azuka/spectrumsharing_4g/models/prelim_xgboost_model.model")  
-                            start_time = time.perf_counter()
-                            pred = model_kpms.predict(curr_extracted_metrics)
-                            if metrics[2] >= 5 or metrics[7] >=5:
-                                pred[0] = 1
-                            else:
-                                pred[0] = 0
-                            epoch_time1 = time.time()
+
                             end_time = time.perf_counter()
                             duration = end_time - start_time
-                            print(f"KPMs detection Time {duration:.6f} seconds")
+                            log_entry1 = f"Time to get KPMs from dB and Process for model {duration}\n"
+                            log_file2.write(log_entry1)  # Write to file
+
+                            start_timee = time.perf_counter()
+                            # model_kpms = xgb.XGBClassifier() 
+                            # model_kpms.load_model("/home/azuka/spectrumsharing_4g/models/prelim_xgboost_model.model")  
+                            # model_kpms = load_model("/home/azuka/spectrumsharing_4g/models/kpmradarmodel1.h5")  
+                            pred = model_kpms.predict(curr_extracted_metrics)
+                            end_time = time.perf_counter()
+                            pred = np.argmax(pred,axis=1)
+                            epoch_time1 = time.time()
+                            # if metrics[2] >= 5 or metrics[7] >=5:
+                            # if metrics[2] >= 5:
+                            #     pred[0] = 1
+                            # else:
+                            #     pred[0] = 0
+
+                            # end_time = time.perf_counter()
+                            duration1 = end_time - start_timee
+                            duration = end_time - start_time
+                            log_entry1 = f"Time to get KPMs from dB, load model and get prediction {duration}\n"
+                            log_entry2 = f"Time to get prediction {duration1}\n"
+                            log_file2.write(log_entry1)  # Write to file
+                            log_file2.write(log_entry2)
+
+                            # print(f"KPMs detection Time {duration:.6f} seconds")
                             log_entry1 = f"Epoch: {epoch_time1}, KPMs Prediction: {pred[0]}\n"
                             print(f"KPMs detection at {epoch_time1:.6f} seconds")
                             log_file1.write(log_entry1)  # Write to file
-                            log_file1.flush()  # Ensure immediate write to disk
+                            # log_file1.flush()  # Ensure immediate write to disk
                             if pred[0] == 0:
                                 # No radar detected, stay in KPMs mode
                                 # First ensure that the BS is not blanking
-                                if metrics[2] >= 5 or metrics[7] >=5:
+                                # if metrics[2] >= 5 or metrics[7] >=5:
+                                if metrics[2] >= 5:
                                     interf_restoarr = array.array('i',interf_res_final)
                                     interf_restobytes = interf_restoarr.tobytes()
                                     # print(f"Confirmed Affected PRBs are {interf_res}")
                                     conn.send(interf_restobytes)
                                     print("Retain previous blanked PRBs")
-                                    log_entry1 = f"In KPMs mode. Retain previous blanked PRBs\n"
-                                    log_file1.write(log_entry1)  # Write to file
+                                    end_time = time.perf_counter()
+                                    duration = end_time - start_time
+                                    log_entry1 = f"Time to get KPMs from dB, load model, get prediction & forward decision {duration}\n"
+                                    log_file2.write(log_entry1)  # Write to file
+
                                 else:
                                     interf_res = [0,0]
                                     interf_restoarr = array.array('i',interf_res)
                                     interf_restobytes = interf_restoarr.tobytes()
                                     # print(f"Confirmed Affected PRBs are {interf_res}")
                                     conn.send(interf_restobytes)
+                                    end_time = time.perf_counter()
+                                    duration = end_time - start_time
+                                    log_entry1 = f"Time to get KPMs from dB, load model, get prediction & forward decision {duration}\n"
+                                    log_file2.write(log_entry1)  # Write to file
+
                                     print(f"Sent control to unblank PRBs")
                                     log_entry1 = f"In KPMs mode. Unblanking PRBS\n"
                                     log_file1.write(log_entry1)  # Write to file
@@ -158,42 +191,61 @@ def entry(self):
                                 
 
                 elif current_mode == "I/Qs":
-                    # print("Now in I/Q mode")
+                    print("Now in I/Q mode")
                     # Now the object detection algorithm
                     start_time = time.perf_counter()
+
                     curr_raw_bytes = get_bytes()
+
                     end_time = time.perf_counter()
                     duration = end_time - start_time
+                    log_entry1 = f"Time to get Spectrograms from dB and Process for model {duration}\n"
+                    log_file2.write(log_entry1)  # Write to file
+                    
                     # print(f"Sending took {duration:.6f} seconds")
-                    # print(curr_raw_bytes)
+                    print("Entering curr_raw_bytes conditional loop")
                     if curr_raw_bytes!= prev_raw_bytes:
                         # Prediction is run here
                         prev_raw_bytes = curr_raw_bytes
                         print("Entering prediction function")
                         # Measure time
-                        start_time = time.perf_counter()
+                        start_timee = time.perf_counter()
+
                         interf_res = run_prediction(curr_raw_bytes)
                         end_time = time.perf_counter()
                         epoch_time1 = time.time()
+                        
+                        duration1 = end_time - start_timee
                         duration = end_time - start_time
-                        log_entry1 = f"Epoch: {epoch_time1}, Spectrogram Prediction: {interf_res}\n"
-                        print(f"KPMs detection at {epoch_time1:.6f} seconds")
+                        log_entry1 = f"Time to Load Spectrograms model and get prediction {duration}\n"
+                        log_entry2 = f"Time to get prediction {duration1}\n"
+                        log_file2.write(log_entry1)  # Write to file
+                        log_file2.write(log_entry2)  # Write to file
+                        log_entry1 = f"Epoch: {epoch_time1}, Spectrograms Prediction: {interf_res}\n"
+                        print(f"Spectrograms detection at {epoch_time1:.6f} seconds")
                         log_file1.write(log_entry1)  # Write to file
-                        log_file1.flush()  # Ensure immediate write to disk
-                        # Calculate duration
-                        # duration = end_time - start_time
-                        # print(f"Function took {duration:.6f} seconds")
                         print(interf_res)
                         if interf_res != "No detections made" and interf_res != "There is no interference detected":
                             # print("Detections made")
                             interf_res = sorted(interf_res[0])
                             interf_res_final = interf_res
+                            interf_res_final = [34,46]
+                            # if metrics[2] > 5:
+                            #     optimal_mcs = optimize_mcs(metrics[3])
                             # print(f"Affected PRBs are {interf_res}")
                             if interf_res_final[0] > 0 and interf_res_final[1] > interf_res_final[0] and interf_res_final[0] < 50 and interf_res_final[1] < 50 :
                                 interf_restoarr = array.array('i',interf_res_final)
                                 interf_restobytes = interf_restoarr.tobytes()
                                 print(f"Confirmed Affected PRBs are {interf_res_final}")
+                                # optimal_mcs = array.array('i',optimal_mcs)
+                                # optimalmcstobytes = optimal_mcs.tobytes()
                                 conn.send(interf_restobytes)
+                                # conn.send(optimalmcstobytes)
+
+                                end_time = time.perf_counter()
+                                duration = end_time - start_time
+                                log_entry1 = f"Time to Load Spectrograms model, get prediction & forward decision {duration}\n"
+                                log_file2.write(log_entry1)  # Write to file
                                 print(f"Sent Affected PRBs to IMI")
                                 # time.sleep(0.2)
                                 current_mode = "KPMs"
@@ -202,7 +254,8 @@ def entry(self):
                             print("No interference")
                             if current_mode != "KPMs":
 
-                                if metrics[2] >= 5 or metrics[7] >=5:
+                                # if metrics[2] >= 5 or metrics[7] >=5:
+                                if metrics[2] >= 5:
                                     interf_restoarr = array.array('i',interf_res_final)
                                     interf_restobytes = interf_restoarr.tobytes()
                                     # print(f"Confirmed Affected PRBs are {interf_res}")
@@ -217,6 +270,12 @@ def entry(self):
                                     interf_restobytes = interf_restoarr.tobytes()
                                     # print(f"Confirmed Affected PRBs are {interf_res}")
                                     conn.send(interf_restobytes)
+
+                                    end_time = time.perf_counter()
+                                    duration = end_time - start_time
+                                    log_entry1 = f"Time to Load Spectrograms model, get prediction & forward decision {duration}\n"
+                                    log_file2.write(log_entry1)  # Write to file
+
                                     print(f"Sent control to unblank PRBs")
                                     log_entry1 = f"In I/Qs mode. Unblanking PRBs\n"
                                     log_file1.write(log_entry1)  # Write to file
@@ -243,6 +302,12 @@ def entry(self):
             log_error(e)
             break
 
+
+def optimize_mcs(mcs):
+    mcs_val = mcs
+    mcs_val-=2
+    mcs_val = [mcs_val]
+    return mcs_val
 
 # This function gets the bytes from the database
 def get_bytes():

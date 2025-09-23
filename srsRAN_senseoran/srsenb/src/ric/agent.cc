@@ -98,6 +98,7 @@ int agent::init(const srsenb::all_args_t& args_,
   tmp_path = args.phy.tmp_path;
   agent_command_path = args.ric_agent.agent_command_path;
   agent_prb_path = args.ric_agent.agent_prb_path;
+  agent_mcs_path = args.ric_agent.agent_mcs_path;
   rrc_command_path = rrc_cfg.command_path;
 
 // New way of initializing level and max_dump_limit variables
@@ -567,14 +568,16 @@ bool agent::handle_message(srsran::unique_byte_buffer_t pdu,
   // agent_cmd.bin handled in txrx.cc to control PHY layer
   if (pdu->N_bytes > 0) {
     RIC_INFO("received e2-lite message: %.*s\n", pdu->N_bytes, pdu->msg);
-    printf("received N_bytes=%d, e2-lite message: %.*s\n", pdu->N_bytes, pdu->N_bytes, pdu->msg);
+    printf("received N_bytes=%d, e2-lite message: [%u, %u, %u]\n", pdu->N_bytes, pdu->msg[0], pdu->msg[1],pdu->msg[2]);
 
     // Determine the file to write based on message
     std::string target_path;
     if (pdu->N_bytes == 1) {
       target_path = agent_command_path;  // For single-byte commands (k/i)
-    } else if (pdu->N_bytes == 8) {
+    } else if (pdu->N_bytes == 12) {
       target_path = agent_prb_path;      // For 8-byte PRB information
+    // } else if (pdu->N_bytes == 8 && pdu->msg[0] <= 24 && pdu->msg[0] >= 2) {
+    //   target_path = agent_mcs_path;
     } else {
       RIC_WARN("Unexpected message size: %d bytes\n", pdu->N_bytes);
       return false;
@@ -613,13 +616,16 @@ if (pdu->N_bytes >= 1) {
 }
 
 // Always send KPMs for either 'k' command OR 8-byte message
-if ((pdu->N_bytes == 1 && msg && msg[0] == 'k') || pdu->N_bytes == 8) {
+if ((pdu->N_bytes == 1 && msg && msg[0] == 'k') || pdu->N_bytes == 12) {
   printf("Filling up KPMs to send to RAN\n");
   fill_class_metrics();
 }
 
 // Always process I/Q samples for either 'i' command or 8-byte message
 if (pdu->N_bytes == 1 && msg != NULL && msg[0] == 'i') {
+    printf("Filling up KPMs to send to RAN before sending I/Q samples\n");
+    fill_class_metrics();
+
     printf("Filling up I/Q samples to send to RAN\n");
     FILE* f = fopen(save_path.c_str(), "rb");
     if (f) {

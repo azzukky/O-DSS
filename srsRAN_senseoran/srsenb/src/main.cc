@@ -303,6 +303,7 @@ void parse_args(all_args_t* args, int argc, char* argv[])
     ("ric.agent.iq_tmp_path", bpo::value<string>(&args->phy.tmp_path), "RIC IQ samples temporary path")
     ("ric.agent.agent_command_path", bpo::value<string>(&args->ric_agent.agent_command_path), "RIC agent command path")
     ("ric.agent.agent_prb_path", bpo::value<string>(&args->ric_agent.agent_prb_path), "RIC agent PRB path")
+    ("ric.agent.agent_mcs_path", bpo::value<string>(&args->ric_agent.agent_mcs_path), "RIC agent MCS path")
 #endif
     ;
 

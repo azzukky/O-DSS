@@ -27,6 +27,7 @@
 #include "sched_harq.h"
 #include "srsenb/hdr/stack/mac/sched_phy_ch/sched_dci.h"
 #include "tpc.h"
+#include <iostream>
 
 namespace srsenb {
 
@@ -154,5 +155,4 @@ bool find_optimal_rbgmask(const sched_ue_cell&       ue_cell,
 
 
 } // namespace srsenb
-
 #endif // SRSRAN_SCHED_UE_CELL_H

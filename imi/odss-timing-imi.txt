@@ -1,0 +1,1816 @@
+ Time to send control to the RAN 2.2734981030225754e-05 
+Time to get I/Qs from RAN, convert to spectrograms and store in database 0.1454206290654838
+ Total time in IMI 0.14648548420518637 
+ Time to send control to the RAN 0.0001045609824359417 
+ Total time in IMI 0.20895556593313813 
+ Time to send control to the RAN 6.74370676279068e-05 
+ Total time in IMI 0.20720604434609413 
+ Time to send control to the RAN 5.669379606842995e-05 
+ Total time in IMI 0.41279092617332935 
+ Time to send control to the RAN 2.149771898984909e-05 
+ Total time in IMI 0.2045976440422237 
+ Time to send control to the RAN 3.5082921385765076e-05 
+ Total time in IMI 0.4135970948264003 
+ Time to send control to the RAN 2.8135254979133606e-05 
+ Total time in IMI 0.20694109005853534 
+ Time to send control to the RAN 8.44229944050312e-05 
+ Total time in IMI 0.4130153898149729 
+ Time to send control to the RAN 5.536293610930443e-05 
+ Total time in IMI 0.0024525057524442673 
+ Time to send control to the RAN 2.817530184984207e-05 
+ Total time in IMI 0.20909179607406259 
+ Time to send control to the RAN 8.429167792201042e-05 
+ Total time in IMI 0.20569944009184837 
+ Time to send control to the RAN 6.218208000063896e-05 
+ Total time in IMI 0.20598977291956544 
+ Time to send control to the RAN 3.084121271967888e-05 
+ Total time in IMI 0.20595931122079492 
+ Time to send control to the RAN 0.00010843807831406593 
+Time to get I/Qs from RAN, convert to spectrograms and store in database 0.3603076757863164
+ Total time in IMI 0.3613396999426186 
+ Time to send control to the RAN 0.0001803068444132805 
+ Total time in IMI 0.21012922562658787 
+ Time to send control to the RAN 3.732694312930107e-05 
+ Total time in IMI 0.4137095920741558 
+ Time to send control to the RAN 9.786617010831833e-05 
+ Total time in IMI 0.4134693783707917 
+ Time to send control to the RAN 6.317626684904099e-05 
+1753810231.064 Time to get KPMs from RAN and store in database 0.10212444281205535
+ Total time in IMI 0.3096526092849672 
+ Time Stamp when PRB control sent 1753810231.6236234 
+ Time to send control to the RAN 0.00013622967526316643 
+1753810231.623 Time to get KPMs from RAN and store in database 0.10280017601326108
+ Total time in IMI 0.1030407128855586 
+ Time Stamp when PRB control sent 1753810231.9766858 
+ Time to send control to the RAN 9.413668885827065e-05 
+1753810231.977 Time to get KPMs from RAN and store in database 0.10250606900081038
+ Total time in IMI 0.10270060691982508 
+ Time to send control to the RAN 0.00010898523032665253 
+1753810232.329 Time to get KPMs from RAN and store in database 0.10235928278416395
+ Total time in IMI 0.30892251059412956 
+ Time to send control to the RAN 7.587205618619919e-05 
+1753810232.889 Time to get KPMs from RAN and store in database 0.10197969572618604
+ Total time in IMI 0.5177659238688648 
+ Time to send control to the RAN 0.00012875208631157875 
+1753810233.657 Time to get KPMs from RAN and store in database 0.10250449180603027
+ Total time in IMI 0.3083404400385916 
+ Time to send control to the RAN 7.156701758503914e-05 
+1753810234.215 Time to get KPMs from RAN and store in database 0.10211095307022333
+ Total time in IMI 0.30993997398763895 
+ Time to send control to the RAN 0.00010572001338005066 
+1753810234.776 Time to get KPMs from RAN and store in database 0.10229597380384803
+Time to get I/Qs from RAN, convert to spectrograms and store in database 0.17566966637969017
+ Total time in IMI 0.27818992594256997 
+ Time to send control to the RAN 8.12457874417305e-05 
+1753810235.304 Time to get KPMs from RAN and store in database 0.10211142199113965
+ Total time in IMI 0.31029634084552526 
+ Time to send control to the RAN 0.000107618048787117 
+1753810235.865 Time to get KPMs from RAN and store in database 0.10177700314670801
+ Total time in IMI 0.10373222501948476 
+ Time Stamp when PRB control sent 1753810236.2189229 
+ Time to send control to the RAN 0.00012324564158916473 
+1753810236.219 Time to get KPMs from RAN and store in database 0.10251461295410991
+ Total time in IMI 0.10272344015538692 
+ Time to send control to the RAN 4.902482032775879e-05 
+1753810236.571 Time to get KPMs from RAN and store in database 0.1012529032304883
+ Total time in IMI 0.30563284270465374 
+ Time to send control to the RAN 0.00010640034452080727 
+1753810237.127 Time to get KPMs from RAN and store in database 0.10244963178411126
+ Total time in IMI 0.3108324110507965 
+ Time to send control to the RAN 9.353179484605789e-05 
+1753810237.689 Time to get KPMs from RAN and store in database 0.102384430821985
+ Total time in IMI 0.10455725295469165 
+ Time to send control to the RAN 3.951741382479668e-05 
+1753810238.043 Time to get KPMs from RAN and store in database 0.10102564003318548
+ Total time in IMI 0.30712214205414057 
+ Time Stamp when PRB control sent 1753810238.6010373 
+ Time to send control to the RAN 5.754409357905388e-05 
+1753810238.601 Time to get KPMs from RAN and store in database 0.10107496427372098
+ Total time in IMI 0.10117329424247146 
+ Time to send control to the RAN 3.960495814681053e-05 
+1753810238.952 Time to get KPMs from RAN and store in database 0.1010367488488555
+ Total time in IMI 0.30956824123859406 
+ Time to send control to the RAN 8.954200893640518e-05 
+1753810239.512 Time to get KPMs from RAN and store in database 0.10185757977887988
+ Total time in IMI 0.3089905269443989 
+ Time Stamp when PRB control sent 1753810240.0716834 
+ Time to send control to the RAN 0.00012513995170593262 
+1753810240.072 Time to get KPMs from RAN and store in database 0.10248475102707744
+ Total time in IMI 0.10269443411380053 
+ Time Stamp when PRB control sent 1753810240.424696 
+ Time to send control to the RAN 0.00014752289280295372 
+1753810240.424 Time to get KPMs from RAN and store in database 0.10211853496730328
+ Total time in IMI 0.10236048884689808 
+ Time Stamp when PRB control sent 1753810240.7773583 
+ Time to send control to the RAN 3.504101186990738e-05 
+1753810240.777 Time to get KPMs from RAN and store in database 0.10132573498412967
+ Total time in IMI 0.10140899382531643 
+ Time to send control to the RAN 6.815092638134956e-05 
+1753810241.129 Time to get KPMs from RAN and store in database 0.1014857329428196
+Time to get I/Qs from RAN, convert to spectrograms and store in database 0.1429009367711842
+ Total time in IMI 0.24452185863628983 
+ Time to send control to the RAN 4.040868952870369e-05 
+1753810241.624 Time to get KPMs from RAN and store in database 0.10132355894893408
+ Total time in IMI 0.30937463883310556 
+ Time Stamp when PRB control sent 1753810242.1834524 
+ Time to send control to the RAN 9.695999324321747e-05 
+1753810242.183 Time to get KPMs from RAN and store in database 0.10257529933005571
+ Total time in IMI 0.10276438109576702 
+ Time to send control to the RAN 0.00011035287752747536 
+1753810242.536 Time to get KPMs from RAN and store in database 0.1022973358631134
+ Total time in IMI 0.3086922187358141 
+ Time Stamp when PRB control sent 1753810243.0954764 
+ Time to send control to the RAN 8.341483771800995e-05 
+1753810243.095 Time to get KPMs from RAN and store in database 0.10212525259703398
+ Total time in IMI 0.1022717859596014 
+ Time Stamp when PRB control sent 1753810243.4479861 
+ Time to send control to the RAN 0.00010858802124857903 
+1753810243.448 Time to get KPMs from RAN and store in database 0.10237462446093559
+ Total time in IMI 0.1025928407907486 
+ Time Stamp when PRB control sent 1753810243.8008137 
+ Time to send control to the RAN 5.263974890112877e-05 
+1753810243.8 Time to get KPMs from RAN and store in database 0.10095100477337837
+ Total time in IMI 0.10107452096417546 
+ Time to send control to the RAN 5.4283998906612396e-05 
+1753810244.152 Time to get KPMs from RAN and store in database 0.10119261126965284
+ Total time in IMI 0.31053675385192037 
+ Time Stamp when PRB control sent 1753810244.7128382 
+ Time to send control to the RAN 0.00011881813406944275 
+1753810244.713 Time to get KPMs from RAN and store in database 0.10206274595111609
+ Total time in IMI 0.10230434918776155 
+ Time to send control to the RAN 0.00012679630890488625 
+1753810245.065 Time to get KPMs from RAN and store in database 0.10118523286655545
+ Total time in IMI 0.10514490399509668 
+ Time to send control to the RAN 5.1227398216724396e-05 
+1753810245.42 Time to get KPMs from RAN and store in database 0.10117199178785086
+ Total time in IMI 0.3048318508081138 
+ Time Stamp when PRB control sent 1753810245.9757507 
+ Time to send control to the RAN 2.6582274585962296e-05 
+1753810245.976 Time to get KPMs from RAN and store in database 0.10141109116375446
+ Total time in IMI 0.10148203698918223 
+ Time to send control to the RAN 4.6593137085437775e-05 
+1753810246.327 Time to get KPMs from RAN and store in database 0.10116636427119374
+ Total time in IMI 0.3098996430635452 
+ Time Stamp when PRB control sent 1753810246.8878007 
+ Time to send control to the RAN 0.00011920928955078125 
+1753810246.888 Time to get KPMs from RAN and store in database 0.1020167600363493
+ Total time in IMI 0.10225069615989923 
+ Time Stamp when PRB control sent 1753810247.240279 
+ Time to send control to the RAN 6.031664088368416e-05 
+1753810247.24 Time to get KPMs from RAN and store in database 0.10144480224698782
+ Total time in IMI 0.10158384311944246 
+ Time to send control to the RAN 9.307311847805977e-05 
+1753810247.592 Time to get KPMs from RAN and store in database 0.10120417084544897
+Time to get I/Qs from RAN, convert to spectrograms and store in database 0.40694283694028854
+ Total time in IMI 0.5083351978100836 
+ Time to send control to the RAN 8.438481017947197e-05 
+1753810248.351 Time to get KPMs from RAN and store in database 0.10210326174274087
+ Total time in IMI 0.5189406159333885 
+ Time to send control to the RAN 3.7113670259714127e-05 
+1753810249.12 Time to get KPMs from RAN and store in database 0.10090694483369589
+ Total time in IMI 0.31036537792533636 
+ Time Stamp when PRB control sent 1753810249.6805792 
+ Time to send control to the RAN 5.746912211179733e-05 
+1753810249.68 Time to get KPMs from RAN and store in database 0.10102174011990428
+ Total time in IMI 0.10112267220392823 
+ Time Stamp when PRB control sent 1753810250.0319185 
+ Time to send control to the RAN 4.048878327012062e-05 
+1753810250.032 Time to get KPMs from RAN and store in database 0.10139454016461968
+ Total time in IMI 0.10147151630371809 
+ Time to send control to the RAN 4.7836918383836746e-05 
+1753810250.383 Time to get KPMs from RAN and store in database 0.1010551480576396
+ Total time in IMI 0.3096417607739568 
+ Time Stamp when PRB control sent 1753810250.9436631 
+ Time to send control to the RAN 0.00012365402653813362 
+1753810250.943 Time to get KPMs from RAN and store in database 0.10237637301906943
+ Total time in IMI 0.10260946117341518 
+ Time Stamp when PRB control sent 1753810251.2964845 
+ Time to send control to the RAN 4.9505848437547684e-05 
+1753810251.296 Time to get KPMs from RAN and store in database 0.10109238000586629
+ Total time in IMI 0.10120971128344536 
+ Time to send control to the RAN 0.00011621275916695595 
+1753810251.648 Time to get KPMs from RAN and store in database 0.10270958486944437
+ Total time in IMI 0.31051147170364857 
+ Time Stamp when PRB control sent 1753810252.2087939 
+ Time to send control to the RAN 8.584791794419289e-05 
+1753810252.209 Time to get KPMs from RAN and store in database 0.10226060822606087
+ Total time in IMI 0.10243138577789068 
+ Time Stamp when PRB control sent 1753810252.5615127 
+ Time to send control to the RAN 9.098974987864494e-05 
+1753810252.561 Time to get KPMs from RAN and store in database 0.10211139312013984
+ Total time in IMI 0.10229752864688635 
+ Time Stamp when PRB control sent 1753810252.9139836 
+ Time to send control to the RAN 9.656930342316628e-05 
+1753810252.914 Time to get KPMs from RAN and store in database 0.10221731010824442
+ Total time in IMI 0.10237998468801379 
+ Time Stamp when PRB control sent 1753810253.2666485 
+ Time to send control to the RAN 0.00010485900565981865 
+1753810253.266 Time to get KPMs from RAN and store in database 0.10219333600252867
+ Total time in IMI 0.10237669618800282 
+ Time Stamp when PRB control sent 1753810253.6193135 
+ Time to send control to the RAN 0.00010676030069589615 
+1753810253.619 Time to get KPMs from RAN and store in database 0.1021851203404367
+ Total time in IMI 0.10236946074292064 
+ Time Stamp when PRB control sent 1753810253.9720354 
+ Time to send control to the RAN 0.0001625632867217064 
+1753810253.972 Time to get KPMs from RAN and store in database 0.10241442359983921
+ Total time in IMI 0.10266827419400215 
+ Time Stamp when PRB control sent 1753810254.3249996 
+ Time to send control to the RAN 0.0001659099943935871 
+1753810254.325 Time to get KPMs from RAN and store in database 0.10214787675067782
+ Total time in IMI 0.102406261023134 
+ Time Stamp when PRB control sent 1753810254.677726 
+ Time to send control to the RAN 0.0001253201626241207 
+1753810254.678 Time to get KPMs from RAN and store in database 0.10296408925205469
+ Total time in IMI 0.10317126708105206 
+ Time Stamp when PRB control sent 1753810255.0309703 
+ Time to send control to the RAN 6.44950196146965e-05 
+1753810255.031 Time to get KPMs from RAN and store in database 0.10106115182861686
+ Total time in IMI 0.10117122111842036 
+ Time Stamp when PRB control sent 1753810255.382267 
+ Time to send control to the RAN 7.428927347064018e-05 
+1753810255.382 Time to get KPMs from RAN and store in database 0.10177623014897108
+ Total time in IMI 0.10192569391801953 
+ Time Stamp when PRB control sent 1753810255.7345405 
+ Time to send control to the RAN 5.2805058658123016e-05 
+1753810255.734 Time to get KPMs from RAN and store in database 0.10133808944374323
+ Total time in IMI 0.10144787514582276 
+ Time Stamp when PRB control sent 1753810256.0862908 
+ Time to send control to the RAN 8.335616439580917e-05 
+1753810256.086 Time to get KPMs from RAN and store in database 0.10273600090295076
+ Total time in IMI 0.10290047992020845 
+ Time Stamp when PRB control sent 1753810256.439476 
+ Time to send control to the RAN 8.979532867670059e-05 
+1753810256.439 Time to get KPMs from RAN and store in database 0.10206413781270385
+ Total time in IMI 0.10223996732383966 
+ Time Stamp when PRB control sent 1753810256.7919872 
+ Time to send control to the RAN 9.502796456217766e-05 
+1753810256.792 Time to get KPMs from RAN and store in database 0.10240825405344367
+ Total time in IMI 0.10256862500682473 
+ Time Stamp when PRB control sent 1753810257.1448352 
+ Time to send control to the RAN 9.453389793634415e-05 
+1753810257.145 Time to get KPMs from RAN and store in database 0.1019967277534306
+ Total time in IMI 0.10219869296997786 
+ Time Stamp when PRB control sent 1753810257.4973195 
+ Time to send control to the RAN 9.681470692157745e-05 
+1753810257.497 Time to get KPMs from RAN and store in database 0.10152684198692441
+ Total time in IMI 0.10169702488929033 
+ Time Stamp when PRB control sent 1753810257.849252 
+ Time to send control to the RAN 5.615921691060066e-05 
+1753810257.849 Time to get KPMs from RAN and store in database 0.10150594497099519
+ Total time in IMI 0.10163735691457987 
+ Time Stamp when PRB control sent 1753810258.2010167 
+ Time to send control to the RAN 0.00013095838949084282 
+1753810258.201 Time to get KPMs from RAN and store in database 0.10252391593530774
+ Total time in IMI 0.10274710180237889 
+ Time Stamp when PRB control sent 1753810258.5540013 
+ Time to send control to the RAN 9.261583909392357e-05 
+1753810258.554 Time to get KPMs from RAN and store in database 0.10244254721328616
+ Total time in IMI 0.10261939186602831 
+ Time Stamp when PRB control sent 1753810258.9069662 
+ Time to send control to the RAN 0.00015225587412714958 
+1753810258.907 Time to get KPMs from RAN and store in database 0.102263696026057
+ Total time in IMI 0.10250961780548096 
+ Time to send control to the RAN 0.00010394304990768433 
+1753810259.26 Time to get KPMs from RAN and store in database 0.1025726618245244
+Time to get I/Qs from RAN, convert to spectrograms and store in database 0.3801361941732466
+ Total time in IMI 0.4829512797296047 
+ Time to send control to the RAN 7.983716204762459e-05 
+1753810259.993 Time to get KPMs from RAN and store in database 0.10257587628439069
+ Total time in IMI 0.3083533551543951 
+ Time Stamp when PRB control sent 1753810260.5515294 
+ Time to send control to the RAN 0.00013160193338990211 
+1753810260.551 Time to get KPMs from RAN and store in database 0.10265348758548498
+ Total time in IMI 0.10289649618789554 
+ Time Stamp when PRB control sent 1753810260.9045513 
+ Time to send control to the RAN 0.00018072081729769707 
+1753810260.904 Time to get KPMs from RAN and store in database 0.1030043181963265
+ Total time in IMI 0.10326406732201576 
+ Time to send control to the RAN 3.171013668179512e-05 
+1753810261.258 Time to get KPMs from RAN and store in database 0.10165625205263495
+ Total time in IMI 0.3072885097935796 
+ Time Stamp when PRB control sent 1753810261.8155556 
+ Time to send control to the RAN 0.00010507693514227867 
+1753810261.815 Time to get KPMs from RAN and store in database 0.10218585887923837
+ Total time in IMI 0.10235963389277458 
+ Time to send control to the RAN 7.972586899995804e-05 
+1753810262.168 Time to get KPMs from RAN and store in database 0.10118145914748311
+ Total time in IMI 0.3090608660131693 
+ Time Stamp when PRB control sent 1753810262.7274845 
+ Time to send control to the RAN 0.00010205013677477837 
+1753810262.727 Time to get KPMs from RAN and store in database 0.10262318095192313
+ Total time in IMI 0.10280448384582996 
+ Time Stamp when PRB control sent 1753810263.0805671 
+ Time to send control to the RAN 2.5597866624593735e-05 
+1753810263.08 Time to get KPMs from RAN and store in database 0.10167569387704134
+ Total time in IMI 0.10175071097910404 
+ Time to send control to the RAN 6.598606705665588e-05 
+1753810263.432 Time to get KPMs from RAN and store in database 0.10137233370915055
+ Total time in IMI 0.3103047600015998 
+ Time Stamp when PRB control sent 1753810263.9933653 
+ Time to send control to the RAN 0.0001590200699865818 
+1753810263.993 Time to get KPMs from RAN and store in database 0.1026188493706286
+ Total time in IMI 0.10288574872538447 
+ Time Stamp when PRB control sent 1753810264.3464181 
+ Time to send control to the RAN 3.788108006119728e-05 
+1753810264.346 Time to get KPMs from RAN and store in database 0.10145663004368544
+ Total time in IMI 0.10155421821400523 
+ Time to send control to the RAN 5.5423006415367126e-05 
+1753810264.698 Time to get KPMs from RAN and store in database 0.10104487091302872
+Time to get I/Qs from RAN, convert to spectrograms and store in database 0.15738233597949147
+ Total time in IMI 0.2585678519681096 
+ Time Stamp when PRB control sent 1753810265.2070549 
+ Time to send control to the RAN 8.33338126540184e-05 
+1753810265.207 Time to get KPMs from RAN and store in database 0.1021897098980844
+ Total time in IMI 0.10234314994886518 
+ Time Stamp when PRB control sent 1753810265.5597703 
+ Time to send control to the RAN 0.0001704040914773941 
+1753810265.56 Time to get KPMs from RAN and store in database 0.101763014215976
+ Total time in IMI 0.10202961508184671 
+ Time Stamp when PRB control sent 1753810265.911991 
+ Time to send control to the RAN 8.910894393920898e-05 
+1753810265.912 Time to get KPMs from RAN and store in database 0.10139154130592942
+ Total time in IMI 0.10155116207897663 
+ Time Stamp when PRB control sent 1753810266.2638488 
+ Time to send control to the RAN 0.0001140860840678215 
+1753810266.264 Time to get KPMs from RAN and store in database 0.10248626209795475
+ Total time in IMI 0.10269910609349608 
+ Time Stamp when PRB control sent 1753810266.6167607 
+ Time to send control to the RAN 0.00013736076653003693 
+1753810266.617 Time to get KPMs from RAN and store in database 0.10250324383378029
+ Total time in IMI 0.10275060217827559 
+ Time Stamp when PRB control sent 1753810266.969696 
+ Time to send control to the RAN 3.427313640713692e-05 
+1753810266.969 Time to get KPMs from RAN and store in database 0.1009478997439146
+ Total time in IMI 0.1010438296943903 
+ Time Stamp when PRB control sent 1753810267.3209453 
+ Time to send control to the RAN 6.278930231928825e-05 
+1753810267.321 Time to get KPMs from RAN and store in database 0.10112970881164074
+ Total time in IMI 0.10123887984082103 
+ Time Stamp when PRB control sent 1753810267.6724517 
+ Time to send control to the RAN 6.045680493116379e-05 
+1753810267.672 Time to get KPMs from RAN and store in database 0.101011305116117
+ Total time in IMI 0.10112615581601858 
+ Time Stamp when PRB control sent 1753810268.02395 
+ Time to send control to the RAN 0.00015443004667758942 
+1753810268.024 Time to get KPMs from RAN and store in database 0.10235738474875689
+ Total time in IMI 0.102604690939188 
+ Time Stamp when PRB control sent 1753810268.3768034 
+ Time to send control to the RAN 0.00010654190555214882 
+1753810268.377 Time to get KPMs from RAN and store in database 0.10234622890129685
+ Total time in IMI 0.10253974096849561 
+ Time Stamp when PRB control sent 1753810268.7296667 
+ Time to send control to the RAN 0.00014173705130815506 
+1753810268.73 Time to get KPMs from RAN and store in database 0.10242741042748094
+ Total time in IMI 0.10268475487828255 
+ Time Stamp when PRB control sent 1753810269.082562 
+ Time to send control to the RAN 6.629666313529015e-05 
+1753810269.082 Time to get KPMs from RAN and store in database 0.10121077299118042
+ Total time in IMI 0.1013566181063652 
+ Time Stamp when PRB control sent 1753810269.4342082 
+ Time to send control to the RAN 6.164703518152237e-05 
+1753810269.434 Time to get KPMs from RAN and store in database 0.10116572212427855
+ Total time in IMI 0.10126740299165249 
+ Time Stamp when PRB control sent 1753810269.785828 
+ Time to send control to the RAN 0.000125957652926445 
+1753810269.786 Time to get KPMs from RAN and store in database 0.10342325503006577
+ Total time in IMI 0.10364493308588862 
+ Time Stamp when PRB control sent 1753810270.1397712 
+ Time to send control to the RAN 0.0001328820362687111 
+1753810270.14 Time to get KPMs from RAN and store in database 0.10250007314607501
+ Total time in IMI 0.1028312686830759 
+ Time Stamp when PRB control sent 1753810270.4928288 
+ Time to send control to the RAN 8.496502414345741e-05 
+1753810270.493 Time to get KPMs from RAN and store in database 0.10156361339613795
+ Total time in IMI 0.10175822488963604 
+ Time Stamp when PRB control sent 1753810270.8448403 
+ Time to send control to the RAN 5.8706849813461304e-05 
+1753810270.845 Time to get KPMs from RAN and store in database 0.10102531081065536
+ Total time in IMI 0.10116541106253862 
+ Time Stamp when PRB control sent 1753810271.196301 
+ Time to send control to the RAN 7.646111771464348e-05 
+1753810271.196 Time to get KPMs from RAN and store in database 0.10130418324843049
+ Total time in IMI 0.10144030582159758 
+ Time Stamp when PRB control sent 1753810271.5479383 
+ Time to send control to the RAN 5.742907524108887e-05 
+1753810271.548 Time to get KPMs from RAN and store in database 0.10131919989362359
+ Total time in IMI 0.10145686520263553 
+ Time Stamp when PRB control sent 1753810271.8997123 
+ Time to send control to the RAN 9.400583803653717e-05 
+1753810271.9 Time to get KPMs from RAN and store in database 0.10175988590344787
+ Total time in IMI 0.10192457772791386 
+ Time Stamp when PRB control sent 1753810272.2519038 
+ Time to send control to the RAN 8.240016177296638e-05 
+1753810272.252 Time to get KPMs from RAN and store in database 0.10138090699911118
+ Total time in IMI 0.10153906513005495 
+ Time Stamp when PRB control sent 1753810272.6037035 
+ Time to send control to the RAN 6.629060953855515e-05 
+1753810272.603 Time to get KPMs from RAN and store in database 0.10134012019261718
+ Total time in IMI 0.10205249674618244 
+ Time Stamp when PRB control sent 1753810272.9560294 
+ Time to send control to the RAN 0.0001304280012845993 
+1753810272.956 Time to get KPMs from RAN and store in database 0.1021757428534329
+ Total time in IMI 0.10241445805877447 
+ Time Stamp when PRB control sent 1753810273.308707 
+ Time to send control to the RAN 0.00010564224794507027 
+1753810273.309 Time to get KPMs from RAN and store in database 0.10204038117080927
+ Total time in IMI 0.10223654797300696 
+ Time Stamp when PRB control sent 1753810273.6609905 
+ Time to send control to the RAN 9.87490639090538e-05 
+1753810273.661 Time to get KPMs from RAN and store in database 0.10231693089008331
+ Total time in IMI 0.10250457096844912 
+ Time Stamp when PRB control sent 1753810274.0137722 
+ Time to send control to the RAN 9.307311847805977e-05 
+1753810274.014 Time to get KPMs from RAN and store in database 0.10176431806758046
+ Total time in IMI 0.10201902687549591 
+ Time Stamp when PRB control sent 1753810274.3659894 
+ Time to send control to the RAN 9.359978139400482e-05 
+1753810274.366 Time to get KPMs from RAN and store in database 0.10182527359575033
+ Total time in IMI 0.10199094424024224 
+ Time Stamp when PRB control sent 1753810274.7182784 
+ Time to send control to the RAN 0.00011656107380986214 
+1753810274.718 Time to get KPMs from RAN and store in database 0.10183103429153562
+ Total time in IMI 0.10202349768951535 
+ Time Stamp when PRB control sent 1753810275.0704963 
+ Time to send control to the RAN 3.452738747000694e-05 
+1753810275.07 Time to get KPMs from RAN and store in database 0.1007633269764483
+ Total time in IMI 0.10085345897823572 
+ Time to send control to the RAN 4.069693386554718e-05 
+1753810275.421 Time to get KPMs from RAN and store in database 0.10110816592350602
+Time to get I/Qs from RAN, convert to spectrograms and store in database 0.3956437772139907
+ Total time in IMI 0.49684948194772005 
+ Time Stamp when PRB control sent 1753810276.1686082 
+ Time to send control to the RAN 0.00014098221436142921 
+1753810276.168 Time to get KPMs from RAN and store in database 0.10689368331804872
+ Total time in IMI 0.10711435507982969 
+ Time Stamp when PRB control sent 1753810276.5260162 
+ Time to send control to the RAN 0.00013312557712197304 
+1753810276.526 Time to get KPMs from RAN and store in database 0.10230693221092224
+ Total time in IMI 0.1025540023110807 
+ Time Stamp when PRB control sent 1753810276.8787632 
+ Time to send control to the RAN 3.815488889813423e-05 
+1753810276.879 Time to get KPMs from RAN and store in database 0.10106350388377905
+ Total time in IMI 0.10121211921796203 
+ Time to send control to the RAN 4.682829603552818e-05 
+1753810277.23 Time to get KPMs from RAN and store in database 0.10106495395302773
+Time to get I/Qs from RAN, convert to spectrograms and store in database 0.1392434318549931
+ Total time in IMI 0.24046528432518244 
+ Time to send control to the RAN 7.482385262846947e-05 
+1753810277.721 Time to get KPMs from RAN and store in database 0.10170168010517955
+ Total time in IMI 0.3092311229556799 
+ Time Stamp when PRB control sent 1753810278.280486 
+ Time to send control to the RAN 8.448585867881775e-05 
+1753810278.28 Time to get KPMs from RAN and store in database 0.10320170503109694
+ Total time in IMI 0.10338746197521687 
+ Time Stamp when PRB control sent 1753810278.6339257 
+ Time to send control to the RAN 4.6838074922561646e-05 
+1753810278.634 Time to get KPMs from RAN and store in database 0.1010851007886231
+ Total time in IMI 0.10119438171386719 
+ Time Stamp when PRB control sent 1753810278.985403 
+ Time to send control to the RAN 5.64083456993103e-05 
+1753810278.985 Time to get KPMs from RAN and store in database 0.10108464397490025
+ Total time in IMI 0.1011980902403593 
+ Time Stamp when PRB control sent 1753810279.3368704 
+ Time to send control to the RAN 5.929498001933098e-05 
+1753810279.337 Time to get KPMs from RAN and store in database 0.10100036766380072
+ Total time in IMI 0.10111089097335935 
+ Time Stamp when PRB control sent 1753810279.6883562 
+ Time to send control to the RAN 0.00015104329213500023 
+1753810279.688 Time to get KPMs from RAN and store in database 0.10222858004271984
+ Total time in IMI 0.10247266991063952 
+ Time Stamp when PRB control sent 1753810280.0410433 
+ Time to send control to the RAN 0.00015006912872195244 
+1753810280.041 Time to get KPMs from RAN and store in database 0.10241309925913811
+ Total time in IMI 0.102662970777601 
+ Time Stamp when PRB control sent 1753810280.3940125 
+ Time to send control to the RAN 0.00014543300494551659 
+1753810280.394 Time to get KPMs from RAN and store in database 0.1022668476216495
+ Total time in IMI 0.10251908702775836 
+ Time Stamp when PRB control sent 1753810280.746717 
+ Time to send control to the RAN 6.0879625380039215e-05 
+1753810280.746 Time to get KPMs from RAN and store in database 0.10102471383288503
+ Total time in IMI 0.10114075196906924 
+ Time Stamp when PRB control sent 1753810281.0981236 
+ Time to send control to the RAN 0.00012779701501131058 
+1753810281.098 Time to get KPMs from RAN and store in database 0.10228912578895688
+ Total time in IMI 0.10251144785434008 
+ Time Stamp when PRB control sent 1753810281.4509463 
+ Time to send control to the RAN 0.00014795316383242607 
+1753810281.451 Time to get KPMs from RAN and store in database 0.1026530941016972
+ Total time in IMI 0.10287545388564467 
+ Time Stamp when PRB control sent 1753810281.8039925 
+ Time to send control to the RAN 9.778700768947601e-05 
+1753810281.804 Time to get KPMs from RAN and store in database 0.10223142523318529
+ Total time in IMI 0.10240156995132565 
+ Time Stamp when PRB control sent 1753810282.1566138 
+ Time to send control to the RAN 3.4514814615249634e-05 
+1753810282.156 Time to get KPMs from RAN and store in database 0.10107331164181232
+ Total time in IMI 0.10117413103580475 
+ Time Stamp when PRB control sent 1753810282.507934 
+ Time to send control to the RAN 5.287211388349533e-05 
+1753810282.508 Time to get KPMs from RAN and store in database 0.10093446495011449
+ Total time in IMI 0.10105634806677699 
+ Time Stamp when PRB control sent 1753810282.8592863 
+ Time to send control to the RAN 4.9699097871780396e-05 
+1753810282.859 Time to get KPMs from RAN and store in database 0.10126504208892584
+ Total time in IMI 0.10140002612024546 
+ Time Stamp when PRB control sent 1753810283.2110019 
+ Time to send control to the RAN 0.00011449307203292847 
+1753810283.211 Time to get KPMs from RAN and store in database 0.10233666794374585
+ Total time in IMI 0.10252923471853137 
+ Time Stamp when PRB control sent 1753810283.5638356 
+ Time to send control to the RAN 0.00012898724526166916 
+1753810283.564 Time to get KPMs from RAN and store in database 0.1024289857596159
+ Total time in IMI 0.10269322991371155 
+ Time Stamp when PRB control sent 1753810283.916592 
+ Time to send control to the RAN 4.0209852159023285e-05 
+1753810283.916 Time to get KPMs from RAN and store in database 0.10099967569112778
+ Total time in IMI 0.1010796227492392 
+ Time Stamp when PRB control sent 1753810284.2679398 
+ Time to send control to the RAN 6.0028862208127975e-05 
+1753810284.268 Time to get KPMs from RAN and store in database 0.10112148663029075
+ Total time in IMI 0.10122568206861615 
+ Time Stamp when PRB control sent 1753810284.619308 
+ Time to send control to the RAN 5.207909271121025e-05 
+1753810284.619 Time to get KPMs from RAN and store in database 0.10085551906377077
+ Total time in IMI 0.10095320921391249 
+ Time Stamp when PRB control sent 1753810284.9705381 
+ Time to send control to the RAN 5.991477519273758e-05 
+1753810284.97 Time to get KPMs from RAN and store in database 0.10103035997599363
+ Total time in IMI 0.10115164332091808 
+ Time Stamp when PRB control sent 1753810285.3219435 
+ Time to send control to the RAN 6.101094186306e-05 
+1753810285.322 Time to get KPMs from RAN and store in database 0.10090517392382026
+ Total time in IMI 0.10101129813119769 
+ Time Stamp when PRB control sent 1753810285.673087 
+ Time to send control to the RAN 5.300017073750496e-05 
+1753810285.673 Time to get KPMs from RAN and store in database 0.10140948696061969
+ Total time in IMI 0.10168514400720596 
+ Time Stamp when PRB control sent 1753810286.0249777 
+ Time to send control to the RAN 9.466614574193954e-05 
+1753810286.025 Time to get KPMs from RAN and store in database 0.10199365904554725
+ Total time in IMI 0.10218522790819407 
+ Time Stamp when PRB control sent 1753810286.3774443 
+ Time to send control to the RAN 9.4615388661623e-05 
+1753810286.377 Time to get KPMs from RAN and store in database 0.10204186104238033
+ Total time in IMI 0.1022259290330112 
+ Time to send control to the RAN 0.00010065082460641861 
+1753810286.73 Time to get KPMs from RAN and store in database 0.10210512112826109
+Time to get I/Qs from RAN, convert to spectrograms and store in database 0.3867872511036694
+ Total time in IMI 0.4890980822965503 
+ Time Stamp when PRB control sent 1753810287.469336 
+ Time to send control to the RAN 0.00013725785538554192 
+1753810287.469 Time to get KPMs from RAN and store in database 0.1016506920568645
+ Total time in IMI 0.10185862798243761 
+ Time Stamp when PRB control sent 1753810287.8214574 
+ Time to send control to the RAN 6.51450827717781e-05 
+1753810287.821 Time to get KPMs from RAN and store in database 0.10128812910988927
+ Total time in IMI 0.10140544082969427 
+ Time to send control to the RAN 9.042397141456604e-05 
+1753810288.173 Time to get KPMs from RAN and store in database 0.1017339201644063
+ Total time in IMI 0.30577802984043956 
+ Time to send control to the RAN 5.0080008804798126e-05 
+1753810288.729 Time to get KPMs from RAN and store in database 0.1011456442065537
+Time to get I/Qs from RAN, convert to spectrograms and store in database 0.3816804001107812
+ Total time in IMI 0.48297299025580287 
+ Time Stamp when PRB control sent 1753810289.4622092 
+ Time to send control to the RAN 7.499568164348602e-05 
+1753810289.462 Time to get KPMs from RAN and store in database 0.10121840285137296
+ Total time in IMI 0.10134927788749337 
+ Time Stamp when PRB control sent 1753810289.8139102 
+ Time to send control to the RAN 0.00014721089974045753 
+1753810289.814 Time to get KPMs from RAN and store in database 0.10269279824569821
+ Total time in IMI 0.10294954711571336 
+ Time to send control to the RAN 4.7483015805482864e-05 
+1753810290.167 Time to get KPMs from RAN and store in database 0.1011041458696127
+ Total time in IMI 0.3106086361221969 
+ Time Stamp when PRB control sent 1753810290.7279007 
+ Time to send control to the RAN 0.00012228917330503464 
+1753810290.728 Time to get KPMs from RAN and store in database 0.10248306905850768
+ Total time in IMI 0.10270020319148898 
+ Time Stamp when PRB control sent 1753810291.080687 
+ Time to send control to the RAN 4.572421312332153e-05 
+1753810291.081 Time to get KPMs from RAN and store in database 0.10113741178065538
+ Total time in IMI 0.10127154784277081 
+ Time to send control to the RAN 5.122041329741478e-05 
+1753810291.432 Time to get KPMs from RAN and store in database 0.10112313507124782
+ Total time in IMI 0.309323713183403 
+ Time to send control to the RAN 4.3171923607587814e-05 
+1753810291.992 Time to get KPMs from RAN and store in database 0.10101018100976944
+ Total time in IMI 0.3105269749648869 
+ Time Stamp when PRB control sent 1753810292.5527475 
+ Time to send control to the RAN 0.0001311260275542736 
+1753810292.553 Time to get KPMs from RAN and store in database 0.1026858757250011
+ Total time in IMI 0.1029140679165721 
+ Time Stamp when PRB control sent 1753810292.9059033 
+ Time to send control to the RAN 8.190702646970749e-05 
+1753810292.906 Time to get KPMs from RAN and store in database 0.101176334079355
+ Total time in IMI 0.10132883116602898 
+ Time to send control to the RAN 5.092192441225052e-05 
+1753810293.257 Time to get KPMs from RAN and store in database 0.1011177790351212
+ Total time in IMI 0.10227930592373013 
+ Time to send control to the RAN 0.00012716324999928474 
+1753810293.61 Time to get KPMs from RAN and store in database 0.1032695178873837
+ Total time in IMI 0.3076729360036552 
+ Time to send control to the RAN 5.306210368871689e-05 
+1753810294.168 Time to get KPMs from RAN and store in database 0.10112937400117517
+ Total time in IMI 0.10234136180952191 
+ Time to send control to the RAN 7.216958329081535e-05 
+1753810294.52 Time to get KPMs from RAN and store in database 0.10178537899628282
+Time to get I/Qs from RAN, convert to spectrograms and store in database 0.5702924211509526
+ Total time in IMI 0.6722683790139854 
+ Time to send control to the RAN 7.36163929104805e-05 
+1753810295.443 Time to get KPMs from RAN and store in database 0.10217614006251097
+ Total time in IMI 0.10452924808487296 
+ Time to send control to the RAN 4.0654558688402176e-05 
+1753810295.797 Time to get KPMs from RAN and store in database 0.10099175199866295
+ Total time in IMI 0.30435854475945234 
+ Time Stamp when PRB control sent 1753810296.3524158 
+ Time to send control to the RAN 8.179200813174248e-05 
+1753810296.352 Time to get KPMs from RAN and store in database 0.10183038702234626
+ Total time in IMI 0.10200449312105775 
+ Time to send control to the RAN 3.608502447605133e-05 
+1753810296.705 Time to get KPMs from RAN and store in database 0.10115984920412302
+ Total time in IMI 0.3085968941450119 
+ Time Stamp when PRB control sent 1753810297.263671 
+ Time to send control to the RAN 0.00013072136789560318 
+1753810297.264 Time to get KPMs from RAN and store in database 0.10268027521669865
+ Total time in IMI 0.1029277890920639 
+ Time Stamp when PRB control sent 1753810297.6168249 
+ Time to send control to the RAN 6.513111293315887e-05 
+1753810297.617 Time to get KPMs from RAN and store in database 0.101521628908813
+ Total time in IMI 0.10165323410183191 
+ Time to send control to the RAN 4.482502117753029e-05 
+1753810297.968 Time to get KPMs from RAN and store in database 0.10113323526456952
+ Total time in IMI 0.3085957048460841 
+ Time Stamp when PRB control sent 1753810298.5276253 
+ Time to send control to the RAN 0.00013556797057390213 
+1753810298.527 Time to get KPMs from RAN and store in database 0.10214402107521892
+ Total time in IMI 0.10239961603656411 
+ Time Stamp when PRB control sent 1753810298.880263 
+ Time to send control to the RAN 8.483231067657471e-05 
+1753810298.88 Time to get KPMs from RAN and store in database 0.10183855798095465
+ Total time in IMI 0.10201905528083444 
+ Time to send control to the RAN 7.850304245948792e-05 
+1753810299.232 Time to get KPMs from RAN and store in database 0.10129067674279213
+ Total time in IMI 0.3096461989916861 
+ Time Stamp when PRB control sent 1753810299.7925205 
+ Time to send control to the RAN 9.724171832203865e-05 
+1753810299.792 Time to get KPMs from RAN and store in database 0.10195130901411176
+ Total time in IMI 0.10213289177045226 
+ Time Stamp when PRB control sent 1753810300.1446788 
+ Time to send control to the RAN 4.79663722217083e-05 
+1753810300.144 Time to get KPMs from RAN and store in database 0.10119757521897554
+ Total time in IMI 0.10131239611655474 
+ Time to send control to the RAN 4.367576912045479e-05 
+1753810300.496 Time to get KPMs from RAN and store in database 0.10105491522699594
+Time to get I/Qs from RAN, convert to spectrograms and store in database 0.1675077141262591
+ Total time in IMI 0.2686917968094349 
+ Time Stamp when PRB control sent 1753810301.015218 
+ Time to send control to the RAN 4.406692460179329e-05 
+1753810301.015 Time to get KPMs from RAN and store in database 0.10134925181046128
+ Total time in IMI 0.1014547641389072 
+ Time to send control to the RAN 4.906998947262764e-05 
+1753810301.367 Time to get KPMs from RAN and store in database 0.10130822518840432
+ Total time in IMI 0.3105060290545225 
+ Time Stamp when PRB control sent 1753810301.9277697 
+ Time to send control to the RAN 9.175622835755348e-05 
+1753810301.928 Time to get KPMs from RAN and store in database 0.10227963514626026
+ Total time in IMI 0.10247222008183599 
+ Time to send control to the RAN 2.7493108063936234e-05 
+1753810302.28 Time to get KPMs from RAN and store in database 0.10106602683663368
+ Total time in IMI 0.30973558593541384 
+ Time Stamp when PRB control sent 1753810302.8405344 
+ Time to send control to the RAN 9.383773431181908e-05 
+1753810302.84 Time to get KPMs from RAN and store in database 0.10268396977335215
+ Total time in IMI 0.10287073394283652 
+ Time Stamp when PRB control sent 1753810303.1937375 
+ Time to send control to the RAN 0.00013585295528173447 
+1753810303.194 Time to get KPMs from RAN and store in database 0.10223681712523103
+ Total time in IMI 0.10247619962319732 
+ Time Stamp when PRB control sent 1753810303.546397 
+ Time to send control to the RAN 3.7760939449071884e-05 
+1753810303.546 Time to get KPMs from RAN and store in database 0.10107869934290648
+ Total time in IMI 0.10116407694295049 
+ Time to send control to the RAN 0.000176955945789814 
+1753810303.898 Time to get KPMs from RAN and store in database 0.10134227992966771
+ Total time in IMI 0.3078855541534722 
+ Time Stamp when PRB control sent 1753810304.455916 
+ Time to send control to the RAN 3.5913195461034775e-05 
+1753810304.456 Time to get KPMs from RAN and store in database 0.10094203287735581
+ Total time in IMI 0.10107563203200698 
+ Time to send control to the RAN 4.5658089220523834e-05 
+1753810304.807 Time to get KPMs from RAN and store in database 0.1010943972505629
+ Total time in IMI 0.5112403412349522 
+ Time Stamp when PRB control sent 1753810305.5687275 
+ Time to send control to the RAN 0.00011493358761072159 
+1753810305.569 Time to get KPMs from RAN and store in database 0.10228989599272609
+ Total time in IMI 0.10249603120610118 
+ Time Stamp when PRB control sent 1753810305.921328 
+ Time to send control to the RAN 0.00015647709369659424 
+1753810305.921 Time to get KPMs from RAN and store in database 0.10226356983184814
+ Total time in IMI 0.10252156015485525 
+ Time Stamp when PRB control sent 1753810306.2739933 
+ Time to send control to the RAN 9.37669537961483e-05 
+1753810306.274 Time to get KPMs from RAN and store in database 0.10203615901991725
+ Total time in IMI 0.1021988089196384 
+ Time Stamp when PRB control sent 1753810306.626454 
+ Time to send control to the RAN 7.856404408812523e-05 
+1753810306.626 Time to get KPMs from RAN and store in database 0.10183111112564802
+ Total time in IMI 0.10198727296665311 
+ Time Stamp when PRB control sent 1753810306.9787362 
+ Time to send control to the RAN 9.55960713326931e-05 
+1753810306.979 Time to get KPMs from RAN and store in database 0.10210020001977682
+ Total time in IMI 0.1022826200351119 
+ Time Stamp when PRB control sent 1753810307.3313046 
+ Time to send control to the RAN 9.661959484219551e-05 
+1753810307.331 Time to get KPMs from RAN and store in database 0.1019010771997273
+ Total time in IMI 0.1020827810280025 
+ Time Stamp when PRB control sent 1753810307.6835399 
+ Time to send control to the RAN 9.065307676792145e-05 
+1753810307.683 Time to get KPMs from RAN and store in database 0.10223038820549846
+ Total time in IMI 0.10240554017946124 
+ Time Stamp when PRB control sent 1753810308.0362508 
+ Time to send control to the RAN 9.753508493304253e-05 
+1753810308.036 Time to get KPMs from RAN and store in database 0.10205676732584834
+ Total time in IMI 0.10222289385274053 
+ Time Stamp when PRB control sent 1753810308.3884852 
+ Time to send control to the RAN 6.24130479991436e-05 
+1753810308.388 Time to get KPMs from RAN and store in database 0.10137202078476548
+ Total time in IMI 0.1015004669316113 
+ Time Stamp when PRB control sent 1753810308.7401392 
+ Time to send control to the RAN 8.480483666062355e-05 
+1753810308.74 Time to get KPMs from RAN and store in database 0.10187649726867676
+ Total time in IMI 0.10202992567792535 
+ Time Stamp when PRB control sent 1753810309.0924053 
+ Time to send control to the RAN 5.039805546402931e-05 
+1753810309.092 Time to get KPMs from RAN and store in database 0.10075242398306727
+ Total time in IMI 0.10084250569343567 
+ Time Stamp when PRB control sent 1753810309.4435132 
+ Time to send control to the RAN 5.049118772149086e-05 
+1753810309.443 Time to get KPMs from RAN and store in database 0.10080526303499937
+ Total time in IMI 0.10089119942858815 
+ Time Stamp when PRB control sent 1753810309.7945278 
+ Time to send control to the RAN 4.134001210331917e-05 
+1753810309.794 Time to get KPMs from RAN and store in database 0.1008611093275249
+ Total time in IMI 0.10093877371400595 
+ Time Stamp when PRB control sent 1753810310.1457298 
+ Time to send control to the RAN 4.128227010369301e-05 
+1753810310.145 Time to get KPMs from RAN and store in database 0.1008550338447094
+ Total time in IMI 0.10093577159568667 
+ Time Stamp when PRB control sent 1753810310.4969482 
+ Time to send control to the RAN 6.846804171800613e-05 
+1753810310.497 Time to get KPMs from RAN and store in database 0.10090120090171695
+ Total time in IMI 0.10101265227422118 
+ Time Stamp when PRB control sent 1753810310.8482213 
+ Time to send control to the RAN 6.127497181296349e-05 
+1753810310.848 Time to get KPMs from RAN and store in database 0.10152425011619925
+ Total time in IMI 0.10164425102993846 
+ Time Stamp when PRB control sent 1753810311.1999168 
+ Time to send control to the RAN 3.969203680753708e-05 
+1753810311.2 Time to get KPMs from RAN and store in database 0.10084422817453742
+ Total time in IMI 0.10093924216926098 
+ Time Stamp when PRB control sent 1753810311.5509572 
+ Time to send control to the RAN 7.501011714339256e-05 
+1753810311.551 Time to get KPMs from RAN and store in database 0.10251018730923533
+ Total time in IMI 0.10266367206349969 
+ Time Stamp when PRB control sent 1753810311.9038928 
+ Time to send control to the RAN 7.120566442608833e-05 
+1753810311.904 Time to get KPMs from RAN and store in database 0.10148250497877598
+ Total time in IMI 0.10162224806845188 
+ Time Stamp when PRB control sent 1753810312.25584 
+ Time to send control to the RAN 0.00010515190660953522 
+1753810312.256 Time to get KPMs from RAN and store in database 0.10190549213439226
+ Total time in IMI 0.1021024389192462 
+ Time Stamp when PRB control sent 1753810312.6079812 
+ Time to send control to the RAN 9.440630674362183e-05 
+1753810312.608 Time to get KPMs from RAN and store in database 0.10210097627714276
+ Total time in IMI 0.10226081730797887 
+ Time Stamp when PRB control sent 1753810312.9604585 
+ Time to send control to the RAN 3.8007739931344986e-05 
+1753810312.96 Time to get KPMs from RAN and store in database 0.10125938523560762
+ Total time in IMI 0.10237491596490145 
+ Time Stamp when PRB control sent 1753810313.313065 
+ Time to send control to the RAN 0.0001842309720814228 
+1753810313.313 Time to get KPMs from RAN and store in database 0.1018958231434226
+ Total time in IMI 0.1021877583116293 
+ Time Stamp when PRB control sent 1753810313.6654456 
+ Time to send control to the RAN 9.121699258685112e-05 
+1753810313.665 Time to get KPMs from RAN and store in database 0.10211859596893191
+ Total time in IMI 0.102297468110919 
+ Time Stamp when PRB control sent 1753810314.0180292 
+ Time to send control to the RAN 9.628431871533394e-05 
+1753810314.018 Time to get KPMs from RAN and store in database 0.10231842799112201
+ Total time in IMI 0.1025041351094842 
+ Time Stamp when PRB control sent 1753810314.3708122 
+ Time to send control to the RAN 9.28221270442009e-05 
+1753810314.37 Time to get KPMs from RAN and store in database 0.10123907262459397
+ Total time in IMI 0.10143611999228597 
+ Time Stamp when PRB control sent 1753810314.722534 
+ Time to send control to the RAN 9.565101936459541e-05 
+1753810314.722 Time to get KPMs from RAN and store in database 0.10222023073583841
+ Total time in IMI 0.10239166719838977 
+ Time to send control to the RAN 7.365131750702858e-05 
+1753810315.075 Time to get KPMs from RAN and store in database 0.10206347890198231
+Time to get I/Qs from RAN, convert to spectrograms and store in database 0.3793778456747532
+ Total time in IMI 0.48162785498425364 
+ Time Stamp when PRB control sent 1753810315.806764 
+ Time to send control to the RAN 0.0001101749949157238 
+1753810315.807 Time to get KPMs from RAN and store in database 0.10199446510523558
+ Total time in IMI 0.10220396798104048 
+ Time Stamp when PRB control sent 1753810316.159244 
+ Time to send control to the RAN 9.132083505392075e-05 
+1753810316.159 Time to get KPMs from RAN and store in database 0.10259303404018283
+ Total time in IMI 0.10278139403089881 
+ Time Stamp when PRB control sent 1753810316.5123203 
+ Time to send control to the RAN 0.00010341918095946312 
+1753810316.512 Time to get KPMs from RAN and store in database 0.10229350067675114
+ Total time in IMI 0.10247435420751572 
+ Time Stamp when PRB control sent 1753810316.8649747 
+ Time to send control to the RAN 9.061675518751144e-05 
+1753810316.865 Time to get KPMs from RAN and store in database 0.10202755918726325
+ Total time in IMI 0.102192641235888 
+ Time Stamp when PRB control sent 1753810317.2174447 
+ Time to send control to the RAN 8.874991908669472e-05 
+1753810317.217 Time to get KPMs from RAN and store in database 0.10179440164938569
+ Total time in IMI 0.101969372946769 
+ Time Stamp when PRB control sent 1753810317.5697129 
+ Time to send control to the RAN 0.00010599428787827492 
+1753810317.57 Time to get KPMs from RAN and store in database 0.10177157074213028
+ Total time in IMI 0.10202786698937416 
+ Time Stamp when PRB control sent 1753810317.9219997 
+ Time to send control to the RAN 0.00010929768905043602 
+1753810317.922 Time to get KPMs from RAN and store in database 0.10310614574700594
+ Total time in IMI 0.10330559778958559 
+ Time Stamp when PRB control sent 1753810318.2756217 
+ Time to send control to the RAN 0.00013254210352897644 
+1753810318.276 Time to get KPMs from RAN and store in database 0.10220902413129807
+ Total time in IMI 0.10245639318600297 
+ Time Stamp when PRB control sent 1753810318.6283162 
+ Time to send control to the RAN 0.00015442026779055595 
+1753810318.628 Time to get KPMs from RAN and store in database 0.10250527039170265
+ Total time in IMI 0.10275511862710118 
+ Time Stamp when PRB control sent 1753810318.9813359 
+ Time to send control to the RAN 0.00012350408360362053 
+1753810318.981 Time to get KPMs from RAN and store in database 0.10225236602127552
+ Total time in IMI 0.10247170273214579 
+ Time Stamp when PRB control sent 1753810319.3339915 
+ Time to send control to the RAN 0.00010313885286450386 
+1753810319.334 Time to get KPMs from RAN and store in database 0.10076950304210186
+ Total time in IMI 0.10095039382576942 
+ Time Stamp when PRB control sent 1753810319.6850233 
+ Time to send control to the RAN 0.0001280931755900383 
+1753810319.685 Time to get KPMs from RAN and store in database 0.10228197230026126
+ Total time in IMI 0.10251403413712978 
+ Time Stamp when PRB control sent 1753810320.0378406 
+ Time to send control to the RAN 0.00013685133308172226 
+1753810320.038 Time to get KPMs from RAN and store in database 0.10236170096322894
+ Total time in IMI 0.10265026241540909 
+ Time Stamp when PRB control sent 1753810320.3907506 
+ Time to send control to the RAN 0.00010164128616452217 
+1753810320.39 Time to get KPMs from RAN and store in database 0.10165417566895485
+ Total time in IMI 0.10180934518575668 
+ Time Stamp when PRB control sent 1753810320.7428293 
+ Time to send control to the RAN 9.117228910326958e-05 
+1753810320.743 Time to get KPMs from RAN and store in database 0.10321653820574284
+ Total time in IMI 0.10340901603922248 
+ Time Stamp when PRB control sent 1753810321.0965054 
+ Time to send control to the RAN 6.590364500880241e-05 
+1753810321.096 Time to get KPMs from RAN and store in database 0.10102405399084091
+ Total time in IMI 0.10114947985857725 
+ Time Stamp when PRB control sent 1753810321.4479797 
+ Time to send control to the RAN 9.013013914227486e-05 
+1753810321.448 Time to get KPMs from RAN and store in database 0.10209797136485577
+ Total time in IMI 0.10227657295763493 
+ Time Stamp when PRB control sent 1753810321.800568 
+ Time to send control to the RAN 0.00012109009549021721 
+1753810321.801 Time to get KPMs from RAN and store in database 0.10272097494453192
+ Total time in IMI 0.1029330431483686 
+ Time Stamp when PRB control sent 1753810322.153652 
+ Time to send control to the RAN 0.00014053098857402802 
+1753810322.154 Time to get KPMs from RAN and store in database 0.10373433213680983
+ Total time in IMI 0.10397345200181007 
+ Time Stamp when PRB control sent 1753810322.5079157 
+ Time to send control to the RAN 0.00013714097440242767 
+1753810322.508 Time to get KPMs from RAN and store in database 0.10227168118581176
+ Total time in IMI 0.10251286067068577 
+ Time Stamp when PRB control sent 1753810322.860612 
+ Time to send control to the RAN 3.545079380273819e-05 
+1753810322.86 Time to get KPMs from RAN and store in database 0.10102415503934026
+ Total time in IMI 0.1011250652372837 
+ Time Stamp when PRB control sent 1753810323.2120433 
+ Time to send control to the RAN 0.0001470646820962429 
+1753810323.212 Time to get KPMs from RAN and store in database 0.10259294789284468
+ Total time in IMI 0.10284137399867177 
+ Time Stamp when PRB control sent 1753810323.5650167 
+ Time to send control to the RAN 0.00012204376980662346 
+1753810323.565 Time to get KPMs from RAN and store in database 0.10223747091367841
+ Total time in IMI 0.1024385616183281 
+ Time Stamp when PRB control sent 1753810323.9177208 
+ Time to send control to the RAN 9.961007162928581e-05 
+1753810323.918 Time to get KPMs from RAN and store in database 0.10200632130727172
+ Total time in IMI 0.1021935697644949 
+ Time Stamp when PRB control sent 1753810324.2700512 
+ Time to send control to the RAN 9.956303983926773e-05 
+1753810324.27 Time to get KPMs from RAN and store in database 0.10202976921573281
+ Total time in IMI 0.10221704561263323 
+ Time Stamp when PRB control sent 1753810324.6224792 
+ Time to send control to the RAN 3.202119842171669e-05 
+1753810324.622 Time to get KPMs from RAN and store in database 0.1008179816417396
+ Total time in IMI 0.10089924093335867 
+ Time Stamp when PRB control sent 1753810324.973707 
+ Time to send control to the RAN 8.772499859333038e-05 
+1753810324.974 Time to get KPMs from RAN and store in database 0.1032821899279952
+ Total time in IMI 0.10345603385940194 
+ Time Stamp when PRB control sent 1753810325.3273041 
+ Time to send control to the RAN 9.231315925717354e-05 
+1753810325.327 Time to get KPMs from RAN and store in database 0.10252867685630918
+ Total time in IMI 0.10270932177081704 
+ Time Stamp when PRB control sent 1753810325.6803029 
+ Time to send control to the RAN 0.00010078493505716324 
+1753810325.68 Time to get KPMs from RAN and store in database 0.10181530704721808
+ Total time in IMI 0.10200076224282384 
+ Time Stamp when PRB control sent 1753810326.0323827 
+ Time to send control to the RAN 9.158067405223846e-05 
+1753810326.032 Time to get KPMs from RAN and store in database 0.101970667950809
+ Total time in IMI 0.10214497894048691 
+ Time Stamp when PRB control sent 1753810326.384696 
+ Time to send control to the RAN 6.961403414607048e-05 
+1753810326.385 Time to get KPMs from RAN and store in database 0.10145481303334236
+ Total time in IMI 0.10158859100192785 
+ Time Stamp when PRB control sent 1753810326.7365682 
+ Time to send control to the RAN 7.623294368386269e-05 
+1753810326.736 Time to get KPMs from RAN and store in database 0.10184130305424333
+ Total time in IMI 0.10199951799586415 
+ Time Stamp when PRB control sent 1753810327.088908 
+ Time to send control to the RAN 0.0001290738582611084 
+1753810327.089 Time to get KPMs from RAN and store in database 0.10245364997535944
+ Total time in IMI 0.10267316782847047 
+ Time Stamp when PRB control sent 1753810327.4416401 
+ Time to send control to the RAN 0.00010416703298687935 
+1753810327.441 Time to get KPMs from RAN and store in database 0.10200100811198354
+ Total time in IMI 0.10219201492145658 
+ Time Stamp when PRB control sent 1753810327.7940109 
+ Time to send control to the RAN 0.00011046184226870537 
+1753810327.794 Time to get KPMs from RAN and store in database 0.10181715618818998
+ Total time in IMI 0.1020078039728105 
+ Time Stamp when PRB control sent 1753810328.1462784 
+ Time to send control to the RAN 8.73291864991188e-05 
+1753810328.146 Time to get KPMs from RAN and store in database 0.10201936308294535
+ Total time in IMI 0.10219997726380825 
+ Time Stamp when PRB control sent 1753810328.4987211 
+ Time to send control to the RAN 4.940526559948921e-05 
+1753810328.498 Time to get KPMs from RAN and store in database 0.10140698496252298
+ Total time in IMI 0.10151524096727371 
+ Time Stamp when PRB control sent 1753810328.8505516 
+ Time to send control to the RAN 9.398069232702255e-05 
+1753810328.851 Time to get KPMs from RAN and store in database 0.1022707698866725
+ Total time in IMI 0.10245518013834953 
+ Time Stamp when PRB control sent 1753810329.2032845 
+ Time to send control to the RAN 8.979719132184982e-05 
+1753810329.203 Time to get KPMs from RAN and store in database 0.10195449320599437
+ Total time in IMI 0.10213311994448304 
+ Time Stamp when PRB control sent 1753810329.5557292 
+ Time to send control to the RAN 0.00011659692972898483 
+1753810329.556 Time to get KPMs from RAN and store in database 0.10211086925119162
+ Total time in IMI 0.10228713508695364 
+ Time Stamp when PRB control sent 1753810329.9079998 
+ Time to send control to the RAN 4.2601022869348526e-05 
+1753810329.908 Time to get KPMs from RAN and store in database 0.10105486027896404
+ Total time in IMI 0.10124627826735377 
+ Time Stamp when PRB control sent 1753810330.2594483 
+ Time to send control to the RAN 8.401600643992424e-05 
+1753810330.259 Time to get KPMs from RAN and store in database 0.10174268390983343
+ Total time in IMI 0.10190342599526048 
+ Time Stamp when PRB control sent 1753810330.6115472 
+ Time to send control to the RAN 9.281374514102936e-05 
+1753810330.611 Time to get KPMs from RAN and store in database 0.10228679701685905
+ Total time in IMI 0.10246791504323483 
+ Time Stamp when PRB control sent 1753810330.964298 
+ Time to send control to the RAN 9.36710275709629e-05 
+1753810330.964 Time to get KPMs from RAN and store in database 0.10240326588973403
+ Total time in IMI 0.10258727893233299 
+ Time Stamp when PRB control sent 1753810331.317008 
+ Time to send control to the RAN 0.00012171175330877304 
+1753810331.317 Time to get KPMs from RAN and store in database 0.10181406186893582
+ Total time in IMI 0.10198770090937614 
+ Time Stamp when PRB control sent 1753810331.6692371 
+ Time to send control to the RAN 8.616317063570023e-05 
+1753810331.669 Time to get KPMs from RAN and store in database 0.10189239168539643
+ Total time in IMI 0.10205600876361132 
+ Time Stamp when PRB control sent 1753810332.02154 
+ Time to send control to the RAN 5.541136488318443e-05 
+1753810332.021 Time to get KPMs from RAN and store in database 0.10132215730845928
+ Total time in IMI 0.10144365578889847 
+ Time Stamp when PRB control sent 1753810332.3732889 
+ Time to send control to the RAN 8.036801591515541e-05 
+1753810332.373 Time to get KPMs from RAN and store in database 0.1017280318774283
+ Total time in IMI 0.10188888804987073 
+ Time Stamp when PRB control sent 1753810332.725356 
+ Time to send control to the RAN 8.704513311386108e-05 
+1753810332.725 Time to get KPMs from RAN and store in database 0.10269339894875884
+ Total time in IMI 0.10288233309984207 
+ Time Stamp when PRB control sent 1753810333.0785787 
+ Time to send control to the RAN 0.0001368178054690361 
+1753810333.078 Time to get KPMs from RAN and store in database 0.10250511998310685
+ Total time in IMI 0.10275494260713458 
+ Time Stamp when PRB control sent 1753810333.4316366 
+ Time to send control to the RAN 0.00014438200742006302 
+1753810333.431 Time to get KPMs from RAN and store in database 0.10186255583539605
+ Total time in IMI 0.10208141291514039 
+ Time Stamp when PRB control sent 1753810333.783889 
+ Time to send control to the RAN 3.8329046219587326e-05 
+1753810333.784 Time to get KPMs from RAN and store in database 0.10086392518132925
+ Total time in IMI 0.10095220385119319 
+ Time Stamp when PRB control sent 1753810334.1349783 
+ Time to send control to the RAN 8.71303491294384e-05 
+1753810334.135 Time to get KPMs from RAN and store in database 0.10234844032675028
+ Total time in IMI 0.10252928407862782 
+ Time Stamp when PRB control sent 1753810334.4875815 
+ Time to send control to the RAN 8.804583922028542e-05 
+1753810334.487 Time to get KPMs from RAN and store in database 0.10201869904994965
+ Total time in IMI 0.10219515208154917 
+ Time Stamp when PRB control sent 1753810334.8399904 
+ Time to send control to the RAN 9.366078302264214e-05 
+1753810334.84 Time to get KPMs from RAN and store in database 0.10197270894423127
+ Total time in IMI 0.10213238606229424 
+ Time Stamp when PRB control sent 1753810335.1922512 
+ Time to send control to the RAN 0.00011322461068630219 
+1753810335.192 Time to get KPMs from RAN and store in database 0.10177177097648382
+ Total time in IMI 0.10196468513458967 
+ Time Stamp when PRB control sent 1753810335.544413 
+ Time to send control to the RAN 3.301212564110756e-05 
+1753810335.544 Time to get KPMs from RAN and store in database 0.10091247083619237
+ Total time in IMI 0.10107081104069948 
+ Time Stamp when PRB control sent 1753810335.8957696 
+ Time to send control to the RAN 5.014101043343544e-05 
+1753810335.895 Time to get KPMs from RAN and store in database 0.10086581110954285
+ Total time in IMI 0.1009738827124238 
+ Time Stamp when PRB control sent 1753810336.2470043 
+ Time to send control to the RAN 0.00011784583330154419 
+1753810336.247 Time to get KPMs from RAN and store in database 0.10293141286820173
+ Total time in IMI 0.10313948197290301 
+ Time Stamp when PRB control sent 1753810336.600434 
+ Time to send control to the RAN 0.00011912593618035316 
+1753810336.6 Time to get KPMs from RAN and store in database 0.10255041439086199
+ Total time in IMI 0.10275259288027883 
+ Time Stamp when PRB control sent 1753810336.953487 
+ Time to send control to the RAN 0.00012722425162792206 
+1753810336.953 Time to get KPMs from RAN and store in database 0.102156862616539
+ Total time in IMI 0.1023758677765727 
+ Time Stamp when PRB control sent 1753810337.3059423 
+ Time to send control to the RAN 6.204284727573395e-05 
+1753810337.306 Time to get KPMs from RAN and store in database 0.1013857158832252
+ Total time in IMI 0.1015216470696032 
+ Time Stamp when PRB control sent 1753810337.657815 
+ Time to send control to the RAN 0.00012725405395030975 
+1753810337.658 Time to get KPMs from RAN and store in database 0.10249336995184422
+ Total time in IMI 0.10273471381515265 
+ Time Stamp when PRB control sent 1753810338.0108535 
+ Time to send control to the RAN 0.00015384797006845474 
+1753810338.011 Time to get KPMs from RAN and store in database 0.10263926861807704
+ Total time in IMI 0.10289942380040884 
+ Time Stamp when PRB control sent 1753810338.3639824 
+ Time to send control to the RAN 9.505962952971458e-05 
+1753810338.364 Time to get KPMs from RAN and store in database 0.1021157312206924
+ Total time in IMI 0.1023013312369585 
+ Time Stamp when PRB control sent 1753810338.7165658 
+ Time to send control to the RAN 9.436020627617836e-05 
+1753810338.716 Time to get KPMs from RAN and store in database 0.10226266365498304
+ Total time in IMI 0.1024352079257369 
+ Time Stamp when PRB control sent 1753810339.0693135 
+ Time to send control to the RAN 0.00012019183486700058 
+1753810339.069 Time to get KPMs from RAN and store in database 0.10237748082727194
+ Total time in IMI 0.10259686782956123 
+ Time Stamp when PRB control sent 1753810339.4219656 
+ Time to send control to the RAN 7.951818406581879e-05 
+1753810339.422 Time to get KPMs from RAN and store in database 0.10147424973547459
+ Total time in IMI 0.10163914179429412 
+ Time Stamp when PRB control sent 1753810339.7739463 
+ Time to send control to the RAN 0.00013541290536522865 
+1753810339.774 Time to get KPMs from RAN and store in database 0.10236090794205666
+ Total time in IMI 0.1025999216362834 
+ Time Stamp when PRB control sent 1753810340.1269581 
+ Time to send control to the RAN 0.00017730984836816788 
+1753810340.127 Time to get KPMs from RAN and store in database 0.10250550275668502
+ Total time in IMI 0.10278698010370135 
+ Time Stamp when PRB control sent 1753810340.4800272 
+ Time to send control to the RAN 0.00014263996854424477 
+1753810340.48 Time to get KPMs from RAN and store in database 0.10242403531447053
+ Total time in IMI 0.10267972713336349 
+ Time Stamp when PRB control sent 1753810340.8330126 
+ Time to send control to the RAN 0.00012141885235905647 
+1753810340.833 Time to get KPMs from RAN and store in database 0.10233274288475513
+ Total time in IMI 0.1025435971096158 
+ Time Stamp when PRB control sent 1753810341.1857886 
+ Time to send control to the RAN 5.5952928960323334e-05 
+1753810341.185 Time to get KPMs from RAN and store in database 0.10076627181842923
+ Total time in IMI 0.10087642213329673 
+ Time Stamp when PRB control sent 1753810341.5369613 
+ Time to send control to the RAN 7.836008444428444e-05 
+1753810341.537 Time to get KPMs from RAN and store in database 0.10216722497716546
+ Total time in IMI 0.1023249588906765 
+ Time Stamp when PRB control sent 1753810341.8895822 
+ Time to send control to the RAN 9.390618652105331e-05 
+1753810341.889 Time to get KPMs from RAN and store in database 0.10193494101986289
+ Total time in IMI 0.10211768234148622 
+ Time Stamp when PRB control sent 1753810342.24199 
+ Time to send control to the RAN 9.746802970767021e-05 
+1753810342.242 Time to get KPMs from RAN and store in database 0.10222275089472532
+ Total time in IMI 0.1024831049144268 
+ Time Stamp when PRB control sent 1753810342.5947566 
+ Time to send control to the RAN 9.600585326552391e-05 
+1753810342.595 Time to get KPMs from RAN and store in database 0.10202704789116979
+ Total time in IMI 0.10222485894337296 
+ Time Stamp when PRB control sent 1753810342.947264 
+ Time to send control to the RAN 9.217485785484314e-05 
+1753810342.947 Time to get KPMs from RAN and store in database 0.10231031058356166
+ Total time in IMI 0.10248642275109887 
+ Time Stamp when PRB control sent 1753810343.299914 
+ Time to send control to the RAN 3.478908911347389e-05 
+1753810343.3 Time to get KPMs from RAN and store in database 0.10084043582901359
+ Total time in IMI 0.1009242320433259 
+ Time Stamp when PRB control sent 1753810343.650921 
+ Time to send control to the RAN 4.071509465575218e-05 
+1753810343.651 Time to get KPMs from RAN and store in database 0.10084570199251175
+ Total time in IMI 0.10092534311115742 
+ Time Stamp when PRB control sent 1753810344.0019262 
+ Time to send control to the RAN 4.669232293963432e-05 
+1753810344.002 Time to get KPMs from RAN and store in database 0.10085660684853792
+ Total time in IMI 0.10094483522698283 
+ Time Stamp when PRB control sent 1753810344.3529186 
+ Time to send control to the RAN 4.0831975638866425e-05 
+1753810344.353 Time to get KPMs from RAN and store in database 0.10088518494740129
+ Total time in IMI 0.1009639399126172 
+ Time Stamp when PRB control sent 1753810344.70406 
+ Time to send control to the RAN 4.194304347038269e-05 
+1753810344.704 Time to get KPMs from RAN and store in database 0.10067893890663981
+ Total time in IMI 0.10075576929375529 
+ Time Stamp when PRB control sent 1753810345.05492 
+ Time to send control to the RAN 4.226621240377426e-05 
+1753810345.055 Time to get KPMs from RAN and store in database 0.10082485619932413
+ Total time in IMI 0.10090521024540067 
+ Time Stamp when PRB control sent 1753810345.4059243 
+ Time to send control to the RAN 4.657916724681854e-05 
+1753810345.406 Time to get KPMs from RAN and store in database 0.10083675989881158
+ Total time in IMI 0.10092234006151557 
+ Time Stamp when PRB control sent 1753810345.7569816 
+ Time to send control to the RAN 9.340327233076096e-05 
+1753810345.757 Time to get KPMs from RAN and store in database 0.10196340596303344
+ Total time in IMI 0.10214776918292046 
+ Time Stamp when PRB control sent 1753810346.1093545 
+ Time to send control to the RAN 4.006270319223404e-05 
+1753810346.109 Time to get KPMs from RAN and store in database 0.10086488956585526
+ Total time in IMI 0.10095639387145638 
+ Time Stamp when PRB control sent 1753810346.460638 
+ Time to send control to the RAN 9.465310722589493e-05 
+1753810346.46 Time to get KPMs from RAN and store in database 0.10192155418917537
+ Total time in IMI 0.10210506990551949 
+ Time Stamp when PRB control sent 1753810346.8129652 
+ Time to send control to the RAN 8.136685937643051e-05 
+1753810346.813 Time to get KPMs from RAN and store in database 0.10220005083829165
+ Total time in IMI 0.10236314684152603 
+ Time Stamp when PRB control sent 1753810347.1656249 
+ Time to send control to the RAN 9.47960652410984e-05 
+1753810347.165 Time to get KPMs from RAN and store in database 0.1019508563913405
+ Total time in IMI 0.10212663188576698 
+ Time Stamp when PRB control sent 1753810347.5180058 
+ Time to send control to the RAN 0.00010663038119673729 
+1753810347.518 Time to get KPMs from RAN and store in database 0.10223607486113906
+ Total time in IMI 0.10243746917694807 
+ Time Stamp when PRB control sent 1753810347.8705423 
+ Time to send control to the RAN 4.378659650683403e-05 
+1753810347.87 Time to get KPMs from RAN and store in database 0.101043283008039
+ Total time in IMI 0.10115914698690176 
+ Time Stamp when PRB control sent 1753810348.2220232 
+ Time to send control to the RAN 0.00012836884707212448 
+1753810348.222 Time to get KPMs from RAN and store in database 0.10244864597916603
+ Total time in IMI 0.1026774849742651 
+ Time Stamp when PRB control sent 1753810348.5749686 
+ Time to send control to the RAN 9.610503911972046e-05 
+1753810348.575 Time to get KPMs from RAN and store in database 0.10202950099483132
+ Total time in IMI 0.10311278514564037 
+ Time Stamp when PRB control sent 1753810348.9283662 
+ Time to send control to the RAN 9.690085425972939e-05 
+1753810348.928 Time to get KPMs from RAN and store in database 0.10198512300848961
+ Total time in IMI 0.10218609776347876 
+ Time Stamp when PRB control sent 1753810349.2809052 
+ Time to send control to the RAN 0.00016078632324934006 
+1753810349.281 Time to get KPMs from RAN and store in database 0.1023995978757739
+ Total time in IMI 0.10265155974775553 
+ Time Stamp when PRB control sent 1753810349.6337867 
+ Time to send control to the RAN 0.00010620476678013802 
+1753810349.634 Time to get KPMs from RAN and store in database 0.10232887137681246
+ Total time in IMI 0.1025096820667386 
+ Time Stamp when PRB control sent 1753810349.986378 
+ Time to send control to the RAN 8.887797594070435e-05 
+1753810349.986 Time to get KPMs from RAN and store in database 0.1017496190033853
+ Total time in IMI 0.1019256729632616 
+ Time Stamp when PRB control sent 1753810350.3385932 
+ Time to send control to the RAN 9.765941649675369e-05 
+1753810350.339 Time to get KPMs from RAN and store in database 0.10201822500675917
+ Total time in IMI 0.10220570210367441 
+ Time Stamp when PRB control sent 1753810350.6910014 
+ Time to send control to the RAN 9.790807962417603e-05 
+1753810350.691 Time to get KPMs from RAN and store in database 0.10174022195860744
+ Total time in IMI 0.1019277460873127 
+ Time Stamp when PRB control sent 1753810351.0430524 
+ Time to send control to the RAN 9.919190779328346e-05 
+1753810351.043 Time to get KPMs from RAN and store in database 0.10228560585528612
+ Total time in IMI 0.10247640497982502 
+ Time Stamp when PRB control sent 1753810351.3958066 
+ Time to send control to the RAN 7.263803854584694e-05 
+1753810351.396 Time to get KPMs from RAN and store in database 0.10147878341376781
+ Total time in IMI 0.10161845292896032 
+ Time Stamp when PRB control sent 1753810351.7477338 
+ Time to send control to the RAN 9.368918836116791e-05 
+1753810351.748 Time to get KPMs from RAN and store in database 0.10179094411432743
+ Total time in IMI 0.10197293804958463 
+ Time Stamp when PRB control sent 1753810352.0999918 
+ Time to send control to the RAN 9.756116196513176e-05 
+1753810352.1 Time to get KPMs from RAN and store in database 0.10237557021901011
+ Total time in IMI 0.10256351809948683 
+ Time Stamp when PRB control sent 1753810352.452843 
+ Time to send control to the RAN 9.894091635942459e-05 
+1753810352.453 Time to get KPMs from RAN and store in database 0.10228474671021104
+ Total time in IMI 0.10246173478662968 
+ Time Stamp when PRB control sent 1753810352.8055785 
+ Time to send control to the RAN 9.567523375153542e-05 
+1753810352.805 Time to get KPMs from RAN and store in database 0.10199628584086895
+ Total time in IMI 0.10218179319053888 
+ Time Stamp when PRB control sent 1753810353.1579542 
+ Time to send control to the RAN 5.4188072681427e-05 
+1753810353.158 Time to get KPMs from RAN and store in database 0.10117731802165508
+ Total time in IMI 0.10128878382965922 
+ Time Stamp when PRB control sent 1753810353.5095532 
+ Time to send control to the RAN 9.141117334365845e-05 
+1753810353.509 Time to get KPMs from RAN and store in database 0.10192706622183323
+ Total time in IMI 0.10210808273404837 
+ Time Stamp when PRB control sent 1753810353.861975 
+ Time to send control to the RAN 0.00012540770694613457 
+1753810353.862 Time to get KPMs from RAN and store in database 0.10185852507129312
+ Total time in IMI 0.10206180904060602 
+ Time Stamp when PRB control sent 1753810354.2142918 
+ Time to send control to the RAN 9.155320003628731e-05 
+1753810354.214 Time to get KPMs from RAN and store in database 0.10259125474840403
+ Total time in IMI 0.1027759169228375 
+ Time Stamp when PRB control sent 1753810354.5672245 
+ Time to send control to the RAN 8.32253135740757e-05 
+1753810354.567 Time to get KPMs from RAN and store in database 0.10229311091825366
+ Total time in IMI 0.10253241518512368 
+ Time Stamp when PRB control sent 1753810354.9200118 
+ Time to send control to the RAN 0.00011818110942840576 
+1753810354.92 Time to get KPMs from RAN and store in database 0.10171893518418074
+ Total time in IMI 0.10192112578079104 
+ Time Stamp when PRB control sent 1753810355.27197 
+ Time to send control to the RAN 8.458690717816353e-05 
+1753810355.272 Time to get KPMs from RAN and store in database 0.10238307481631637
+ Total time in IMI 0.1025605876930058 
+ Time Stamp when PRB control sent 1753810355.6247468 
+ Time to send control to the RAN 0.00014320900663733482 
+1753810355.625 Time to get KPMs from RAN and store in database 0.10242540389299393
+ Total time in IMI 0.10268053971230984 
+ Time Stamp when PRB control sent 1753810355.977718 
+ Time to send control to the RAN 0.00013238238170742989 
+1753810355.978 Time to get KPMs from RAN and store in database 0.10227317502722144
+ Total time in IMI 0.10251438105478883 
+ Time Stamp when PRB control sent 1753810356.3302927 
+ Time to send control to the RAN 9.236996993422508e-05 
+1753810356.33 Time to get KPMs from RAN and store in database 0.10252835880964994
+ Total time in IMI 0.10269008995965123 
+ Time Stamp when PRB control sent 1753810356.683191 
+ Time to send control to the RAN 0.00013714609667658806 
+1753810356.683 Time to get KPMs from RAN and store in database 0.10237880609929562
+ Total time in IMI 0.10260698292404413 
+ Time Stamp when PRB control sent 1753810357.0360067 
+ Time to send control to the RAN 0.0001079607754945755 
+1753810357.036 Time to get KPMs from RAN and store in database 0.10099265910685062
+ Total time in IMI 0.1011544018983841 
+ Time Stamp when PRB control sent 1753810357.3874104 
+ Time to send control to the RAN 8.895620703697205e-05 
+1753810357.387 Time to get KPMs from RAN and store in database 0.10168300708755851
+ Total time in IMI 0.10185905918478966 
+ Time Stamp when PRB control sent 1753810357.7393808 
+ Time to send control to the RAN 9.128730744123459e-05 
+1753810357.739 Time to get KPMs from RAN and store in database 0.10173062793910503
+ Total time in IMI 0.10191547870635986 
+ Time Stamp when PRB control sent 1753810358.091475 
+ Time to send control to the RAN 9.476020932197571e-05 
+1753810358.091 Time to get KPMs from RAN and store in database 0.10235587880015373
+ Total time in IMI 0.1025423570536077 
+ Time Stamp when PRB control sent 1753810358.444236 
+ Time to send control to the RAN 0.00012697605416178703 
+1753810358.444 Time to get KPMs from RAN and store in database 0.10227579297497869
+ Total time in IMI 0.10249559720978141 
+ Time Stamp when PRB control sent 1753810358.797006 
+ Time to send control to the RAN 0.0001105000264942646 
+1753810358.797 Time to get KPMs from RAN and store in database 0.1006599492393434
+ Total time in IMI 0.10081588290631771 
+ Time Stamp when PRB control sent 1753810359.1479833 
+ Time to send control to the RAN 9.430106729269028e-05 
+1753810359.148 Time to get KPMs from RAN and store in database 0.10204752488061786
+ Total time in IMI 0.10221394011750817 
+ Time Stamp when PRB control sent 1753810359.5003765 
+ Time to send control to the RAN 9.454181417822838e-05 
+1753810359.5 Time to get KPMs from RAN and store in database 0.10204352717846632
+ Total time in IMI 0.10222914116457105 
+ Time Stamp when PRB control sent 1753810359.852906 
+ Time to send control to the RAN 0.0001123170368373394 
+1753810359.853 Time to get KPMs from RAN and store in database 0.10212659602984786
+ Total time in IMI 0.1023123231716454 
+ Time Stamp when PRB control sent 1753810360.2052891 
+ Time to send control to the RAN 8.567608892917633e-05 
+1753810360.205 Time to get KPMs from RAN and store in database 0.102981670293957
+ Total time in IMI 0.10315230721607804 
+ Time Stamp when PRB control sent 1753810360.5587301 
+ Time to send control to the RAN 7.79610127210617e-05 
+1753810360.558 Time to get KPMs from RAN and store in database 0.1009267270565033
+ Total time in IMI 0.10105386190116405 
+ Time Stamp when PRB control sent 1753810360.9099731 
+ Time to send control to the RAN 8.326303213834763e-05 
+1753810360.91 Time to get KPMs from RAN and store in database 0.10187525022774935
+ Total time in IMI 0.10204557096585631 
+ Time Stamp when PRB control sent 1753810361.2623105 
+ Time to send control to the RAN 9.293016046285629e-05 
+1753810361.262 Time to get KPMs from RAN and store in database 0.101918316911906
+ Total time in IMI 0.10209953179582953 
+ Time Stamp when PRB control sent 1753810361.614696 
+ Time to send control to the RAN 9.202118963003159e-05 
+1753810361.615 Time to get KPMs from RAN and store in database 0.10299500497058034
+ Total time in IMI 0.10316790407523513 
+ Time Stamp when PRB control sent 1753810361.968005 
+ Time to send control to the RAN 0.00011686095967888832 
+1753810361.968 Time to get KPMs from RAN and store in database 0.10182863427326083
+ Total time in IMI 0.1020285408012569 
+ Time Stamp when PRB control sent 1753810362.3202307 
+ Time to send control to the RAN 3.4044962376356125e-05 
+1753810362.32 Time to get KPMs from RAN and store in database 0.1008156449533999
+ Total time in IMI 0.1009044530801475 
+ Time Stamp when PRB control sent 1753810362.6714642 
+ Time to send control to the RAN 8.967332541942596e-05 
+1753810362.671 Time to get KPMs from RAN and store in database 0.10219042701646686
+ Total time in IMI 0.10236683022230864 
+ Time Stamp when PRB control sent 1753810363.0240617 
+ Time to send control to the RAN 8.909311145544052e-05 
+1753810363.024 Time to get KPMs from RAN and store in database 0.10194714181125164
+ Total time in IMI 0.10211571305990219 
+ Time Stamp when PRB control sent 1753810363.3764687 
+ Time to send control to the RAN 9.906105697154999e-05 
+1753810363.376 Time to get KPMs from RAN and store in database 0.1016388451680541
+ Total time in IMI 0.1018092860467732 
+ Time Stamp when PRB control sent 1753810363.728547 
+ Time to send control to the RAN 9.086402133107185e-05 
+1753810363.728 Time to get KPMs from RAN and store in database 0.10213204473257065
+ Total time in IMI 0.10230988496914506 
+ Time Stamp when PRB control sent 1753810364.0810235 
+ Time to send control to the RAN 5.705375224351883e-05 
+1753810364.081 Time to get KPMs from RAN and store in database 0.10116134211421013
+ Total time in IMI 0.1012750887311995 
+ Time Stamp when PRB control sent 1753810364.4326005 
+ Time to send control to the RAN 8.789636194705963e-05 
+1753810364.432 Time to get KPMs from RAN and store in database 0.10212375642731786
+ Total time in IMI 0.1023112228140235 
+ Time Stamp when PRB control sent 1753810364.7850332 
+ Time to send control to the RAN 0.00014466000720858574 
+1753810364.785 Time to get KPMs from RAN and store in database 0.10233224695548415
+ Total time in IMI 0.10257144598290324 
+ Time Stamp when PRB control sent 1753810365.1376019 
+ Time to send control to the RAN 9.59751196205616e-05 
+1753810365.137 Time to get KPMs from RAN and store in database 0.10248192399740219
+ Total time in IMI 0.1026529697701335 
+ Time Stamp when PRB control sent 1753810365.4905272 
+ Time to send control to the RAN 8.899299427866936e-05 
+1753810365.49 Time to get KPMs from RAN and store in database 0.10294347908347845
+ Total time in IMI 0.10311680100858212 
+ Time Stamp when PRB control sent 1753810365.8439405 
+ Time to send control to the RAN 0.0001051090657711029 
+1753810365.844 Time to get KPMs from RAN and store in database 0.10161774419248104
+ Total time in IMI 0.10179624985903502 
+ Time Stamp when PRB control sent 1753810366.1959896 
+ Time to send control to the RAN 0.00010602129623293877 
+1753810366.196 Time to get KPMs from RAN and store in database 0.10218341276049614
+ Total time in IMI 0.1023694439791143 
+ Time Stamp when PRB control sent 1753810366.548629 
+ Time to send control to the RAN 8.838903158903122e-05 
+1753810366.549 Time to get KPMs from RAN and store in database 0.1020666011609137
+ Total time in IMI 0.10224845027551055 
+ Time Stamp when PRB control sent 1753810366.9012694 
+ Time to send control to the RAN 0.00012600002810359 
+1753810366.901 Time to get KPMs from RAN and store in database 0.10252598021179438
+ Total time in IMI 0.10284751979634166 
+ Time Stamp when PRB control sent 1753810367.25443 
+ Time to send control to the RAN 0.000130373053252697 
+1753810367.254 Time to get KPMs from RAN and store in database 0.10317979101091623
+ Total time in IMI 0.1034167381003499 
+ Time Stamp when PRB control sent 1753810367.6080134 
+ Time to send control to the RAN 0.00012403912842273712 
+1753810367.608 Time to get KPMs from RAN and store in database 0.10222363006323576
+ Total time in IMI 0.10244983527809381 
+ Time Stamp when PRB control sent 1753810367.960752 
+ Time to send control to the RAN 0.00012037483975291252 
+1753810367.961 Time to get KPMs from RAN and store in database 0.10251558711752295
+ Total time in IMI 0.10273694666102529 
+ Time Stamp when PRB control sent 1753810368.3137872 
+ Time to send control to the RAN 0.00012842519208788872 
+1753810368.314 Time to get KPMs from RAN and store in database 0.10230037523433566
+ Total time in IMI 0.1025278139859438 
+ Time Stamp when PRB control sent 1753810368.6665628 
+ Time to send control to the RAN 9.163608774542809e-05 
+1753810368.666 Time to get KPMs from RAN and store in database 0.10212991992011666
+ Total time in IMI 0.10229074116796255 
+ Time Stamp when PRB control sent 1753810369.018995 
+ Time to send control to the RAN 4.182197153568268e-05 
+1753810369.019 Time to get KPMs from RAN and store in database 0.10078517207875848
+ Total time in IMI 0.10086536407470703 
+ Time Stamp when PRB control sent 1753810369.3699236 
+ Time to send control to the RAN 4.4411979615688324e-05 
+1753810369.37 Time to get KPMs from RAN and store in database 0.10065785190090537
+ Total time in IMI 0.1007352783344686 
+ Time Stamp when PRB control sent 1753810369.7209198 
+ Time to send control to the RAN 4.1179824620485306e-05 
+1753810369.721 Time to get KPMs from RAN and store in database 0.1009391350671649
+ Total time in IMI 0.10101832589134574 
+ Time Stamp when PRB control sent 1753810370.0722044 
+ Time to send control to the RAN 4.409626126289368e-05 
+1753810370.072 Time to get KPMs from RAN and store in database 0.10086073819547892
+ Total time in IMI 0.10094069503247738 
+ Time Stamp when PRB control sent 1753810370.4232247 
+ Time to send control to the RAN 4.4114887714385986e-05 
+1753810370.423 Time to get KPMs from RAN and store in database 0.10074611194431782
+ Total time in IMI 0.10082891304045916 
+ Time Stamp when PRB control sent 1753810370.7742314 
+ Time to send control to the RAN 9.141070768237114e-05 
+1753810370.774 Time to get KPMs from RAN and store in database 0.10209827311336994
+ Total time in IMI 0.10227425210177898 
+ Time Stamp when PRB control sent 1753810371.1267962 
+ Time to send control to the RAN 0.00010137911885976791 
+1753810371.127 Time to get KPMs from RAN and store in database 0.10184725699946284
+ Total time in IMI 0.10203002905473113 
+ Time Stamp when PRB control sent 1753810371.4790168 
+ Time to send control to the RAN 0.00012213224545121193 
+1753810371.479 Time to get KPMs from RAN and store in database 0.10243364609777927
+ Total time in IMI 0.10263874987140298 
+ Time Stamp when PRB control sent 1753810371.831911 
+ Time to send control to the RAN 9.926594793796539e-05 
+1753810371.832 Time to get KPMs from RAN and store in database 0.10312316892668605
+ Total time in IMI 0.10330636892467737 
+ Time Stamp when PRB control sent 1753810372.1854577 
+ Time to send control to the RAN 6.24251551926136e-05 
+1753810372.185 Time to get KPMs from RAN and store in database 0.10071688098832965
+ Total time in IMI 0.10083165811374784 
+ Time Stamp when PRB control sent 1753810372.5365884 
+ Time to send control to the RAN 9.05119813978672e-05 
+1753810372.537 Time to get KPMs from RAN and store in database 0.10207947576418519
+ Total time in IMI 0.102260478772223 
+ Time Stamp when PRB control sent 1753810372.8889964 
+ Time to send control to the RAN 9.795511141419411e-05 
+1753810372.889 Time to get KPMs from RAN and store in database 0.10180313512682915
+ Total time in IMI 0.10200374480336905 
+ Time Stamp when PRB control sent 1753810373.2412758 
+ Time to send control to the RAN 8.997274562716484e-05 
+1753810373.241 Time to get KPMs from RAN and store in database 0.10171315725892782
+ Total time in IMI 0.10188776208087802 
+ Time Stamp when PRB control sent 1753810373.593467 
+ Time to send control to the RAN 0.00010579917579889297 
+1753810373.593 Time to get KPMs from RAN and store in database 0.10214350000023842
+ Total time in IMI 0.10233492078259587 
+ Time Stamp when PRB control sent 1753810373.9460433 
+ Time to send control to the RAN 0.00011515803635120392 
+1753810373.946 Time to get KPMs from RAN and store in database 0.10223500384017825
+ Total time in IMI 0.1024364773184061 
+ Time Stamp when PRB control sent 1753810374.2987382 
+ Time to send control to the RAN 9.01930034160614e-05 
+1753810374.299 Time to get KPMs from RAN and store in database 0.10189450113102794
+ Total time in IMI 0.10207266686484218 
+ Time Stamp when PRB control sent 1753810374.650976 
+ Time to send control to the RAN 8.956389501690865e-05 
+1753810374.651 Time to get KPMs from RAN and store in database 0.10208956385031343
+ Total time in IMI 0.1022691149264574 
+ Time Stamp when PRB control sent 1753810375.0035253 
+ Time to send control to the RAN 8.928636088967323e-05 
+1753810375.003 Time to get KPMs from RAN and store in database 0.10224980814382434
+ Total time in IMI 0.10240484913811088 
+ Time Stamp when PRB control sent 1753810375.356003 
+ Time to send control to the RAN 0.00010064616799354553 
+1753810375.356 Time to get KPMs from RAN and store in database 0.1032596449367702
+ Total time in IMI 0.10344095015898347 
+ Time Stamp when PRB control sent 1753810375.709715 
+ Time to send control to the RAN 9.106798097491264e-05 
+1753810375.71 Time to get KPMs from RAN and store in database 0.1020332770422101
+ Total time in IMI 0.10220500873401761 
+ Time Stamp when PRB control sent 1753810376.0620184 
+ Time to send control to the RAN 0.00013168668374419212 
+1753810376.062 Time to get KPMs from RAN and store in database 0.10315915895625949
+ Total time in IMI 0.10336797498166561 
+ Time Stamp when PRB control sent 1753810376.4156318 
+ Time to send control to the RAN 9.366218000650406e-05 
+1753810376.416 Time to get KPMs from RAN and store in database 0.10214992240071297
+ Total time in IMI 0.10235289530828595 
+ Time Stamp when PRB control sent 1753810376.768284 
+ Time to send control to the RAN 0.00010170415043830872 
+1753810376.768 Time to get KPMs from RAN and store in database 0.10197600396350026
+ Total time in IMI 0.10214905394241214 
+ Time Stamp when PRB control sent 1753810377.1205275 
+ Time to send control to the RAN 8.62879678606987e-05 
+1753810377.12 Time to get KPMs from RAN and store in database 0.10196421528235078
+ Total time in IMI 0.10211463877931237 
+ Time Stamp when PRB control sent 1753810377.4727967 
+ Time to send control to the RAN 0.00010141916573047638 
+1753810377.473 Time to get KPMs from RAN and store in database 0.10238169925287366
+ Total time in IMI 0.10256745759397745 
+ Time Stamp when PRB control sent 1753810377.8256512 
+ Time to send control to the RAN 0.00011253589764237404 
+1753810377.826 Time to get KPMs from RAN and store in database 0.10216647805646062
+ Total time in IMI 0.10237237298861146 
+ Time Stamp when PRB control sent 1753810378.1783335 
+ Time to send control to the RAN 0.00012224074453115463 
+1753810378.178 Time to get KPMs from RAN and store in database 0.10212756367400289
+ Total time in IMI 0.10233887191861868 
+ Time Stamp when PRB control sent 1753810378.5307765 
+ Time to send control to the RAN 9.946106001734734e-05 
+1753810378.531 Time to get KPMs from RAN and store in database 0.10182265983894467
+ Total time in IMI 0.10198649996891618 
+ Time Stamp when PRB control sent 1753810378.882987 
+ Time to send control to the RAN 9.541120380163193e-05 
+1753810378.883 Time to get KPMs from RAN and store in database 0.10184260690584779
+ Total time in IMI 0.10202000895515084 
+ Time Stamp when PRB control sent 1753810379.2352798 
+ Time to send control to the RAN 8.327700197696686e-05 
+1753810379.235 Time to get KPMs from RAN and store in database 0.10212755296379328
+ Total time in IMI 0.10236289305612445 
+ Time Stamp when PRB control sent 1753810379.5879347 
+ Time to send control to the RAN 9.706709533929825e-05 
+1753810379.588 Time to get KPMs from RAN and store in database 0.10189355676993728
+ Total time in IMI 0.10207505524158478 
+ Time Stamp when PRB control sent 1753810379.9402883 
+ Time to send control to the RAN 9.361002594232559e-05 
+1753810379.94 Time to get KPMs from RAN and store in database 0.10187467932701111
+ Total time in IMI 0.10206940304487944 
+ Time Stamp when PRB control sent 1753810380.292608 
+ Time to send control to the RAN 0.00015252502635121346 
+1753810380.293 Time to get KPMs from RAN and store in database 0.10222056601196527
+ Total time in IMI 0.10247325990349054 
+ Time Stamp when PRB control sent 1753810380.645311 
+ Time to send control to the RAN 9.424984455108643e-05 
+1753810380.645 Time to get KPMs from RAN and store in database 0.10183768905699253
+ Total time in IMI 0.10200489405542612 
+ Time Stamp when PRB control sent 1753810380.9975908 
+ Time to send control to the RAN 9.09632071852684e-05 
+1753810380.997 Time to get KPMs from RAN and store in database 0.1022398485802114
+ Total time in IMI 0.10241595329716802 
+ Time Stamp when PRB control sent 1753810381.3502433 
+ Time to send control to the RAN 4.932889714837074e-05 
+1753810381.35 Time to get KPMs from RAN and store in database 0.10133730014786124
+ Total time in IMI 0.10144784580916166 
+ Time Stamp when PRB control sent 1753810381.7021208 
+ Time to send control to the RAN 0.00012860866263508797 
+1753810381.702 Time to get KPMs from RAN and store in database 0.10241994587704539
+ Total time in IMI 0.10264549311250448 
+ Time Stamp when PRB control sent 1753810382.0549893 
+ Time to send control to the RAN 0.00010138982906937599 
+1753810382.055 Time to get KPMs from RAN and store in database 0.10215383907780051
+ Total time in IMI 0.10233255894854665 
+ Time Stamp when PRB control sent 1753810382.4073896 
+ Time to send control to the RAN 9.566079825162888e-05 
+1753810382.407 Time to get KPMs from RAN and store in database 0.10187648702412844
+ Total time in IMI 0.10204605804756284 
+ Time Stamp when PRB control sent 1753810382.7597098 
+ Time to send control to the RAN 9.083608165383339e-05 
+1753810382.76 Time to get KPMs from RAN and store in database 0.10242505185306072
+ Total time in IMI 0.10261417413130403 
+ Time Stamp when PRB control sent 1753810383.112565 
+ Time to send control to the RAN 5.142809823155403e-05 
+1753810383.112 Time to get KPMs from RAN and store in database 0.1009910348802805
+ Total time in IMI 0.10109354183077812 
+ Time Stamp when PRB control sent 1753810383.463981 
+ Time to send control to the RAN 8.78707505762577e-05 
+1753810383.464 Time to get KPMs from RAN and store in database 0.10259026661515236
+ Total time in IMI 0.1027718260884285 
+ Time Stamp when PRB control sent 1753810383.8169746 
+ Time to send control to the RAN 8.936412632465363e-05 
+1753810383.817 Time to get KPMs from RAN and store in database 0.10260600782930851
+ Total time in IMI 0.10357028106227517 
+ Time Stamp when PRB control sent 1753810384.1708503 
+ Time to send control to the RAN 0.00010386714711785316 
+1753810384.171 Time to get KPMs from RAN and store in database 0.10197828430682421
+ Total time in IMI 0.10218144673854113 
+ Time Stamp when PRB control sent 1753810384.5232744 
+ Time to send control to the RAN 6.772903725504875e-05 
+1753810384.523 Time to get KPMs from RAN and store in database 0.10170874372124672
+ Total time in IMI 0.10183361684903502 
+ Time Stamp when PRB control sent 1753810384.875381 
+ Time to send control to the RAN 6.972905248403549e-05 
+1753810384.875 Time to get KPMs from RAN and store in database 0.1016287892125547
+ Total time in IMI 0.10178000014275312 
+ Time Stamp when PRB control sent 1753810385.227536 
+ Time to send control to the RAN 0.0001563909463584423 
+1753810385.227 Time to get KPMs from RAN and store in database 0.10262883873656392
+ Total time in IMI 0.10287797125056386 
+ Time Stamp when PRB control sent 1753810385.5806403 
+ Time to send control to the RAN 9.707082062959671e-05 
+1753810385.58 Time to get KPMs from RAN and store in database 0.10196312004700303
+ Total time in IMI 0.10214294493198395 
+ Time to send control to the RAN 4.35682013630867e-05 
+1753810385.933 Time to get KPMs from RAN and store in database 0.10099986428394914
+Time to get I/Qs from RAN, convert to spectrograms and store in database 0.410109331831336
+ Total time in IMI 0.5112355840392411 
+ Time to send control to the RAN 9.837094694375992e-05 
+1753810386.694 Time to get KPMs from RAN and store in database 0.10188515996560454
+ Total time in IMI 0.3118893252685666 
+ Time to send control to the RAN 8.315593004226685e-05 
+1753810387.257 Time to get KPMs from RAN and store in database 0.10210948623716831
+ Total time in IMI 0.3086604969576001 
+ Time to send control to the RAN 6.730807945132256e-05 
+1753810387.815 Time to get KPMs from RAN and store in database 0.10160896740853786
+ Total time in IMI 0.30972145311534405 
+ Time to send control to the RAN 6.839772686362267e-05 
+1753810388.375 Time to get KPMs from RAN and store in database 0.10141628701239824
+ Total time in IMI 0.31074695382267237 
+ Time to send control to the RAN 7.19861127436161e-05 
+1753810388.936 Time to get KPMs from RAN and store in database 0.10183164617046714
+ Total time in IMI 0.3089322601445019 
+ Time to send control to the RAN 8.097710087895393e-05 
+1753810389.496 Time to get KPMs from RAN and store in database 0.10189455421641469
+ Total time in IMI 0.31077115098014474 
+ Time to send control to the RAN 6.940402090549469e-05 
+1753810390.057 Time to get KPMs from RAN and store in database 0.10178869497030973
+ Total time in IMI 0.30960287479683757 
+ Time to send control to the RAN 7.725972682237625e-05 
+1753810390.617 Time to get KPMs from RAN and store in database 0.10264693293720484
+Time to get I/Qs from RAN, convert to spectrograms and store in database 0.5730025200173259
+ Total time in IMI 0.6758434302173555 
+ Time to send control to the RAN 7.436610758304596e-05 
+1753810391.543 Time to get KPMs from RAN and store in database 0.10300725605338812
+ Total time in IMI 0.519190379884094 
+ Time to send control to the RAN 7.241172716021538e-05 
+1753810392.312 Time to get KPMs from RAN and store in database 0.10215503303334117
+ Total time in IMI 0.10468068299815059 
+ Time to send control to the RAN 7.352512329816818e-05 
+1753810392.667 Time to get KPMs from RAN and store in database 0.10175748588517308
+ Total time in IMI 0.3072862569242716 
+ Time to send control to the RAN 0.00010194908827543259 
+1753810393.225 Time to get KPMs from RAN and store in database 0.10226520476862788
+ Total time in IMI 0.10478923423215747 
+ Time to send control to the RAN 0.0001098080538213253 
+1753810393.58 Time to get KPMs from RAN and store in database 0.10219548922032118
+ Total time in IMI 0.5145703600719571 
+ Time Stamp when PRB control sent 1753810394.3446414 
+ Time to send control to the RAN 8.499389514327049e-05 
+1753810394.345 Time to get KPMs from RAN and store in database 0.10192593699321151
+ Total time in IMI 0.10209249425679445 
+ Time Stamp when PRB control sent 1753810394.6969342 
+ Time to send control to the RAN 5.522184073925018e-05 
+1753810394.697 Time to get KPMs from RAN and store in database 0.10125050693750381
+ Total time in IMI 0.10136977629736066 
+ Time Stamp when PRB control sent 1753810395.048577 
+ Time to send control to the RAN 5.3402967751026154e-05 
+1753810395.048 Time to get KPMs from RAN and store in database 0.1014043278992176
+ Total time in IMI 0.10151005117222667 
+ Time Stamp when PRB control sent 1753810395.40036 
+ Time to send control to the RAN 5.402322858572006e-05 
+1753810395.4 Time to get KPMs from RAN and store in database 0.10080079967156053
+ Total time in IMI 0.10090221697464585 
+ Time Stamp when PRB control sent 1753810395.7514517 
+ Time to send control to the RAN 0.00014385301619768143 
+1753810395.751 Time to get KPMs from RAN and store in database 0.1023524240590632
+ Total time in IMI 0.10258433222770691 
+ Time Stamp when PRB control sent 1753810396.1043296 
+ Time to send control to the RAN 0.00022780802100896835 
+1753810396.104 Time to get KPMs from RAN and store in database 0.10238505667075515
+ Total time in IMI 0.1027216799557209 
+ Time Stamp when PRB control sent 1753810396.4572365 
+ Time to send control to the RAN 4.6154018491506577e-05 
+1753810396.457 Time to get KPMs from RAN and store in database 0.10098530305549502
+ Total time in IMI 0.10110092116519809 
+ Time Stamp when PRB control sent 1753810396.8086214 
+ Time to send control to the RAN 5.708588287234306e-05 
+1753810396.808 Time to get KPMs from RAN and store in database 0.1009248229674995
+ Total time in IMI 0.10104723507538438 
+ Time Stamp when PRB control sent 1753810397.1599333 
+ Time to send control to the RAN 5.14020211994648e-05 
+1753810397.16 Time to get KPMs from RAN and store in database 0.10104456730186939
+ Total time in IMI 0.10114052891731262 
+ Time Stamp when PRB control sent 1753810397.5114207 
+ Time to send control to the RAN 0.0001249890774488449 
+1753810397.511 Time to get KPMs from RAN and store in database 0.10238880384713411
+ Total time in IMI 0.10259534325450659 
+ Time Stamp when PRB control sent 1753810397.8643253 
+ Time to send control to the RAN 0.00014256499707698822 
+1753810397.864 Time to get KPMs from RAN and store in database 0.10212158691138029
+ Total time in IMI 0.10237277112901211 
+ Time Stamp when PRB control sent 1753810398.2170153 
+ Time to send control to the RAN 0.00014914199709892273 
+1753810398.217 Time to get KPMs from RAN and store in database 0.10272987093776464
+ Total time in IMI 0.1029841136187315 
+ Time Stamp when PRB control sent 1753810398.5702357 
+ Time to send control to the RAN 9.018601849675179e-05 
+1753810398.57 Time to get KPMs from RAN and store in database 0.10119906393811107
+ Total time in IMI 0.10134163638576865 
+ Time Stamp when PRB control sent 1753810398.9217994 
+ Time to send control to the RAN 3.686221316456795e-05 
+1753810398.922 Time to get KPMs from RAN and store in database 0.10089068207889795
+ Total time in IMI 0.10096241487190127 
+ Time Stamp when PRB control sent 1753810399.2729878 
+ Time to send control to the RAN 9.383121505379677e-05 
+1753810399.273 Time to get KPMs from RAN and store in database 0.10246034106239676
+ Total time in IMI 0.1026351791806519 
+ Time Stamp when PRB control sent 1753810399.6259682 
+ Time to send control to the RAN 0.00015438813716173172 
+1753810399.626 Time to get KPMs from RAN and store in database 0.10218677576631308
+ Total time in IMI 0.102496437728405 
+ Time Stamp when PRB control sent 1753810399.9787514 
+ Time to send control to the RAN 0.00014863116666674614 
+1753810399.979 Time to get KPMs from RAN and store in database 0.10230882279574871
+ Total time in IMI 0.10256451414898038 
+ Time Stamp when PRB control sent 1753810400.331585 
+ Time to send control to the RAN 0.00012456299737095833 
+1753810400.331 Time to get KPMs from RAN and store in database 0.1022412539459765
+ Total time in IMI 0.10247317980974913 
+ Time Stamp when PRB control sent 1753810400.6842804 
+ Time to send control to the RAN 5.914783105254173e-05 
+1753810400.684 Time to get KPMs from RAN and store in database 0.10123415384441614
+ Total time in IMI 0.10135895991697907 
+ Time Stamp when PRB control sent 1753810401.0359795 
+ Time to send control to the RAN 9.791133925318718e-05 
+1753810401.036 Time to get KPMs from RAN and store in database 0.10143425315618515
+ Total time in IMI 0.10160253336653113 
+ Time Stamp when PRB control sent 1753810401.3879087 
+ Time to send control to the RAN 0.00011067790910601616 
+1753810401.388 Time to get KPMs from RAN and store in database 0.10216603800654411
+ Total time in IMI 0.10234593227505684 
+ Time Stamp when PRB control sent 1753810401.740522 
+ Time to send control to the RAN 9.405100718140602e-05 
+1753810401.74 Time to get KPMs from RAN and store in database 0.10217132419347763
+ Total time in IMI 0.1023621498607099 
+ Time Stamp when PRB control sent 1753810402.093136 
+ Time to send control to the RAN 6.628874689340591e-05 
+1753810402.093 Time to get KPMs from RAN and store in database 0.10109636001288891
+ Total time in IMI 0.10123505396768451 
+ Time Stamp when PRB control sent 1753810402.4446516 
+ Time to send control to the RAN 6.869900971651077e-05 
+1753810402.445 Time to get KPMs from RAN and store in database 0.10143839102238417
+ Total time in IMI 0.10157747892662883 
+ Time Stamp when PRB control sent 1753810402.7964895 
+ Time to send control to the RAN 5.319202318787575e-05 
+1753810402.796 Time to get KPMs from RAN and store in database 0.10089032026007771
+ Total time in IMI 0.1009892150759697 
+ Time Stamp when PRB control sent 1753810403.1478202 
+ Time to send control to the RAN 0.00012040603905916214 
+1753810403.148 Time to get KPMs from RAN and store in database 0.10222234297543764
+ Total time in IMI 0.10244262823835015 
+ Time Stamp when PRB control sent 1753810403.5005698 
+ Time to send control to the RAN 0.00017071841284632683 
+1753810403.501 Time to get KPMs from RAN and store in database 0.10254004178568721
+ Total time in IMI 0.10281624784693122 
+ Time Stamp when PRB control sent 1753810403.853676 
+ Time to send control to the RAN 0.00012913206592202187 
+1753810403.854 Time to get KPMs from RAN and store in database 0.10247543081641197
+ Total time in IMI 0.10274951718747616 
+ Time Stamp when PRB control sent 1753810404.2066376 
+ Time to send control to the RAN 5.8718957006931305e-05 
+1753810404.206 Time to get KPMs from RAN and store in database 0.10102861002087593
+ Total time in IMI 0.10113388206809759 
+ Time Stamp when PRB control sent 1753810404.5579648 
+ Time to send control to the RAN 7.332582026720047e-05 
+1753810404.558 Time to get KPMs from RAN and store in database 0.10126425372436643
+ Total time in IMI 0.10138280317187309 
+ Time Stamp when PRB control sent 1753810404.909596 
+ Time to send control to the RAN 4.9688853323459625e-05 
+1753810404.909 Time to get KPMs from RAN and store in database 0.10088559985160828
+ Total time in IMI 0.10097861383110285 
+ Time Stamp when PRB control sent 1753810405.2608294 
+ Time to send control to the RAN 3.946293145418167e-05 
+1753810405.26 Time to get KPMs from RAN and store in database 0.10086953919380903
+ Total time in IMI 0.1009525740519166 
+ Time Stamp when PRB control sent 1753810405.6119394 
+ Time to send control to the RAN 6.046099588274956e-05 
+1753810405.612 Time to get KPMs from RAN and store in database 0.10090292291715741
+ Total time in IMI 0.10100170318037271 
+ Time Stamp when PRB control sent 1753810405.9632008 
+ Time to send control to the RAN 4.9449969083070755e-05 
+1753810405.963 Time to get KPMs from RAN and store in database 0.100960039999336
+ Total time in IMI 0.10106591368094087 
+ Time Stamp when PRB control sent 1753810406.3145378 
+ Time to send control to the RAN 4.6832021325826645e-05 
+1753810406.314 Time to get KPMs from RAN and store in database 0.10091424081474543
+ Total time in IMI 0.10103166336193681 
+ Time Stamp when PRB control sent 1753810406.6659484 
+ Time to send control to the RAN 6.286101415753365e-05 
+1753810406.666 Time to get KPMs from RAN and store in database 0.10123089468106627
+ Total time in IMI 0.10134913679212332 
+ Time Stamp when PRB control sent 1753810407.0176384 
+ Time to send control to the RAN 0.000123628880828619 
+1753810407.017 Time to get KPMs from RAN and store in database 0.10252052685245872
+ Total time in IMI 0.10272248089313507 
+ Time Stamp when PRB control sent 1753810407.3706152 
+ Time to send control to the RAN 9.573996067047119e-05 
+1753810407.37 Time to get KPMs from RAN and store in database 0.1017100759781897
+ Total time in IMI 0.10188950411975384 
+ Time Stamp when PRB control sent 1753810407.7228262 
+ Time to send control to the RAN 0.00012598978355526924 
+1753810407.723 Time to get KPMs from RAN and store in database 0.10271175997331738
+ Total time in IMI 0.10294472193345428 
+ Time Stamp when PRB control sent 1753810408.0760896 
+ Time to send control to the RAN 0.00012024398893117905 
+1753810408.076 Time to get KPMs from RAN and store in database 0.10143262706696987
+ Total time in IMI 0.1016074582003057 
