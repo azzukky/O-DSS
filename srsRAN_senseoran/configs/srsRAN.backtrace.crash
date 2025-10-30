@@ -2509,3 +2509,30 @@
 	/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0x80) [0x7b0fdf829e40]
 	../build/srsenb/src/srsenb(_start+0x25) [0x59684c32d635]
 
+--- command='../build/srsenb/src/srsenb enb.conf --log.all_level=debug --rf.device_name=zmq --rf.device_args="tx_port=tcp://*:2000,rx_port=tcp://localhost:2001,id=enb,base_srate=23.04e6" --enb_files.rr_config=rr1.conf' version=21.10.0 signal=11 date='23/10/2025 20:26:53' ---
+	../build/srsenb/src/srsenb(+0x2d4bab) [0x5a0a36e0cbab]
+	/lib/x86_64-linux-gnu/libc.so.6(+0x42520) [0x7c4178642520]
+	/lib/x86_64-linux-gnu/libc.so.6(+0x9651b) [0x7c417869651b]
+	../build/srsenb/src/srsenb(+0x25100f) [0x5a0a36d8900f]
+	../build/srsenb/src/srsenb(+0x2512ad) [0x5a0a36d892ad]
+	../build/srsenb/src/srsenb(+0xd1706) [0x5a0a36c09706]
+	../build/srsenb/src/srsenb(+0xd181d) [0x5a0a36c0981d]
+	../build/srsenb/src/srsenb(+0xb65b6) [0x5a0a36bee5b6]
+	/lib/x86_64-linux-gnu/libc.so.6(+0x29d90) [0x7c4178629d90]
+	/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0x80) [0x7c4178629e40]
+	../build/srsenb/src/srsenb(_start+0x25) [0x5a0a36bf0635]
+
+--- command='../build/srsenb/src/srsenb enb.conf --log.all_level=debug --rf.device_name=zmq --rf.device_args="tx_port=tcp://*:2000,rx_port=tcp://localhost:2001,id=enb,base_srate=23.04e6" --enb_files.rr_config=rr1.conf' version=21.10.0 signal=13 date='23/10/2025 20:36:01' ---
+	../build/srsenb/src/srsenb(+0x2d4bab) [0x587c7bf9ebab]
+	/lib/x86_64-linux-gnu/libc.so.6(+0x42520) [0x76db89c42520]
+	/lib/x86_64-linux-gnu/libc.so.6(sendmsg+0x4d) [0x76db89d2799d]
+	/lib/x86_64-linux-gnu/libsctp.so.1(sctp_sendmsg+0xc2) [0x76db8a7e0a12]
+	../build/srsenb/src/srsenb(+0x24dd92) [0x587c7bf17d92]
+	../build/srsenb/src/srsenb(+0x24f1bf) [0x587c7bf191bf]
+	../build/srsenb/src/srsenb(+0x24f402) [0x587c7bf19402]
+	../build/srsenb/src/srsenb(+0x2da524) [0x587c7bfa4524]
+	../build/srsenb/src/srsenb(+0x24d379) [0x587c7bf17379]
+	../build/srsenb/src/srsenb(+0xc0fd5) [0x587c7bd8afd5]
+	/lib/x86_64-linux-gnu/libc.so.6(+0x94ac3) [0x76db89c94ac3]
+	/lib/x86_64-linux-gnu/libc.so.6(+0x126850) [0x76db89d26850]
+

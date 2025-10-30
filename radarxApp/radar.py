@@ -1,326 +1,78 @@
-import sctp, socket
-from ultralytics import YOLO
-import torch, torchvision
-import time
-import random
+import sctp
+import socket
 import array
+import time
+import json
+import numpy as np
+from PIL import Image
 import math
 import io
-from datetime import datetime
-from log import *
-import threading
-from PIL import Image
-import numpy as np
-import matplotlib.pyplot as plt
-from ricsdl.syncstorage import SyncStorage
-import json
-import xgboost as xgb
+from ultralytics import YOLO
 from tensorflow.keras.models import load_model
+from ricsdl.syncstorage import SyncStorage
+from log import *
+import matplotlib.pyplot as plt
 
-# CONSTANTS
 
-# SAMPLING_RATE = 7.68e6
-chann_bandwidth = 10e6
-num_prbs = 50
-spec_width_px = 640
-spec_height_px = 640
-# spectrogram_time = 0.010  # 10 ms
-# num_of_samples = SAMPLING_RATE * spectrogram_time
-# SPEC_SIZE = num_of_samples * 8  # size in bytes, where 8 bytes is the size of one sample (complex64)
+# Constants
+CHANNEL_BANDWIDTH = 10e6
+NUM_PRBS = 50
+SPEC_WIDTH_PX = 640
+SPEC_HEIGHT_PX = 640
 PROTOCOL = 'SCTP'
 ENABLE_DEBUG = False
+BLER_THRESHOLD = 5.0  # BLER threshold in percentage
+MCS_REDUCTION_STEP = 2  # Amount to reduce MCS by when BLER is below threshold
+LOG_FILE1_PATH = 'radar_power_log_2db.txt'
+LOG_FILE2_PATH = 'odss-timing-radarxapp2.txt'
+MODEL_KPMS_PATH = "/home/ajchieji/spectrumsharing_4g/models/kpmmodel_len5.h5"
+MODEL_SPEC_PATH = "/home/ajchieji/spectrumsharing_4g/models/best.pt"
+MAX_METRICS = [45839996.0, 100, 24.34091, 148525]
+METRICS_TO_EXTRACT = ["rx_bitrate", "rx_block_error_rate", "ul_mcs", "ul_buffer"]
+
+
+# Global variables
 server = None
-interf_res_final = [34,46]
-# create the sdl client
-ns1 = "Spectrograms"
-ns2 = "Kpms"
-sdl2= SyncStorage()
-log_file1 = open('radar_power_log_2db.txt', 'w')  # Open log file in write mode
-log_file2 = open('odss-timing-radarxapp.txt', 'w')  # Open log file in write mode
-model_kpms = load_model("/home/azuka/spectrumsharing_4g/models/kpmradarmodel1.h5")
-should_send = True
-# max_metrics = [49.108295, 45839996.0, 78.57143, 24.34091, 148525]
-max_metrics = [49.108295, 45839996.0, 100, 24.34091, 148525]
+sdl2 = SyncStorage()
+log_file1 = open(LOG_FILE1_PATH, 'w')
+log_file2 = open(LOG_FILE2_PATH, 'w')
+model_kpms = load_model(MODEL_KPMS_PATH)
 
+optimal_mcs_final = 24
+interf_res_final = [0, 0, optimal_mcs_final]
+current_mode = "KPMs"  # Initial mode
+command = b'k'
+prev_command = None
+BLER_prev = 0
+MAX_MCS = 24
+MIN_MCS = 1
 
-def post_init(self):
-    global server
-
+def post_init():
+    """Initialize the SCTP server."""
     ip_addr = socket.gethostbyname(socket.gethostname())
-    # ip_addr = "127.0.1.1"
-    port_radarxApp = 5002
-
-    log_info(f"connecting using SCTP on {ip_addr}")
+    port_radarxapp = 5002
+    log_info(f"Connecting using {PROTOCOL} on {ip_addr}:{port_radarxapp}")
+    
+    global server
     server = sctp.sctpsocket_tcp(socket.AF_INET)
-    server.bind((ip_addr, port_radarxApp)) 
+    server.bind((ip_addr, port_radarxapp))
     server.listen()
-
     log_info('Server started')
 
-interf_res = None
+def load_model_spec():
+    """Load the YOLO model for spectrogram analysis."""
+    return YOLO(MODEL_SPEC_PATH)
 
-
-def entry(self):
-    global server, model_spec, interf_res_final
-
-    post_init(self)
-    model_spec = load_model_spec()
-    # State variable to track the current mode
-    current_mode = "KPMs"  # Can be "KPMs" or "I/Q"
-    while True:
-        try:
-            conn, addr = server.accept() 
-            log_info(f'Connected to IMI by {addr}')
-            prev_raw_bytes = None
-            prev_extracted_metrics = []
-            print("Starting inferences")
-            while True:
-                #  For KPMs inference
-                start_time = time.perf_counter()
-                if current_mode == "KPMs":
-                    key_pattern = "kpm_*"
-                    n = 1
-                    keys = sdl2.find_keys(ns2, key_pattern)
-                    
-                    sorted_keys = sorted(keys, key=lambda x: int(x.split('_')[1]))
-                    # print(len(sorted_keys))
-                    lastn_keys = sorted_keys[-n:]
-                    values = sdl2.get(ns2, set(lastn_keys)) 
-                    metrics_to_extract = ["pusch_sinr", "rx_bitrate", "rx_block_error_rate", "ul_mcs", "ul_buffer"]
-                    curr_extracted_metrics = []
-                    
-                    for key, value_bytes in values.items():
-                        if value_bytes:
-                            value = json.loads(value_bytes.decode('utf-8'))
-                            ue_metrics = value.get("ue_metrics", [])
-                            # print(ue_metrics)
-                            for ue_metric in ue_metrics:
-                                if (ue_metric.get("rx_bitrate") == 0 
-                                    and ue_metric.get("rx_block_error_rate") == 0 
-                                    and ue_metric.get("ul_buffer") == 0):
-                                    continue  # Skip appending if all three are zero
-                                curr_extracted_metrics.extend([ue_metric.get(metric) for metric in metrics_to_extract])
-
-                    if len(curr_extracted_metrics) == len(metrics_to_extract)*n:          
-                        if curr_extracted_metrics!=prev_extracted_metrics:
-                            print("Gotten KPMs from RAN")
-                            # print(f"KPMs gotten from the RAN: {curr_extracted_metrics}")
-                            metrics = curr_extracted_metrics
-                            prev_extracted_metrics = curr_extracted_metrics
-                            curr_extracted_metrics = [x / y for x, y in zip(curr_extracted_metrics, max_metrics)]
-                            # print(len((curr_extracted_metrics)))
-                            curr_extracted_metrics = np.array(curr_extracted_metrics).reshape(1,len(metrics_to_extract)*n)
-
-                            end_time = time.perf_counter()
-                            duration = end_time - start_time
-                            log_entry1 = f"Time to get KPMs from dB and Process for model {duration}\n"
-                            log_file2.write(log_entry1)  # Write to file
-
-                            start_timee = time.perf_counter()
-                            # model_kpms = xgb.XGBClassifier() 
-                            # model_kpms.load_model("/home/azuka/spectrumsharing_4g/models/prelim_xgboost_model.model")  
-                            # model_kpms = load_model("/home/azuka/spectrumsharing_4g/models/kpmradarmodel1.h5")  
-                            pred = model_kpms.predict(curr_extracted_metrics)
-                            end_time = time.perf_counter()
-                            pred = np.argmax(pred,axis=1)
-                            epoch_time1 = time.time()
-                            # if metrics[2] >= 5 or metrics[7] >=5:
-                            # if metrics[2] >= 5:
-                            #     pred[0] = 1
-                            # else:
-                            #     pred[0] = 0
-
-                            # end_time = time.perf_counter()
-                            duration1 = end_time - start_timee
-                            duration = end_time - start_time
-                            log_entry1 = f"Time to get KPMs from dB, load model and get prediction {duration}\n"
-                            log_entry2 = f"Time to get prediction {duration1}\n"
-                            log_file2.write(log_entry1)  # Write to file
-                            log_file2.write(log_entry2)
-
-                            # print(f"KPMs detection Time {duration:.6f} seconds")
-                            log_entry1 = f"Epoch: {epoch_time1}, KPMs Prediction: {pred[0]}\n"
-                            print(f"KPMs detection at {epoch_time1:.6f} seconds")
-                            log_file1.write(log_entry1)  # Write to file
-                            # log_file1.flush()  # Ensure immediate write to disk
-                            if pred[0] == 0:
-                                # No radar detected, stay in KPMs mode
-                                # First ensure that the BS is not blanking
-                                # if metrics[2] >= 5 or metrics[7] >=5:
-                                if metrics[2] >= 5:
-                                    interf_restoarr = array.array('i',interf_res_final)
-                                    interf_restobytes = interf_restoarr.tobytes()
-                                    # print(f"Confirmed Affected PRBs are {interf_res}")
-                                    conn.send(interf_restobytes)
-                                    print("Retain previous blanked PRBs")
-                                    end_time = time.perf_counter()
-                                    duration = end_time - start_time
-                                    log_entry1 = f"Time to get KPMs from dB, load model, get prediction & forward decision {duration}\n"
-                                    log_file2.write(log_entry1)  # Write to file
-
-                                else:
-                                    interf_res = [0,0]
-                                    interf_restoarr = array.array('i',interf_res)
-                                    interf_restobytes = interf_restoarr.tobytes()
-                                    # print(f"Confirmed Affected PRBs are {interf_res}")
-                                    conn.send(interf_restobytes)
-                                    end_time = time.perf_counter()
-                                    duration = end_time - start_time
-                                    log_entry1 = f"Time to get KPMs from dB, load model, get prediction & forward decision {duration}\n"
-                                    log_file2.write(log_entry1)  # Write to file
-
-                                    print(f"Sent control to unblank PRBs")
-                                    log_entry1 = f"In KPMs mode. Unblanking PRBS\n"
-                                    log_file1.write(log_entry1)  # Write to file
-
-                                if current_mode != "KPMs":
-                                    command = b'k'
-                                    print(f"No Radar signal detected! Sending command {command} to imi") 
-                                    conn.send(command)
-                                    current_mode = "KPMs"
-                                else:
-                                    print("Remaining in KPMs state (NO Radar Signal detected)")
-                            else:
-                                command = b'i'
-                                print(f"Radar signal detected! Sending command {command} to imi")
-                                conn.send(command)
-                                end_time = time.perf_counter()
-                                current_mode = "I/Qs"
-                                continue
-                                
-                                
-
-                elif current_mode == "I/Qs":
-                    print("Now in I/Q mode")
-                    # Now the object detection algorithm
-                    start_time = time.perf_counter()
-
-                    curr_raw_bytes = get_bytes()
-
-                    end_time = time.perf_counter()
-                    duration = end_time - start_time
-                    log_entry1 = f"Time to get Spectrograms from dB and Process for model {duration}\n"
-                    log_file2.write(log_entry1)  # Write to file
-                    
-                    # print(f"Sending took {duration:.6f} seconds")
-                    print("Entering curr_raw_bytes conditional loop")
-                    if curr_raw_bytes!= prev_raw_bytes:
-                        # Prediction is run here
-                        prev_raw_bytes = curr_raw_bytes
-                        print("Entering prediction function")
-                        # Measure time
-                        start_timee = time.perf_counter()
-
-                        interf_res = run_prediction(curr_raw_bytes)
-                        end_time = time.perf_counter()
-                        epoch_time1 = time.time()
-                        
-                        duration1 = end_time - start_timee
-                        duration = end_time - start_time
-                        log_entry1 = f"Time to Load Spectrograms model and get prediction {duration}\n"
-                        log_entry2 = f"Time to get prediction {duration1}\n"
-                        log_file2.write(log_entry1)  # Write to file
-                        log_file2.write(log_entry2)  # Write to file
-                        log_entry1 = f"Epoch: {epoch_time1}, Spectrograms Prediction: {interf_res}\n"
-                        print(f"Spectrograms detection at {epoch_time1:.6f} seconds")
-                        log_file1.write(log_entry1)  # Write to file
-                        print(interf_res)
-                        if interf_res != "No detections made" and interf_res != "There is no interference detected":
-                            # print("Detections made")
-                            interf_res = sorted(interf_res[0])
-                            interf_res_final = interf_res
-                            interf_res_final = [34,46]
-                            # if metrics[2] > 5:
-                            #     optimal_mcs = optimize_mcs(metrics[3])
-                            # print(f"Affected PRBs are {interf_res}")
-                            if interf_res_final[0] > 0 and interf_res_final[1] > interf_res_final[0] and interf_res_final[0] < 50 and interf_res_final[1] < 50 :
-                                interf_restoarr = array.array('i',interf_res_final)
-                                interf_restobytes = interf_restoarr.tobytes()
-                                print(f"Confirmed Affected PRBs are {interf_res_final}")
-                                # optimal_mcs = array.array('i',optimal_mcs)
-                                # optimalmcstobytes = optimal_mcs.tobytes()
-                                conn.send(interf_restobytes)
-                                # conn.send(optimalmcstobytes)
-
-                                end_time = time.perf_counter()
-                                duration = end_time - start_time
-                                log_entry1 = f"Time to Load Spectrograms model, get prediction & forward decision {duration}\n"
-                                log_file2.write(log_entry1)  # Write to file
-                                print(f"Sent Affected PRBs to IMI")
-                                # time.sleep(0.2)
-                                current_mode = "KPMs"
-                        else:
-                            # No interference detected, desired state is KPMs
-                            print("No interference")
-                            if current_mode != "KPMs":
-
-                                # if metrics[2] >= 5 or metrics[7] >=5:
-                                if metrics[2] >= 5:
-                                    interf_restoarr = array.array('i',interf_res_final)
-                                    interf_restobytes = interf_restoarr.tobytes()
-                                    # print(f"Confirmed Affected PRBs are {interf_res}")
-                                    conn.send(interf_restobytes)
-                                    print("Retain previous blanked PRBs")
-                                    log_entry1 = f"In I/Qs mode. Retain previous blanked PRBs\n"
-                                    log_file1.write(log_entry1)  # Write to file
-                                # First ensure that the xApp sends command to BS to unblank
-                                else:
-                                    interf_res = [0,0]
-                                    interf_restoarr = array.array('i',interf_res)
-                                    interf_restobytes = interf_restoarr.tobytes()
-                                    # print(f"Confirmed Affected PRBs are {interf_res}")
-                                    conn.send(interf_restobytes)
-
-                                    end_time = time.perf_counter()
-                                    duration = end_time - start_time
-                                    log_entry1 = f"Time to Load Spectrograms model, get prediction & forward decision {duration}\n"
-                                    log_file2.write(log_entry1)  # Write to file
-
-                                    print(f"Sent control to unblank PRBs")
-                                    log_entry1 = f"In I/Qs mode. Unblanking PRBs\n"
-                                    log_file1.write(log_entry1)  # Write to file
-
-                            
-                                # Only send command if there's a state change
-                                command = b'k'
-                                print(f"No Radar signal detected! Sending command {command} to imi")
-                                conn.send(command)
-                                current_mode = "KPMs"  # Update current mode
-
-                            # low = random.randint(5,10)
-                            # dummy_data = [low, random.randint(low+1, 20)]
-                            # print(dummy_data)
-                            # interf_restoarr = array.array('i',dummy_data)
-                            # interf_restobytes = interf_restoarr.tobytes()
-                            # print("Sent bytes", interf_restobytes)
-                            # conn.send(interf_restobytes)
-                        # end = time.perf_counter()-start
-                        # print(f"Total time taken is {end}")
-
-            log_file1.close()  # Close the log file
-        except OSError as e:
-            log_error(e)
-            break
-
-
-def optimize_mcs(mcs):
-    mcs_val = mcs
-    mcs_val-=2
-    mcs_val = [mcs_val]
-    return mcs_val
-
-# This function gets the bytes from the database
 def get_bytes():
-    data_dict = sdl2.get(ns1, {'new_spec'})
+    """Retrieve spectrogram bytes from the database."""
+    data_dict = sdl2.get("Spectrograms", {'new_spec'})
     raw_bytes = None
     for key, val in data_dict.items():
         raw_bytes = val
     return raw_bytes
 
-# This converts the raw bytes back to an image and then processes it to the desired shape required
-# by the ML model!!!!
 def raw_bytes_to_image(raw_bytes):
-    # Read as a PIL image and return
+    """Convert raw bytes to a PIL image."""
     ret = io.BytesIO(raw_bytes)
     image = Image.open(ret)
     arr = np.array(image)
@@ -329,143 +81,333 @@ def raw_bytes_to_image(raw_bytes):
     # plt.imshow(arr)
     # plt.show()
     # plt.close()
-    
     return image
 
-# This runs the prediction
-def run_prediction(raw_bytes):
-    sample = raw_bytes_to_image(raw_bytes)
-    ymin_soi, ymax_soi, ymin_cwis, ymax_cwis = predict_newdata(sample)
-    prbs_affected = get_affected_prbs(ymin_soi, ymax_soi, ymin_cwis, ymax_cwis) 
-    # print("checking predictions",len(result))
-    return prbs_affected
-
-
-# Load model_spec
-def load_model_spec():
-    model_spec_path = '/home/azuka/spectrumsharing_4g/models/best.pt'
-    best_model_spec = YOLO(model_spec_path)
-        
-    return best_model_spec
-
-def predict_newdata(sample):
+def predict_newdata(model_spec,sample):
+    """Run YOLO prediction on the spectrogram image."""
     pred = model_spec(sample)
-    # print("Printing predictions",pred)
     result = pred[0]
-    inference = result.plot()
+    # inference = result.plot()
     # print("Plotting image")
     # plt.imshow(inference)
     # plt.show()
     # plt.close()
-
-
+    
+    soi, p0n2 = [], []
     for box in result.boxes:
         class_id = result.names[box.cls[0].item()]
-        cords_xyxy = box.xyxy[0].tolist()
-        cords_xyxyn = box.xyxyn[0].tolist()
-        cords_xywh = box.xywh[0].tolist()
-        cords_xywhn = box.xywhn[0].tolist()
+        cords = box.xyxy[0].tolist()
         conf = round(box.conf[0].item(), 2)
-        # print("Object type:", class_id)
-
-
-        # print("Coordinates in xyxy:", cords_xyxy)
-        # print("Coordinates in xyxyn:", cords_xyxyn)
-        # print("Coordinates in xywh:", cords_xywh)
-        # print("Coordinates in xywhn:", cords_xywhn)
-
-
-
-        # print("Probability:", conf)
-        # print("---")
-
+        prediction = {"class": class_id, "cords": cords, "confidence": conf}
+        
+        if box.cls == 0 and conf > 0.60:
+            soi.append(prediction)
+        elif box.cls == 1 and conf > 0.50:
+            p0n2.append(prediction)
     
-    soi = []
-    p0n2 = []
-    ymin_soi = "nil" 
-    ymin_p0n2 = "nil"
-    ymax_soi = "nil"
-    ymax_p0n2 = "nil"
-    # ymin_p0n2 = []
-    # ymax_p0n2 = []
-    for box in result.boxes:
-        if box.cls == 0:
-            class_idsoi = result.names[box.cls[0].item()]
-            coordinatessoi = box.xyxy[0].tolist()
-            confidencesoi = round(box.conf[0].item(),2)
-            soi_predictions = {
-                "class": class_idsoi,
-                "cords":coordinatessoi,
-                "confidence": confidencesoi,
-            }
-            soi.append(soi_predictions)
-        elif box.cls == 1:
-            class_idp0n2 = result.names[box.cls[0].item()]
-            coordinatesp0n2 = box.xyxy[0].tolist()
-            confidencep0n2 = round(box.conf[0].item(),2)
-            p0n2_predictions = {
-                "class": class_idp0n2,
-                "cords":coordinatesp0n2,
-                "confidence": confidencep0n2,
-            }
-            p0n2.append(p0n2_predictions)
-
-    if len(soi) != 0:     
-        soi = sorted(soi, key=lambda x: x['confidence'], reverse=True)
-        for i in range(len(soi)):
-            if soi[i]["confidence"] > 0.60:
-                ymin_soi = soi[i]["cords"][1]
-                ymax_soi = soi[i]["cords"][3]
-    if len(p0n2) != 0:
-        p0n2 = sorted(p0n2, key=lambda y: y['confidence'], reverse=True)
-        for i in range(len(p0n2)):
-            if p0n2[i]["confidence"] > 0.20:
-                ymin_p0n2 = p0n2[i]["cords"][1]
-                ymax_p0n2 = p0n2[i]["cords"][3]
-    print(soi)
+    ymin_soi = soi[0]["cords"][1] if soi else "nil"
+    ymax_soi = soi[0]["cords"][3] if soi else "nil"
+    ymin_p0n2 = p0n2[0]["cords"][1] if p0n2 else "nil"
+    ymax_p0n2 = p0n2[0]["cords"][3] if p0n2 else "nil"
+    
     return ymin_soi, ymax_soi, ymin_p0n2, ymax_p0n2
 
-
 def get_affected_prbs(ymin_soi, ymax_soi, ymin_p0n2, ymax_p0n2):
+    """Calculate affected PRBs based on spectrogram predictions."""
     if ymin_p0n2 == "nil" and ymin_soi == "nil":
         return "No detections made"
-    elif ymin_p0n2 == "nil" and ymin_soi != "nil":
+    if ymin_p0n2 == "nil" and ymin_soi != "nil":
         return "There is no interference detected"
-    ymin_soi = 93.23387145996094
-    ymax_soi = 552.609619140625
-    # print(f"{ymin_soi}, {ymax_soi}")
-    guardband_bandwidth = 0.1*chann_bandwidth
-    occupied_bandwidth = chann_bandwidth - guardband_bandwidth
-    # spectral_occupancy_prb = occupied_bandwidth/num_prbs
-    soi_fullheight_px = float(ymax_soi)-float(ymin_soi) #Height of chann bandwidth in px
-    soi_effectiveheight_px = (occupied_bandwidth*soi_fullheight_px)/chann_bandwidth
-    effective_px_prb = soi_effectiveheight_px/num_prbs # A prb thus covers this amount of px
-    guardbands_px = soi_fullheight_px - soi_effectiveheight_px
-    guardband_low_px = guardbands_px/2
-    # guardband_high_px = guardband_low_px
-    soi_start = ymin_soi + guardband_low_px
-    soi_end = soi_start+soi_effectiveheight_px
-    interfered_prbsrange = []
-    interfered_prbsexact = []
-    affected_prbs = []
-    prb_affected1 = math.floor((soi_end-ymax_p0n2)/(effective_px_prb))
-    prb_affected2 = math.ceil((soi_end-ymin_p0n2)/(effective_px_prb)) 
-    if prb_affected1 < 0 or prb_affected2 < 0:
-        prb_affected1 =  prb_affected1+1
-        prb_affected2 = prb_affected2+2
-        
-    affected_prbs.append(prb_affected1)
-    affected_prbs.append(prb_affected2)
     
-    interfered_prbsrange.append(affected_prbs)
-        
-    return interfered_prbsrange
+    ymin_soi, ymax_soi = 93.23387145996094, 552.609619140625
+    guardband_bandwidth = 0.1 * CHANNEL_BANDWIDTH
+    occupied_bandwidth = CHANNEL_BANDWIDTH - guardband_bandwidth
+    soi_fullheight_px = float(ymax_soi) - float(ymin_soi)
+    soi_effectiveheight_px = (occupied_bandwidth * soi_fullheight_px) / CHANNEL_BANDWIDTH
+    effective_px_prb = soi_effectiveheight_px / NUM_PRBS
+    guardbands_px = soi_fullheight_px - soi_effectiveheight_px
+    guardband_low_px = guardbands_px / 2
+    soi_start = ymin_soi + guardband_low_px
+    soi_end = soi_start + soi_effectiveheight_px
+    
+    prb_affected1 = math.floor((soi_end - float(ymax_p0n2)) / effective_px_prb)
+    prb_affected2 = math.ceil((soi_end - float(ymin_p0n2)) / effective_px_prb)
+    if prb_affected1 < 0 or prb_affected2 < 0:
+        prb_affected1 += 1
+        prb_affected2 += 2
+    
+    return [[prb_affected1, prb_affected2]]
 
 
+# This runs the prediction
+def run_prediction(model_spec,raw_bytes):
+    sample = raw_bytes_to_image(raw_bytes)
+    ymin_soi, ymax_soi, ymin_cwis, ymax_cwis = predict_newdata(model_spec,sample)
+    prbs_affected = get_affected_prbs(ymin_soi, ymax_soi, ymin_cwis, ymax_cwis) 
+    # print("checking predictions",len(result))
+    return prbs_affected
 
-def start(thread=False):
-    entry(None)
+def process_kpms():
+    """Retrieve and process KPMs from the database."""
+    print("=====Processing KPMs======")
+    start_time = time.perf_counter()
+    key_pattern = "kpm_*"
+    num_samples = 5
+    # time.sleep(0.2)
+    keys = sdl2.find_keys("Kpms", key_pattern)
+    sorted_keys = sorted(keys, key=lambda x: int(x.split('_')[1]))[-num_samples:]
+    print("These are the keys I am getting ", sorted_keys)
+    values = sdl2.get("Kpms", set(sorted_keys))
+    curr_extracted_metrics = []
+    for key, value_bytes in values.items():
+        if value_bytes:
+            value = json.loads(value_bytes.decode('utf-8'))
+            for ue_metric in value.get("ue_metrics", []):
+                if all(ue_metric.get(m, 0) == 0 for m in ["rx_bitrate", "rx_block_error_rate", "ul_buffer"]):
+                    continue
+                curr_extracted_metrics.extend([ue_metric.get(metric, 0) for metric in METRICS_TO_EXTRACT])
+    # print("Length of extracted metrics",len(curr_extracted_metrics))
+    if curr_extracted_metrics and len(curr_extracted_metrics) == len(METRICS_TO_EXTRACT)*num_samples:
+        # print(curr_extracted_metrics)
+        repeated_max_metrics = MAX_METRICS * num_samples
+        normalized_metrics = [x / y for x, y in zip(curr_extracted_metrics, repeated_max_metrics)]
+        # print(normalized_metrics)
+        pred = model_kpms.predict(np.array(normalized_metrics).reshape(1,len(METRICS_TO_EXTRACT)*num_samples))
+        pred = np.argmax(pred, axis=1)[0]
+        duration = time.perf_counter() - start_time
+        # log_file2.write(f"Time to process KPMs: {duration:.6f}\n")
+        return curr_extracted_metrics, pred
+    
+    return None, None
 
+
+def optimize_mcs(MCS_BS, BLER, BLER_prev, BLER_thresh, MCS_max, MCS_min, gamma=1, beta=2):
+    """
+    Parameters:
+    - MCS_BS: int, current MCS index at BS
+    - BLER: float, current BLER observed
+    - BLER_prev: float, previous BLER
+    - gamma: float, BLER variation threshold
+    - BLER_thresh: float, maximum acceptable BLER
+    - MCS_max: int, maximum MCS value allowed
+    - MCS_min: int, minimum MCS value allowed
+    - beta: int, step size for MCS adjustment (default: 1)
+    """
+    if BLER == 100:
+        return MCS_min
+    
+    if BLER_prev != BLER:
+        if abs(BLER - BLER_prev) < gamma:
+            return MCS_BS  # No significant change
+
+    if BLER > BLER_thresh:
+        action = 'DECR'
+        MCS_BS = max(MCS_BS//beta, MCS_min)
+    else:
+        action = 'INCR'
+        MCS_BS = min(MCS_BS + beta, MCS_max)
+
+    return round(MCS_BS)
+
+def mcs_optim(metrics,BLER_prev):
+    mcs_val = metrics[2::len(METRICS_TO_EXTRACT)]   
+    bler_val = metrics[1::len(METRICS_TO_EXTRACT)]
+    curr_mcs = sum(mcs_val) // len(mcs_val)
+    curr_bler = sum(bler_val) // len(bler_val)
+    # curr_mcs = metrics[18]
+    # curr_bler = metrics[17]
+    optimal_mcs = optimize_mcs(curr_mcs,curr_bler,BLER_prev,BLER_THRESHOLD,MAX_MCS,MIN_MCS)
+    optimal_mcs = math.floor(optimal_mcs)
+    print("current mcs, current bler and previous bler", curr_mcs,curr_bler,BLER_prev)
+    print("---------===",optimal_mcs,"===----------")
+    return optimal_mcs,curr_bler
+    
+
+def entry():
+    """Main entry point for RAN automation."""
+    post_init()
+    global current_mode,interf_res_final,command,prev_command,BLER_prev,MAX_MCS,MIN_MCS,optimal_mcs_final
+    model_spec = load_model_spec()
+    prev_raw_bytes = None
+    prev_extracted_metrics = []
+    counter = 0
+
+    
+    while True:
+        try:
+            conn, addr = server.accept()
+            log_info(f'Connected to IMI by {addr}')
+            conn.send(array.array('i', interf_res_final).tobytes())
+            print("This is the entry: send default configuration", interf_res_final)
+            while True:
+                # Process KPMs in both modes
+                start_time_total = time.perf_counter()
+                start_time = time.perf_counter()
+                metrics, kpm_pred = process_kpms()
+
+                print("KPM Prediction is", kpm_pred)
+                if metrics and metrics != prev_extracted_metrics:
+                    prev_extracted_metrics = metrics
+                    if kpm_pred is not None:                    
+                        if kpm_pred == 0:
+                            current_mode = "KPMs"
+                        else:
+                            current_mode = "I/Qs"
+
+                        if current_mode == "KPMs":
+                            print("==========Entering KPMs mode===========")
+                            command = b'k'
+                            if command != prev_command:
+                                prev_command = command
+                                conn.send(command)
+                            print("Metrics seen in KPMs mode: ", metrics)
+                    
+                            if kpm_pred == 0:
+                                print("====NO RADAR DETECTED USING KPMS=====")
+                                # optimal_mcs_final = 23
+                                optimal_mcs,curr_bler = mcs_optim(metrics,BLER_prev)
+                                BLER_prev = curr_bler
+                                optimal_mcs_final = optimal_mcs
+                                interf_res_final = [0, 0, optimal_mcs_final]
+                                conn.send(array.array('i', interf_res_final).tobytes())
+                                print("Current BLER: ", BLER_prev, "Optimal MCS: ", optimal_mcs_final)
+                                print("In KPMs mode: Sent control to unblank PRBs and use OPTIMAL MCS")
+                                current_mode = "KPMs"
+                            else: 
+                                print("====RADAR DETECTED USING KPMS=====")
+                                print("Metrics seen when we have radar", metrics)
+                                optimal_mcs,curr_bler = mcs_optim(metrics,BLER_prev)
+                                BLER_prev = curr_bler
+                                optimal_mcs_final = optimal_mcs
+                                interf_res_final[2]= optimal_mcs_final
+                                print("Current BLER: ", BLER_prev, "Optimal MCS: ", optimal_mcs_final)
+                                print(f"Sent last updated control: {interf_res_final}")
+                                conn.send(array.array('i', interf_res_final).tobytes())
+                                command = b'i'
+                                if command != prev_command:
+                                    prev_command = command
+                                    conn.send(command)
+                                    current_mode = "I/Qs"
+                                    print("===Radar signal detected! Switching to I/Q mode===")
+
+                            end_time = time.perf_counter()
+                            duration = end_time - start_time
+                            log_entry1 = f" Processing KPMs and Model Inference (MODE 1) {duration} \n"
+                            print("===========",log_entry1,"=========")
+                            log_file2.write(log_entry1)  # Write to file   
+
+                        elif current_mode == "I/Qs":
+                            command = b'i'
+                            if command != prev_command:
+                                conn.send(command)
+                            print("===========Entering I/Q mode===========")
+                            print("====RADAR DETECTED USING KPMS=====")
+                            print("Metrics seen when we have radar", metrics)
+                            
+                            start_time = time.perf_counter()
+
+                            curr_raw_bytes = get_bytes()
+                            print("Gotten RAW bytes")
+                            interf_res = run_prediction(model_spec, curr_raw_bytes)
+                            print(interf_res)
+                            if interf_res not in ["No detections made", "There is no interference detected"]:
+                                print("=======Radar detected=========")
+                                if interf_res[0][0] > 0 and interf_res[0][1] > interf_res[0][0] and interf_res[0][0] < 50 and interf_res[0][1] < 50 :
+                                    interf_res = sorted(interf_res[0])
+                                    # interf_res_final = interf_res.append(23)
+                                    print("=======Valid PRB range========:",interf_res)
+                                    optimal_mcs,curr_bler = mcs_optim(metrics,BLER_prev)
+                                    BLER_prev = curr_bler
+                                    optimal_mcs_final = optimal_mcs
+                                    interf_res.append(optimal_mcs_final)
+                                    interf_res_final = interf_res
+                                    print("Current BLER: ", BLER_prev, "Optimal MCS: ", optimal_mcs_final)
+                                    print(interf_res_final)
+                                    conn.send(array.array('i', interf_res_final).tobytes())
+                                    print(f"======>Sent updated control: {interf_res_final}")
+                                    current_mode = "I/Qs"
+                                else:
+                                    print("=========Invalid PRB range so retain previous valid interference to blank========")
+                                    optimal_mcs,curr_bler = mcs_optim(metrics,BLER_prev)
+                                    BLER_prev = curr_bler
+                                    optimal_mcs_final = optimal_mcs
+                                    interf_res_final[2]= optimal_mcs_final
+                                    print("Current BLER: ", BLER_prev, "Optimal MCS: ", optimal_mcs_final)
+                                    print(f"Sent last updated control: {interf_res_final}")
+                                    conn.send(array.array('i', interf_res_final).tobytes())
+                                    command = b'i'
+                                    if command != prev_command:
+                                        prev_command = command
+                                        conn.send(command)
+                                        current_mode = "I/Qs"
+                                        print("===Staying in I/Q MODE===")
+                                # interf_res_final[0:2] = interf_res[0]
+                                
+
+                            elif interf_res in ["No detections made", "There is no interference detected"]:
+                                print("====There is probability of being interfered======") 
+                                optimal_mcs,curr_bler = mcs_optim(metrics,BLER_prev)
+                                BLER_prev = curr_bler
+                                optimal_mcs_final = optimal_mcs
+                                interf_res_final[2]= optimal_mcs_final
+                                print("Current BLER: ", BLER_prev, "Optimal MCS: ", optimal_mcs_final)
+                                print(f"Sent last updated control: {interf_res_final}")
+                                conn.send(array.array('i', interf_res_final).tobytes())
+                                command = b'k'
+                                if command != prev_command:
+                                    prev_command = command
+                                    conn.send(command)
+                                    current_mode = "KPMs"
+                                    print("===Switching back to KPMs MODE===")
+
+                            optimal_mcs,curr_bler = mcs_optim(metrics,BLER_prev)
+                            BLER_prev = curr_bler
+                            optimal_mcs_final = optimal_mcs
+                            interf_res_final[2]= optimal_mcs_final
+                            print("Current BLER: ", BLER_prev, "Optimal MCS: ", optimal_mcs_final)
+                            print(f"Sent last updated control: {interf_res_final}")
+                            conn.send(array.array('i', interf_res_final).tobytes())
+                            command = b'i'
+                            if command != prev_command:
+                                prev_command = command
+                                conn.send(command)
+                                current_mode = "I/Qs"
+                                print("=== Remain in I/Q mode===")
+
+
+                            end_time = time.perf_counter()
+                            duration = end_time - start_time
+                            log_entry2 = f" Processing Spectrograms and Model Inference (MODE 2) {duration} \n"
+                            print("==============",log_entry2,"===============")
+                            log_file2.write(log_entry2)  # Write to file
+                                                                    
+                    else:
+                        if command != prev_command:
+                            command = b'k'
+                            prev_command = command
+                            conn.send(command)
+                            print("Sent KPMs command")
+                            current_mode = "KPMs"
+                        print("====No valid KPM prediction, remaining in KPMs mode====")
+                        # optimal_mcs_final = 23
+                        # interf_res = [0, 0, optimal_mcs_final]
+                        conn.send(array.array('i', interf_res_final).tobytes())   
+                        print("In KPMs mode: Sent previous control:",interf_res_final)
+
+                end_time_total = time.perf_counter()
+                duration = end_time_total - start_time_total
+                log_entry3 = f" Total time for entire xApp {duration} \n"
+                # log_file2.write(log_entry1)  # Write to file   
+                # log_file2.write(log_entry2)  # Write to file   
+                log_file2.write(log_entry3)  # Write to file
+                print("===========================",log_entry3, "========================")
+                time.sleep(0.25)
+        except OSError as e:
+            log_error(e)
+            break
+    
+    log_file1.close()
+    log_file2.close()
 
 if __name__ == '__main__':
-    start()
+    entry()

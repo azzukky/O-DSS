@@ -1,6 +1,7 @@
 #ifndef RIC_E2SM_KPM_H
 #define RIC_E2SM_KPM_H
 
+// #include <array>   // ADD THIS
 #include <list>
 #include <map>
 #include <queue>
